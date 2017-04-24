@@ -742,6 +742,15 @@ menuGame.prototype = {
         this.cursors.up.onUp.add(this.previous, this);
         this.cursors.down.onUp.add(this.next, this);
 
+        // GROUND (like Sonic)
+        this.grounds = this.game.add.group();
+
+        var _image = new Phaser.Image(this.game, 0, 0, "menu", "grass.png");
+        this.ground = new Phaser.TileSprite(this.game, 0, this.game.height + 128, this.game.width, _image.height, _image.texture);
+        this.grounds.add(this.ground);
+
+        this.game.add.tween(this.ground).to({ y: this.game.height - 64 }, 2000, Phaser.Easing.Cubic.out, true, 0);
+
         // LOGO
         this.logo = this.game.add.group();
         this.bg = new Phaser.Sprite(this.game, 0, -500, "menu", "couch.png");
@@ -844,9 +853,7 @@ menuGame.prototype = {
 
         this.returnBtn.input.enabled = false;
 
-        setTimeout(function () {
-            $('#about').trigger('state:created');
-        }, 250);
+        $('#about').trigger('state:created');
     },
 
     /**
@@ -867,7 +874,10 @@ menuGame.prototype = {
     },
 
     // Phaser.Game.State interface
-    update: function update() {},
+    update: function update() {
+        //  Scroll the ground
+        this.ground.tilePosition.x -= 5;
+    },
 
     /**
      * Mouse controls
@@ -961,6 +971,8 @@ menuGame.prototype = {
         this.logo.y = _margin + 236;
 
         this.ctrlMap.y = this.help.y = this.mainMenu.y = this.logo.y + _margin;
+
+        this.ground.y = this.game.height - 64;
     },
 
     // Phaser.Game.State interface
