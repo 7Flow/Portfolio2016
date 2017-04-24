@@ -24,35 +24,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-people:before {
-  content: "\e902";
-}
-.icon-social:before {
-  content: "\e903";
-}
-.icon-technology-1:before {
-  content: "\e904";
-}
-.icon-technology:before {
+.icon-flash:before {
   content: "\e905";
 }
-.icon-web:before {
+.icon-unity:before {
   content: "\e906";
 }
-.icon-flash:before {
+.icon-bitbucket:before {
   content: "\e900";
-}
-.icon-unity:before {
-  content: "\e901";
-}
-.icon-vimeo:before {
-  content: "\eaa1";
-}
-.icon-flickr:before {
-  content: "\eaa5";
-}
-.icon-linkedin:before {
-  content: "\eac9";
 }
 .icon-navigate_before:before {
   content: "\e408";
@@ -63,7 +42,15 @@
 .icon-close:before {
   content: "\e5cd";
 }
-.icon-done:before {
-  content: "\e876";
+.icon-flickr:before {
+  content: "\e901";
 }
-
+.icon-github:before {
+  content: "\e902";
+}
+.icon-linkedin:before {
+  content: "\e903";
+}
+.icon-vimeo:before {
+  content: "\e904";
+}
