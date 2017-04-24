@@ -37,8 +37,6 @@ class About extends Page
 
         _loader.loadManifest( _manifest );
 
-        this.$el.on('state:created', this.resize.bind(this) );
-
         $('#loading').add('animate').attr( 'value', this.percent );
     }
 
@@ -58,9 +56,12 @@ class About extends Page
         var w = this.$el.width();
         var h = this.$el.height();
 
+        this.$el.on('state:created', this.resize.bind(this) );
+
         this.game = new Phaser.Game( w, h, Phaser.CANVAS, this.$el.attr('id') );
         this.game.state.add("Menu", GameMenu);
         this.game.state.add("Play", GamePlay);
+
         this.game.state.states.Menu.data = this.game.state.states.Play.data = this.data;
 
         this.game.state.start("Menu");
@@ -78,9 +79,9 @@ class About extends Page
         if (this.game.renderType === Phaser.CANVAS) {
             Phaser.Canvas.setSmoothingEnabled( this.game.context, false );
         }
+
         this.game.renderer.resize( w, h );
         this.game.camera.setSize( w, h );
-
         this.game.state.getCurrentState().resize();
     }
 
@@ -95,7 +96,10 @@ class About extends Page
 
     clear()
     {
+        this.$el.off('state:created');
+
         this.game.state.getCurrentState().destroy();
+        this.game.state.destroy();
         this.game.destroy();
     }
 }

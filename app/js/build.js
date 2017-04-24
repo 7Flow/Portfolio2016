@@ -853,7 +853,6 @@ menuGame.prototype = {
      * Keyboard controls
      */
     next: function next() {
-        console.log('#next');
         if (this.current > -1) this.buttons[this.current].out();
         ++this.current;
         if (this.current > this.length - 1) this.current = 0;
@@ -861,7 +860,6 @@ menuGame.prototype = {
     },
 
     previous: function previous() {
-        console.log('#previous');
         if (this.current > -1) this.buttons[this.current].out();
         --this.current;
         if (this.current < 0) this.current = this.length - 1;
@@ -875,8 +873,6 @@ menuGame.prototype = {
      * Mouse controls
      */
     onOver: function onOver(e) {
-        console.log("#onOver: " + e.data.id);
-
         if (this.current > -1) {
             if (this.current !== e.data.id) this.buttons[this.current].out();else return;
         }
@@ -2428,8 +2424,6 @@ var About = function (_Page) {
 
             _loader.loadManifest(_manifest);
 
-            this.$el.on('state:created', this.resize.bind(this));
-
             $('#loading').add('animate').attr('value', this.percent);
         }
     }, {
@@ -2449,9 +2443,12 @@ var About = function (_Page) {
             var w = this.$el.width();
             var h = this.$el.height();
 
+            this.$el.on('state:created', this.resize.bind(this));
+
             this.game = new Phaser.Game(w, h, Phaser.CANVAS, this.$el.attr('id'));
             this.game.state.add("Menu", _GameMenu2.default);
             this.game.state.add("Play", _GamePlay2.default);
+
             this.game.state.states.Menu.data = this.game.state.states.Play.data = this.data;
 
             this.game.state.start("Menu");
@@ -2469,9 +2466,9 @@ var About = function (_Page) {
             if (this.game.renderType === Phaser.CANVAS) {
                 Phaser.Canvas.setSmoothingEnabled(this.game.context, false);
             }
+
             this.game.renderer.resize(w, h);
             this.game.camera.setSize(w, h);
-
             this.game.state.getCurrentState().resize();
         }
     }, {
@@ -2487,7 +2484,10 @@ var About = function (_Page) {
     }, {
         key: 'clear',
         value: function clear() {
+            this.$el.off('state:created');
+
             this.game.state.getCurrentState().destroy();
+            this.game.state.destroy();
             this.game.destroy();
         }
     }]);
