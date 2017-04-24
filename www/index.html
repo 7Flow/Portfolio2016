@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="ie ie9 lte9"> <![endif]-->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Florian Fievet</title>
+    <meta name="author" content="Florian Fievet - flow.devilicious-games.com">
+    <meta name="description" content="Développeur front-end - Unity">
+    <meta name="keywords" content="portfolio, front end, javascript, responsive, c#, unity, développeur">
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="css/app.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Damion|Roboto+Condensed:300" rel="stylesheet">
+
+    <meta property="og:url" content="flow.devilicious-games.com">
+    <meta property="og:image" content="">
+    <meta property="og:title" content="Développeur front-end">
+    <meta property="og:description" content="Développeur front-end">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="Florian Fievet">
+    <meta name="theme-color" content="#fff">
+
+    <!--[if IE 9]>
+    <link rel="stylesheet" type="text/css" href="css/ie9.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="js/polyfills/dialog-polyfill.js"></script>
+    <![endif]-->
+
+    <!-- polifill.io : Object.assign -->
+    <script type="text/javascript">
+        if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
+            document.write('<script src="js/polyfills/dialog-polyfill.js"><\/script>');
+            document.write('<script src="js/polyfills/Object.assign.js"><\/script>');
+    </script>
+    <script src="js/modernizr-custom.js"></script>
+</head>
+<body>
+    <header>
+        <div class="profile">
+            <div id="avatar" class="avatar">
+                <img src="images/florianfievet.jpg" alt="Photo de Florian Fievet" aria-labelledby="site-name" aria-describedby="site-description">
+            </div>
+            <div class="name">
+                <h1 id="site-name">Florian Fievet<span class="fx" aria-hidden="true">Florian Fievet</span></h1>
+                <h3 id="site-description">Creative developer</h3>
+            </div>
+        </div>
+        
+        <div id="menuCurrent" class="polygon current" aria-hidden="true">
+            <svg></svg>
+        </div>
+        <ul role="menubar">
+            <li role="menuitem"><a href="#about">About</a></li><!--
+            --><li role="menuitem"><a href="#games">Games</a></li><!--
+            --><li role="menuitem"><a href="#websites">Websites</a></li><!--
+            --><li role="menuitem"><a href="#cv">CV</a></li>
+        </ul>
+        <span class="over" aria-hidden="true"></span>
+        <span class="current" aria-hidden="true"></span>
+    </header>
+
+    <main>
+        <section id="intro" data-page="Intro" aria-live="polite" aria-relevant="all" aria-atomic="true">
+            <h2 hidden>Introduction</h2>
+        </section>
+        
+        <section id="about" data-page="About" aria-live="polite" aria-relevant="all" aria-atomic="true">
+            <h2 hidden>Présentation sous forme de jeu vidéo.</h2>
+        </section>
+
+        <section id="games" data-page="Games" aria-live="polite" aria-relevant="all" aria-atomic="true">
+            <h2 hidden>Liste des jeux vidéos développés, en Flash ou Unity3D / C#.</h2>
+        </section>
+
+        <section id="websites" data-page="Websites" aria-live="polite" aria-relevant="all" aria-atomic="true">
+            <h2 hidden>Liste des site web développés en HTML5/CSS et javascript, ou Flash.</h2>
+            
+            <div style="margin: 0 auto; text-align: center; width: 80%;">
+                <a class="btn">
+                    <svg>
+                        <defs>
+                            <linearGradient id="cv-linear-grd" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#89132D"><animate attributeName="stop-color" values="#89132D;#B51F22;#FF9100;#89132D" dur="5s" repeatCount="indefinite"></animate></stop>
+                                <stop offset="33%" stop-color="#B51F22"><animate attributeName="stop-color" values="#B51F22;#FF9100;#89132D;#B51F22" dur="5s" repeatCount="indefinite"></animate></stop>
+                                <stop offset="66%" stop-color="#FF9100"><animate attributeName="stop-color" values="#FF9100;#89132D;#B51F22;#FF9100;" dur="5s" repeatCount="indefinite"></animate></stop>
+                            </linearGradient>
+                        </defs>
+                        <rect x="0" y="0" fill="none" width="100%" height="100%" stroke="url(#cv-linear-grd)"></rect>
+                    </svg>
+                    <span>Click</span>
+                </a>
+            </div>
+        </section>
+        
+        <section id="cv" data-page="CV" aria-live="polite" aria-relevant="all" aria-atomic="true">
+            <h2 hidden>CV interactif</h2>
+        </section>
+
+        <progress id="loading" class="loading" value="0" max="100" aria-live="polite" aria-valuemin="0" aria-valuenow="0" aria-valuemax="100"></progress>
+    </main>
+    
+    <dialog id="popin">
+        <div class="overlay js-close"></div>
+        <article>
+            
+        </article>
+    </dialog>
+    
+    <dialog id="credits">
+        <div class="overlay js-close"></div>
+        <article>
+            <button class="icon-close invisible-text js-close"><span class="invisible-text" hidden>Fermer</span></button>
+            
+            <div class="title">
+                <h1 id="popin-game-title" class="js-random-poly">Credits<span class="fx" aria-hidden="true">Credits</span></h1>
+                <h3 id="popin-game-desc">Special thanks</h3>
+            </div>
+
+            <div class="description">
+                <div class="paragraph">
+                    <h4 class="js-random-poly">Outils / Framework<span class="fx" aria-hidden="true">Outils / Framework</span></h4>
+                    <p><span>Site</span> : Babel / Handlebars / Compass / Grunt</p>
+                    <p><span>Mini jeux</span> : Phaser / TexturePacker</p>
+                </div>
+                <div class="paragraph">
+                    <h4 class="js-random-poly">Fonts<span class="fx" aria-hidden="true">Fonts</span></h4>
+                    <p><span>Thème moderne</span> : Roboto <a href="//christianrobertson.com/" rel="author" target="_blank">(Christian Robertson)</a></p>
+                    <p><span>Thème 90's</span> : <span class="market-deco">Market Deco</span> <a href="//www.matthewfaustini.com/" rel="author" target="_blank">(Matthew Faustini)</a> & <span class="damion">Damion</span> <a href="//www.sansoxygen.com" rel="author" target="_blank">(Vernon Adams)</a></p>
+                </div>
+            </div>
+        </article>
+    </dialog>
+
+    <footer>
+        <a href="javascript:void(0);">credits</a>
+        <ul>
+            <li><a href="//www.linkedin.com/in/florian-fievet-16a78555" target="_blank"><i class="icon-linkedin"></i></a></li>
+            <li><a href="//www.flickr.com/photos/flow_of_pictures/albums" target="_blank"><i class="icon-flickr"></i></a></li>
+            <li><a href="//vimeo.com/kptnflow" target="_blank"><i class="icon-vimeo"></i></a></li>
+        </ul>
+        <span>© 2016</span>
+    </footer>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-87167543-1', 'auto');
+    </script>
+
+    <script type='text/javascript' src='js/all.min.js'></script>
+    <noscript>Ce site est une démonstration technique, et donc nécessite javascript.</noscript>
+</body>
+</html>

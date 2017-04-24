@@ -1,0 +1,60 @@
+{"frames": {
+
+"atmo.png":
+{
+	"frame": {"x":0,"y":0,"w":512,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":128},
+	"sourceSize": {"w":512,"h":128}
+},
+"hills.png":
+{
+	"frame": {"x":0,"y":128,"w":512,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":128},
+	"sourceSize": {"w":512,"h":128}
+},
+"lyon-skyline.png":
+{
+	"frame": {"x":0,"y":256,"w":512,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":128},
+	"sourceSize": {"w":512,"h":128}
+},
+"paris-skyline.png":
+{
+	"frame": {"x":0,"y":384,"w":512,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":128},
+	"sourceSize": {"w":512,"h":128}
+},
+"rural.png":
+{
+	"frame": {"x":0,"y":512,"w":512,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":128},
+	"sourceSize": {"w":512,"h":128}
+},
+"vienne-skyline.png":
+{
+	"frame": {"x":0,"y":640,"w":512,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":128},
+	"sourceSize": {"w":512,"h":128}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "backdrop.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":1024},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:d78bb1ca57d9b780d62a799d5daeb469:e47f5929708176bce9bb8a8e71a39969:2aab9dc42902d356dc2477162f97bace$"
+}
+}
