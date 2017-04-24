@@ -58,6 +58,9 @@ Button.prototype.init = function( game, x, y, w, h, label, id )
 {
     Phaser.Button.call( this, game, x, y );
     this.input.useHandCursor = true;
+    this.inputEnabled = true;
+    this.hitArea = new Phaser.Rectangle(0,0, w,h);
+
     this.data.id = id;
 
     this._width = w;
@@ -130,7 +133,6 @@ Button.prototype.updateBg = function()
 Button.prototype.over = function()
 {
     if (!this._over) {
-        console.log( "over: "+this.data.id );
         this._over = true;
         this.updateBg();
 
@@ -145,7 +147,6 @@ Button.prototype.over = function()
 Button.prototype.out = function()
 {
     if (this._over) {
-        console.log( "out: "+this.data.id );
         this._over = false;
         if (this._tween) this._tween.stop();
         this._tween = window.Game.add.tween(this.background).to({width: 0}, 250, Phaser.Easing.Cubic.Out, true);

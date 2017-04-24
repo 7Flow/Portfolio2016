@@ -66,9 +66,6 @@ class About extends Page
         this.game.state.start("Menu");
 
         window.Game = this.game;
-        setTimeout(()=>{
-            this.resize();
-        }, 150);
     }
 
     resize()

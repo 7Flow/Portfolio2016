@@ -143,7 +143,6 @@ menuGame.prototype = {
         this.help.visible = false;
 
         this.currentMenu = this.mainMenu;
-        $('#about').trigger('state:created');
 
         // enable mouse only on main menu
         _start.onInputDown.add( this.onDown, this );
@@ -157,6 +156,10 @@ menuGame.prototype = {
         this.returnBtn.onInputOver.add( this.onOver, this );
 
         this.returnBtn.input.enabled = false;
+
+        setTimeout( function() {
+            $('#about').trigger('state:created');
+        }, 250);
     },
 
     /**
@@ -164,7 +167,6 @@ menuGame.prototype = {
      */
     next: function()
     {
-        console.log('#next');
         if (this.current > -1) this.buttons[this.current].out();
         ++this.current;
         if (this.current > this.length-1) this.current = 0;
@@ -173,7 +175,6 @@ menuGame.prototype = {
 
     previous: function()
     {
-        console.log('#previous');
         if (this.current > -1) this.buttons[this.current].out();
         --this.current;
         if (this.current < 0) this.current = this.length-1;
@@ -189,9 +190,12 @@ menuGame.prototype = {
     /**
      * Mouse controls
      */
-    onOver: function(e) {
-        console.log( "#onOver: "+e.data.id);
-        if (this.current > -1) this.buttons[this.current].out();
+    onOver: function(e)
+    {
+        if (this.current > -1) {
+            if (this.current !== e.data.id) this.buttons[this.current].out();
+            else return;
+        }
 
         if (e.data.id > -1 && e.data.id < this.buttons.length) {
             this.current = e.data.id;
@@ -201,7 +205,8 @@ menuGame.prototype = {
         }
     },
 
-    onDown: function(e) {
+    onDown: function(e)
+    {
         console.log("#onDown: "+e.data.id);
         switch (e.data.id) {
             case 0:

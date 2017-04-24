@@ -830,7 +830,6 @@ menuGame.prototype = {
         this.help.visible = false;
 
         this.currentMenu = this.mainMenu;
-        $('#about').trigger('state:created');
 
         // enable mouse only on main menu
         _start.onInputDown.add(this.onDown, this);
@@ -844,6 +843,10 @@ menuGame.prototype = {
         this.returnBtn.onInputOver.add(this.onOver, this);
 
         this.returnBtn.input.enabled = false;
+
+        setTimeout(function () {
+            $('#about').trigger('state:created');
+        }, 250);
     },
 
     /**
@@ -873,7 +876,10 @@ menuGame.prototype = {
      */
     onOver: function onOver(e) {
         console.log("#onOver: " + e.data.id);
-        if (this.current > -1) this.buttons[this.current].out();
+
+        if (this.current > -1) {
+            if (this.current !== e.data.id) this.buttons[this.current].out();else return;
+        }
 
         if (e.data.id > -1 && e.data.id < this.buttons.length) {
             this.current = e.data.id;
@@ -2440,8 +2446,6 @@ var About = function (_Page) {
     }, {
         key: 'init',
         value: function init() {
-            var _this2 = this;
-
             var w = this.$el.width();
             var h = this.$el.height();
 
@@ -2453,9 +2457,6 @@ var About = function (_Page) {
             this.game.state.start("Menu");
 
             window.Game = this.game;
-            setTimeout(function () {
-                _this2.resize();
-            }, 150);
         }
     }, {
         key: 'resize',
