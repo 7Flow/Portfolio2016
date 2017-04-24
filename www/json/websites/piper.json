@@ -1,0 +1,16 @@
+{
+    "year": "2007",
+    "agency": "Fullsix",
+    "client": "PIPER HEIDSIECK",
+    "title": "Site internet",
+    "techno": "Flash",
+    "screenshots": [
+        "images/references/piper.jpg"
+    ],
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Réalisation de la page \"Depuis 1785\" avec mon moteur 3d, ainsi que des pages \"Gamme\" et \"Nouveautés\""
+        }
+    ]
+}

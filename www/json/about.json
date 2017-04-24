@@ -1,0 +1,641 @@
+{
+    "tileSize": 64,
+    "world": {
+        "width": 80,
+        "height": 16
+    },
+    "gravity": 600,
+    "backdrops": [
+        {
+            "group": "backdrop",
+            "x": 0,
+            "y": 2.5,
+            "repeat": 1,
+            "texture": {
+                "atlas": "backdrop",
+                "id": "vienne-skyline.png",
+                "width": 1
+            },
+            "data": {
+                "ratioX": 0.2,
+                "ratioY": 0.05
+            },
+            "ctor": "BackdropImage"
+        },
+        {
+            "group": "backdrop",
+            "x": 8,
+            "y": 2.5,
+            "repeat": 1,
+            "texture": {
+                "atlas": "backdrop",
+                "id": "lyon-skyline.png",
+                "width": 1
+            },
+            "data": {
+                "ratioX": 0.2,
+                "ratioY": 0.05
+            },
+            "ctor": "BackdropImage"
+        },
+        {
+            "group": "backdrop",
+            "x": 16,
+            "y": 2.5,
+            "repeat": 1,
+            "texture": {
+                "atlas": "backdrop",
+                "id": "rural.png",
+                "width": 1
+            },
+            "data": {
+                "ratioX": 0.2,
+                "ratioY": 0.05
+            },
+            "ctor": "BackdropImage"
+        },
+        {
+            "group": "backdrop",
+            "x": 24,
+            "y": 2.5,
+            "repeat": 1,
+            "texture": {
+                "atlas": "backdrop",
+                "id": "paris-skyline.png",
+                "width": 1
+            },
+            "data": {
+                "ratioX": 0.2,
+                "ratioY": 0.05
+            },
+            "ctor": "BackdropImage"
+        },
+        {
+            "group": "backdrop",
+            "x": 0,
+            "y": 2.1,
+            "repeat": 1,
+            "texture": {
+                "atlas": "backdrop",
+                "id": "atmo.png",
+                "width": 1
+            },
+            "data": {
+                "ratioX": 0,
+                "ratioY": 0
+            },
+            "ctor": "InfiniteLayer"
+        },
+        {
+            "group": "backdrop",
+            "x": 0,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "backdrop",
+                "id": "hills.png",
+                "width": 1
+            },
+            "data": {
+                "ratioX": 0.4,
+                "ratioY": 0.1
+            },
+            "ctor": "InfiniteLayer"
+        },
+        {
+            "group": "backdrop",
+            "x": 0,
+            "y": 1.3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "backdrop",
+                "id": "atmo.png",
+                "width": 1
+            },
+            "data": {
+                "ratioX": 0,
+                "ratioY": 0
+            },
+            "ctor": "InfiniteLayer"
+        },
+        {
+            "group": "decoration",
+            "x": 11,
+            "y": 5,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "chair.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 10,
+            "y": 0,
+            "repeat": 30,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 33,
+            "y": 6,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "plant.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 24.5,
+            "y": 3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "mac.png",
+                "width": 1
+            }
+        }
+    ],
+    "statics": [
+        {
+            "group": "grounds",
+            "x": 0,
+            "y": 0,
+            "repeat": 10,
+            "texture": {
+                "atlas": "atlas",
+                "id": "grass.png",
+                "width": 1
+            },
+            "data": {
+                "material": "grass"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 10,
+            "y": 1,
+            "repeat": 30,
+            "texture": {
+                "atlas": "atlas",
+                "id": "carpet.png",
+                "width": 1
+            },
+            "data": {
+                "material": "carpet"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 10,
+            "y": 4,
+            "repeat": 4,
+            "texture": {
+                "atlas": "atlas",
+                "id": "parquet.png",
+                "width": 1
+            },
+            "data": {
+                "type": "platform",
+                "material": "default"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 32,
+            "y": 5,
+            "repeat": 4,
+            "texture": {
+                "atlas": "atlas",
+                "id": "parquet.png",
+                "width": 1
+            },
+            "data": {
+                "type": "platform"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 17,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "printer.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 18,
+            "y": 3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "coffee-machine.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 24,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "table.png",
+                "width": 2
+            },
+            "data": {
+                "type": "platform",
+                "material": "default"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 30,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "expedit.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 30,
+            "y": 3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "expedit.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 30,
+            "y": 4,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "expedit.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 28,
+            "y": 3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "sandwich-machine.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 29,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "bumper.png",
+                "width": 1
+            },
+            "ctor": "Bumper",
+            "data": {
+                "type": "platform",
+                "material": "default",
+                "on": "bumper-on.png",
+                "off": "bumper.png",
+                "power": 70
+            }
+        }
+    ],
+    "dynamics": [
+        {
+            "name": "dut",
+            "group": "collectable",
+            "x": 6,
+            "y": 3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "scroll.png",
+                "width": 1
+            },
+            "data": {
+                "type": "buff",
+                "accel": 1000,
+                "maxSpeed": 30,
+                "jumpAccel": 2500,
+                "jumpMax": -250,
+                "onCollect": "Je suis niveau 2 !"
+            },
+            "ctor": "Walker",
+            "area": {
+                "x": 4,
+                "y": 4,
+                "width": 3
+            }
+        },
+        {
+            "group": "hittable",
+            "x": 4,
+            "y": 3,
+            "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "brick.png",
+                "width": 1
+            },
+            "ctor": "Breakable",
+            "data": {
+                "life": 3,
+                "material": "brick"
+            }
+        },
+        {
+            "group": "hittable",
+            "x": 6,
+            "y": 3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "bonus.png",
+                "width": 1
+            },
+            "ctor": "Bonus",
+            "data": {
+                "type": "revealator",
+                "group": "collectable",
+                "name": "dut",
+                "num": 1,
+                "hit": "bonus-hit.png"
+            }
+        },
+        {
+            "group": "hittable",
+            "x": 22,
+            "y": 5,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "brick.png",
+                "width": 1
+            },
+            "ctor": "Breakable",
+            "data": {
+                "life": 3,
+                "material": "brick"
+            }
+        },
+        {
+            "group": "hittable",
+            "x": 24,
+            "y": 5,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "brick.png",
+                "width": 1
+            },
+            "ctor": "Breakable",
+            "data": {
+                "life": 3,
+                "material": "brick"
+            }
+        },
+        {
+            "name": "l3",
+            "group": "collectable",
+            "x": 23,
+            "y": 5,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "scroll.png",
+                "width": 1
+            },
+            "data": {
+                "type": "buff",
+                "accel": 1500,
+                "maxSpeed": 30,
+                "jumpAccel": 3000,
+                "jumpMax": -300,
+                "onCollect": "Niveau 3 ! La classe !"
+            },
+            "ctor": "Walker",
+            "area": {
+                "x": 22,
+                "y": 6,
+                "width": 3
+            }
+        },
+        {
+            "group": "hittable",
+            "x": 23,
+            "y": 5,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "bonus.png",
+                "width": 1
+            },
+            "ctor": "Bonus",
+            "data": {
+                "type": "revealator",
+                "group": "collectable",
+                "name": "l3",
+                "num": 1,
+                "hit": "bonus-hit.png"
+            }
+        },
+        {
+            "group": "enemies",
+            "x": 11,
+            "y": 5,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "brice.png",
+                "width": 1
+            },
+            "ctor": "Enemy",
+            "area": {
+                "x": 10,
+                "y": 5,
+                "width": 4
+            },
+            "data": {
+                "type": "mine",
+                "bullet": "excel.png",
+                "rof": 0.3,
+                "offset": {
+                    "x": 30,
+                    "y": 1
+                },
+                "velocity": 250,
+                "mass": 10
+            }
+        },
+        {
+            "group": "triggerable",
+            "x": 15,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "chest.png",
+                "width": 1
+            },
+            "data": {
+                "group": "collectable",
+                "name": "nerf.png",
+                "on": "chest-open.png",
+                "equipment": {
+                    "type": "weapon",
+                    "id": "nerf.png",
+                    "bullet": "dart.png",
+                    "ammos": 12,
+                    "capacity": 6,
+                    "mass": 0.2,
+                    "velocity": 800,
+                    "offset": {
+                        "x": 36,
+                        "y": 40
+                    },
+                    "onCollect": "Enfin une arme !"
+                }
+            },
+            "ctor": "Chest"
+        },
+        {
+            "group": "triggerable",
+            "x": 32,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "chest.png",
+                "width": 1
+            },
+            "data": {
+                "group": "collectable",
+                "name": "elite.png",
+                "on": "chest-open.png",
+                "equipment": {
+                    "type": "weapon",
+                    "id": "elite.png",
+                    "bullet": "dart-elite.png",
+                    "ammos": 12,
+                    "capacity": 6,
+                    "mass": 0.15,
+                    "velocity": 1000,
+                    "offset": {
+                        "x": 36,
+                        "y": 40
+                    },
+                    "onCollect": "Wow! Un modèle élite !!!"
+                }
+            },
+            "ctor": "Chest"
+        },
+        {
+            "group": "enemies",
+            "x": 23,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "marine.png",
+                "width": 1
+            },
+            "ctor": "Enemy",
+            "area": {
+                "x": 21,
+                "y": 2,
+                "width": 5
+            },
+            "data": {
+                "type": "bullet",
+                "bullet": "dart.png",
+                "rof": 0.3,
+                "offset": {
+                    "x": 30,
+                    "y": 36
+                },
+                "velocity": 800,
+                "mass": 1
+            }
+        }
+    ],
+    "player": {
+        "accel": 5000,
+        "maxSpeed": 150,
+        "jumpAccel": 9500,
+        "jumpMax": -450,
+        "mass": 64
+    },
+    "materials": {
+        "default": {
+            "friction": 0.9,
+            "atlas": "atlas",
+            "particle": "default-particle.png"
+        },
+        "grass": {
+            "friction": 0.9,
+            "atlas": "atlas",
+            "particle": "grass-particle.png"
+        },
+        "carpet": {
+            "friction": 0.9,
+            "atlas": "atlas",
+            "particle": "carpet-particle.png"
+        },
+        "brick": {
+            "life": 3,
+            "frames": [
+                "brick-d2.png",
+                "brick-d1.png",
+                "brick.png"
+            ]
+        }
+    },
+    "textures": {
+        "menu": {
+            "menu": {
+                "type": "atlas",
+                "path": "assets/menu.png",
+                "json": "assets/menu.json"
+            }
+        },
+        "play": {
+            "atlas": {
+                "type": "atlas",
+                "path": "assets/atlas.png",
+                "json": "assets/atlas.json"
+            },
+            "backdrop": {
+                "type": "atlas",
+                "path": "assets/backdrop.png",
+                "json": "assets/backdrop.json"
+            },
+            "gui": {
+                "type": "atlas",
+                "path": "assets/gui.png",
+                "json": "assets/gui.json"
+            }
+        }
+    }
+}

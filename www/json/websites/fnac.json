@@ -1,0 +1,16 @@
+{
+    "year": "2009",
+    "client": "Fnac",
+    "title": "Les 10 ans",
+    "agency": "Chewing-com",
+    "techno": "Flash",
+    "screenshots": [
+        "images/references/fnac.jpg"
+    ],
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement et animation du site (Flash)"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "year": "2008",
+    "agency": "Chewing-com",
+    "client": "Renault",
+    "title": "Kangoo Bebop",
+    "techno": "Flash",
+    "screenshots": [
+        "images/references/renault-bebop-1.jpg",
+        "images/references/renault-bebop-2.jpg",
+        "images/references/renault-bebop-3.jpg"
+    ],
+    "features": [
+        {
+            "title": "Mini jeux",
+            "text": "Développement de mini-jeux (rythmique, type Guitar Hero)"
+        },
+        {
+            "title": "Application",
+            "text": "Développement d'application de création de fonds d'écran et de logo"
+        },
+        {
+            "title": "Animations",
+            "text": "Animation du site"
+        }
+    ]
+}

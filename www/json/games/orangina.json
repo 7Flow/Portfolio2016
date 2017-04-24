@@ -1,0 +1,25 @@
+{
+    "client": "Orangina",
+    "title": "Garden Party",
+    "screenshots": [
+        "images/games/orangina.jpg"
+    ],
+    "features": [
+        {
+            "title": "Type",
+            "text": "arcade"
+        },
+        {
+            "title": "Gameplay",
+            "text": "Arrosez un maximum de fleurs"
+        },
+        {
+            "title": "Réalisations",
+            "text": "développement, animations (particules de terre réalisées avec 3DSmax, lueurs et liquide avec After Effects)"
+        }
+    ],
+    "swf": "./swf/orangina/game_GardenParty.swf",
+    "width": 1003,
+    "height": 585,
+    "link": "games/orangina.html"
+}

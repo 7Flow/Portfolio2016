@@ -1,0 +1,25 @@
+{
+    "client": "Kellogg's",
+    "title": "Protège ton choco",
+    "screenshots": [
+        "images/games/bol.jpg"
+    ],
+    "features": [
+        {
+            "title": "Type",  
+            "text": "arcade"
+        },
+        {
+            "title": "Gameplay",
+            "text": "Les céréales tentent de plonger dans le bol de crème au chocolat ! Evitez les céréales, mais attention à ne pas tout renverser !"
+        },
+        {
+            "title": "Réalisations",
+            "text": "développement, animations"
+        }
+    ],
+    "swf": "./swf/kelloggs/game_cascade.swf",
+    "width": 538,
+    "height": 458,
+    "link": "games/choco.html"
+}

@@ -1,0 +1,16 @@
+{
+    "year": "2008",
+    "agency": "Chewing-com",
+    "client": "Ecusson",
+    "title": "Site internet",
+    "techno": "Flash",
+    "screenshots": [
+        "images/references/ecusson.jpg"
+    ],
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement et animation de l'intégralité du site (Flash)"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "client": "Kellogg's",
+    "title": "Tir aux noisettes",
+    "screenshots": [
+        "images/games/shoot.jpg"
+    ],
+    "features": [
+        {
+            "title": "Type",
+            "text": "arcade, shooter statique à la souris"
+        },
+        {
+            "title": "Gameplay",
+            "text": "cliquez sur le bol de noisette pour recharger, et utilisez la souris pour viser les ennemis et tenter de toucher les céréales avant qu'elles n'atteignent le chocolat !"
+        },
+        {
+            "title": "Réalisations",
+            "text": "développement, animations, modélisation 3D"
+        }
+    ],
+    "swf": "./swf/kelloggs/game_shoot.swf",
+    "width": 550,
+    "height": 411,
+    "link": "games/tir.html"
+}

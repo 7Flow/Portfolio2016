@@ -1,0 +1,22 @@
+{
+    "year": "2012",
+    "agency": "Happyend",
+    "client": "Samsung",
+    "title": "La Team",
+    "techno": "Web-app: Backbone + Marionnette",
+    "screenshots": [
+        "images/references/la-team-1.jpg",
+        "images/references/la-team-2.jpg",
+        "images/references/la-team-3.jpg"
+    ],
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement front-end d'une web-application, connecté via API REST"
+        },
+        {
+            "title": "Outils",
+            "text": "Require + Backbone + Marionnette / Handlebars / Compass / jQuery"
+        }
+    ]
+}

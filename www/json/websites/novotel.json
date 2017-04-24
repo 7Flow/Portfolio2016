@@ -1,0 +1,16 @@
+{
+    "year": "2007",
+    "agency": "Fullsix",
+    "client": "Novotel",
+    "title": "Site internet",
+    "techno": "Flash",
+    "screenshots": [
+        "images/references/novotel.jpg"
+    ],
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement du \"split\" flash de la home"
+        }
+    ]
+}

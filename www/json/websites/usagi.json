@@ -1,0 +1,21 @@
+{
+    "year": "2015",
+    "agency": "",
+    "client": "Usagi",
+    "title": "Portfolio",
+    "techno": "Wordpress",
+    "screenshots": [
+        "images/references/usagi-1.jpg"
+    ],
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement portfolio multi-langue + hebergement (en développement)"
+        },
+        {
+            "title": "Outils",
+            "text": "Wordpress"
+        }
+    ],
+    "link": "http://fr.usagi.devilicious-games.com/"
+}

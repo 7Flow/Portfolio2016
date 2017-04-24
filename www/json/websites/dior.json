@@ -1,0 +1,22 @@
+{
+    "year": "Depuis 2012",
+    "client": "Dior",
+    "title": "dior.com / m.dior.com",
+    "agency": "Happyend",
+    "screenshots": [
+        "images/references/diorcom-1.jpg",
+        "images/references/diorcom-2.jpg",
+        "images/references/diorcom-3.jpg"
+    ],
+    "techno": "HTML / CSS / JS - jQuery - Handlebars",
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement front-end et maintenance de la plate-forme e-commerce dior.com"
+        },
+        {
+            "title": "Outils",
+            "text": "Grunt / Handlebars / jQuery"
+        }
+    ]
+}

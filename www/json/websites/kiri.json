@@ -1,0 +1,20 @@
+{
+    "year": "2008",
+    "agency": "Chewing-com",
+    "client": "Kiri",
+    "title": "Tous fan de Kiri",
+    "techno": "Flash",
+    "screenshots": [
+        "images/references/kiri.jpg"
+    ],
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement et animation de l'intégralité du site (Flash)"
+        },
+        {
+            "title": "Jeu concour",
+            "text": "Jeux"
+        }
+    ]
+}

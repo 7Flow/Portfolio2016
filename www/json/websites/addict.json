@@ -1,0 +1,24 @@
+{
+    "year": "2013",
+    "client": "Dior",
+    "title": "Dior Addict",
+    "agency": "Happyend",
+    "screenshots": [
+        "images/references/addict-1.jpg",
+        "images/references/addict-2.jpg",
+        "images/references/addict-3.jpg",
+        "images/references/addict-4.jpg",
+        "images/references/addict-5.jpg"
+    ],
+    "techno": "HTML / CSS / JS - jQuery - Handlebars",
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement front-end du minisite en 'one page', desktop et mobile"
+        },
+        {
+            "title": "Outils",
+            "text": "Grunt / Handlebars / jQuery"
+        }
+    ]
+}

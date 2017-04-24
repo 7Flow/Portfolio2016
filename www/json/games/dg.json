@@ -1,0 +1,18 @@
+{
+    "title": "DG Game",
+    "client": "Projet personnel",
+    "screenshots": [
+        "images/games/dg.jpg"
+    ],
+    "features": [
+        {
+            "title": "Type",
+            "text": "Trouver les objets dissiumulés dans le décors panoramique"
+        },
+        {
+            "title": "Gameplay",
+            "text": "Trouver un maximum d'indices, et le plus rapidement possible pour remplir la jauge de multiplicateur, et sans faire d'erreur"
+        }
+    ],
+    "link": "http://www.devilicious-games.com/game/"
+}

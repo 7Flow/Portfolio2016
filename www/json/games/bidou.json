@@ -1,0 +1,21 @@
+{
+    "title": "Bidou le blanchon",
+    "client": "Projet personnel (depuis 2015)",
+    "screenshots": [
+        "images/games/bidou.jpg"
+    ],
+    "features": [
+        {
+            "title": "Type",
+            "text": "side scroller (type Tiny Wings)"
+        },
+        {
+            "title": "Gameplay",
+            "text": "finir un parcours le plus vite possible, l'efficacité d'un attérissage dépendant à la fois de la colinéarité entre le vecteur vitesse du personnage et la dérivé de la courbe au point de contact, mais également de l'inclinaison du personnage"
+        },
+        {
+            "title": "Editor",
+            "text": "création des carte au moyens de spline, sont ensuite généré les deux mesh constituant le sol (une permi!re couche représentant la surface du sol et qui suit la spline, puis une deuxième couche en dessous pour le sol "
+        }
+    ]
+}

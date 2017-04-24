@@ -1,0 +1,26 @@
+{
+    "year": "2009",
+    "agency": "Chewing-com",
+    "client": "Orangina",
+    "title": "Site internet",
+    "techno": "Flash",
+    "screenshots": [
+        "images/references/orangina-1.jpg",
+        "images/references/orangina-2.jpg",
+        "images/references/orangina-3.jpg"
+    ],
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement et animation du site en Flash"
+        },
+        {
+            "title": "Personnalisation",
+            "text": "Conception du module de création/visualisation de l'île : carte en 3d isométrique, ou l'on peut déposer/déplacer des objets"
+        },
+        {
+            "title": "Mini jeux flash",
+            "text": "Réalisation de 2 mini-jeux flash, de type mémory et 'whac-a-mole'"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "client": "Le Sucre",
+    "title": "Quizz des 4 saveurs",
+    "screenshots": [
+        "images/games/lesucre.jpg"
+    ],
+    "features": [
+        {
+            "title": "Type",  "text": "arcade"
+        },
+        {
+            "title": "Gameplay",  "text": "utiliser le clavier pour selectionner une saveur, et attraper les aliments avec la saveur correspondante"
+        },
+        {
+            "title": "Réalisations",  "text": "développement, animations"
+        }
+    ],
+    "swf": "./swf/lesucre/jeu_quatre_saveurs.swf",
+    "width": 560,
+    "height": 543,
+    "link": "games/quizz.html"
+}

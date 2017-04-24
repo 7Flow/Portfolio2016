@@ -1,0 +1,16 @@
+{
+    "year": "2009",
+    "agency": "Chewing-com",
+    "client": "Renault",
+    "title": "Clio",
+    "techno": "Flash 3D",
+    "screenshots": [
+        "images/references/renaultClio.jpg"
+    ],
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement et animation de la home (carrousel en Papervision3D comprenant un fond vidéo et des éléments de décors)"
+        }
+    ]
+}

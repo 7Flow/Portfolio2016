@@ -1,0 +1,162 @@
+[
+    {
+        "id": "dior",
+        "client": "Dior.com",
+        "title": "Dior",
+        "image": "images/references/diorcom-1.jpg",
+        "type": "Website",
+        "techno": "JS - jQuery - Handlebars",
+        "link": "http://www.dior.com"
+    },
+    {
+        "id": "itlash",
+        "client": "Dior.com",
+        "title": "Dior Addict It-Lash",
+        "image": "images/references/itlash-1.jpg",
+        "type": "Website - one page",
+        "techno": "JS - jQuery - Handlebars"
+    },
+    {
+        "id": "addict",
+        "client": "Dior.com",
+        "title": "Dior Addict",
+        "image": "images/references/addict-1.jpg",
+        "type": "Website - one page",
+        "techno": "JS - jQuery - Handlebars"
+    },
+    {
+        "id": "usagi",
+        "client": "Portfolio",
+        "title": "Usagi",
+        "image": "images/references/usagi-1.jpg",
+        "type": "Website",
+        "techno": "Wordpress",
+        "link": "http://fr.usagi.devilicious-games.com"
+    },
+    {
+        "id": "remycointreau",
+        "client": "Rémy Cointreau",
+        "title": "The Craft Library",
+        "image": "images/references/remy-cointreau-1.jpg",
+        "type": "Application Android",
+        "techno": "Flash",
+        "link": ""
+    },
+    {
+        "id": "samsung",
+        "client": "Samsung",
+        "title": "La Team",
+        "image": "images/references/la-team-1.jpg",
+        "type": "Web-App",
+        "techno": "Backbone + Marionnette",
+        "link": "http://lateam.samsung.com"
+    },
+    {
+        "id": "fnac",
+        "client": "Fnac",
+        "title": "10 ans",
+        "image": "images/references/fnac.jpg",
+        "type": "Website",
+        "techno": "Flash",
+        "link": "http://10ans.fnac.com"
+    },
+    {
+        "id": "maaf",
+        "client": "Maaf",
+        "title": "Move your Maaf",
+        "image": "images/references/mym.jpg",
+        "type": "Website",
+        "techno": "Flash",
+        "link": "http://www.moveyourmaaf.fr"
+    },
+    {
+        "id": "orangina",
+        "client": "Orangina",
+        "title": "Orangina Islands",
+        "image": "images/references/orangina-1.jpg",
+        "type": "Website",
+        "techno": "Flash",
+        "link": "http://www.naturellementpulpeuse.fr"
+    },
+    {
+        "id": "kelloggs",
+        "client": "Kellogg's",
+        "title": "Trésor",
+        "image": "images/references/tresor.jpg",
+        "type": "Website + mini jeux",
+        "techno": "Flash 3D",
+        "link": "http://www.ellessontvivantes.fr/"
+    },
+    {
+        "id": "scenic",
+        "client": "Renault",
+        "title": "Scenic",
+        "image": "images/references/renaultScenic.jpg",
+        "type": "Website",
+        "techno": "Flash 3D",
+        "link": "http://www.scenic.renault.com/fr_fr/"
+    },
+    {
+        "id": "clio",
+        "client": "Renault",
+        "title": "Clio",
+        "image": "images/references/renaultClio.jpg",
+        "type": "Website",
+        "techno": "Flash 3D",
+        "link": "http://www.clio.renault.com/fr_fr/"
+    },
+    {
+        "id": "bebop",
+        "client": "Renault",
+        "title": "Nouveau Kangoo Bebop",
+        "image": "images/references/renault-bebop-1.jpg",
+        "type": "Website + mini jeux",
+        "techno": "Flash",
+        "link": "http://www.kangoo-bebop.com/index.php?langue=fr_fr"
+    },
+    {
+        "id": "kiri",
+        "client": "Kiri",
+        "title": "Fan de Kiri",
+        "image": "images/references/kiri.jpg",
+        "type": "Website - jeu concours",
+        "techno": "Flash",
+        "link": "http://kiri.fr/fan/__index.php"
+    },
+    {
+        "id": "ecusson",
+        "client": "Ecusson",
+        "title": "Bar a cidre",
+        "image": "images/references/ecusson.jpg",
+        "type": "Website",
+        "techno": "Flash",
+        "link": "http://www.baracidre.com/site.php"
+    },
+    {
+        "id": "pampryl",
+        "client": "Pampryl",
+        "title": "Site de la marque",
+        "image": "images/references/pampryl.jpg",
+        "type": "Website",
+        "techno": "Flash",
+        "link": "http://www.pampryl.fr/"
+    },
+    {
+        "id": "mafiosa",
+        "client": "Canal+",
+        "title": "Mafiosa",
+        "image": "images/references/canalmafiosa.jpg",
+        "type": "Website",
+        "techno": "Flash",
+        "link": "http://mafiosa.canalplus.fr/cimetiere.html"
+    },
+    {
+        "id": "piper",
+        "client": "Piper Heidsieck",
+        "title": "Site de la marque",
+        "image": "images/references/piperheidsieck.jpg",
+        "type": "Website",
+        "techno": "Flash 3D",
+        "link": "http://www.piper-heidsieck.fr/home.html"
+    }
+]

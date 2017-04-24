@@ -1,0 +1,32 @@
+{
+    "year": "2009",
+    "client": "Kellogg's",
+    "title": "Tresor",
+    "agency": "Chewing-com",
+    "techno": "Flash 3D (Papervision, JigLib, Box2D)",
+    "screenshots": [
+        "images/references/tresor.jpg"
+    ],
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement et animation des 4 jeux Kellogg's (Flash)"
+        },
+        {
+            "title": "Tir a la noisette",
+            "text": "Papervision3D et moteur physique JigLib"
+        },
+        {
+            "title": "Catapulte ton Choco",
+            "text": "moteur physique Box2DFlash"
+        },
+        {
+            "title": "l'Aspirateur",
+            "text": "Papervision3D + meshmorpher"
+        },
+        {
+            "title": "Bouge Ton Bol",
+            "text": "Effet rendu liquide et moteur physique Box2DFlash"
+        }
+    ]
+}

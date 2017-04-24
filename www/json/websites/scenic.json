@@ -1,0 +1,20 @@
+{
+    "year": "2009",
+    "agency": "Chewing-com",
+    "client": "Renault",
+    "title": "Scenic",
+    "techno": "Flash 3D",
+    "screenshots": [
+        "images/references/renaultScenic.jpg"
+    ],
+    "features": [
+        {
+            "title": "Developpement",
+            "text": "Personnalisation du site : module d'upload et de détourage de photographies pour créer sa \"My Scenic Family\"",
+        },
+        {
+            "title": "Animations",
+            "text": "Animation 3d et intégration Flash de la famille en Papervision3D"
+        }
+    ]
+}

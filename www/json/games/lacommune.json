@@ -1,0 +1,29 @@
+{
+    "title": "La Commune",
+    "client": "Projet personnel (depuis 2014)",
+    "screenshots": [
+        "images/games/lacommune.jpg"
+    ],
+    "features": [
+        {
+            "title": "Type / GamePlay",
+            "text": "FPS (Battlefield) : affrontement de 2 équipes sur des cartes de type conquête, avec système de drapeau sur les cartes (capturable ou non) comme point de réapparition"
+        },
+        {
+            "title": "AI",
+            "text": "machine d'état, avec gestion d'événements d'équipe (ennemi localisé, objectif en cours, objectif en danger), et gestion des comportement suivant : accomplir un objectif, engager un ennemi, chercher un abri pendant un combat, s'enfuir"
+        },
+        {
+            "title": "Environnement",
+            "text": "cycle jour-nuit (ambient, fog, skybox blend shader) / simple clouds (perlin noise blend shader)"
+        },
+        {
+            "title": "Statistiques",  
+            "text": "système de médailles (kill streak, revenge, régicide"
+        },
+        {
+            "title": "GUI",
+            "text": "précision, tir réussi, tir fatal, equipement, santé, gauge sprint"
+        }
+    ]
+}

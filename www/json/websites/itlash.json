@@ -1,0 +1,21 @@
+{
+    "year": "2014",
+    "client": "Dior",
+    "title": "Dior Addict It-Lash",
+    "agency": "Happyend",
+    "screenshots": [
+        "images/references/itlash-1.jpg",
+        "images/references/itlash-2.jpg"
+    ],
+    "techno": "HTML / CSS / JS - jQuery - Handlebars",
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement front-end du minisite en 'one page', desktop et mobile"
+        },
+        {
+            "title": "Outils",
+            "text": "Grunt / Handlebars / jQuery"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "client": "Kellogg's",
+    "title": "L'aspirateur",
+    "screenshots": [
+        "images/games/aspi.jpg"
+    ],
+    "features": [
+        {
+            "title": "Type",
+            "text": "arcade"
+        },
+        {
+            "title": "Gameplay",
+            "text": "essayerz d'aspirer les céréales avant qu'elles n'atteignent le chocolat ! Mais attention à la surchauffe !"
+        },
+        {
+            "title": "Réalisations",
+            "text": "développement, animations, modélisation 3D"
+        }
+    ],
+    "swf": "./swf/kelloggs/game_aspi.swf",
+    "width": 550,
+    "height": 411,
+    "link": "games/aspi.html"
+}

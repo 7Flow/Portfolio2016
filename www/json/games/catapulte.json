@@ -1,0 +1,25 @@
+{
+    "client": "Kellogg's",
+    "title": "La catapulte",
+    "screenshots": [
+        "images/games/catapulte.jpg"
+    ],
+    "features": [
+        {
+            "title": "Type",
+            "text": "arcade, jeu de lancé (avec angle et puissance)"
+        },
+        {
+            "title": "Gameplay",
+            "text": "essayez de remplir la casserole de chocolat en evitant les céréales !"
+        },
+        {
+            "title": "Réalisations", 
+            "text": "développement, animations"
+        }
+    ],
+    "swf": "./swf/kelloggs/game_catapult.swf",
+    "width": 840,
+    "height": 411,
+    "link": "games/catapulte.html"
+}

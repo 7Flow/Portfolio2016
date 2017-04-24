@@ -1,0 +1,22 @@
+{
+    "year": "2009",
+    "agency": "Chewing-com",
+    "client": "Maaf",
+    "title": "Move Your Maaf",
+    "techno": "Flash",
+    "screenshots": [
+        "images/references/mym.jpg",
+        "images/references/mym-1.jpg",
+        "images/references/mym-2.jpg"
+    ],
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement et animation du site (Flash)"
+        },
+        {
+            "title": "Application",
+            "text": "Personnalisation d'une vidéo : module d'upload et de détourage de photographies pour remplacer les visages sur une vidéo publicitaire de Maaf."
+        }
+    ]
+}

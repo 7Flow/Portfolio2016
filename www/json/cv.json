@@ -1,0 +1,120 @@
+{
+    "xp": {
+        "title": "experiences professionnelles",
+        "dates": [
+            {
+                "from": "sept. 2009",
+                "to": "aujourd'hui",
+                "position": "Directeur technique",
+                "company": "Happyend",
+                "description": ""
+            },
+            {
+                "from": "nov. 2007",
+                "to": "sept. 2009",
+                "position": "Developpeur Flash / Animateur",
+                "company": "Isobar (Chewing-com)",
+                "description": ""
+            },
+            {
+                "from": "jan. 2007",
+                "to": "sept. 2007",
+                "position": "Developpeur Flash / Integrateur",
+                "company": "Fullsix",
+                "description": ""
+            }
+        ]
+    },
+    "education": {
+        "title": "formation",
+        "dates": [
+            {
+                "from": "2005",
+                "to": "2007",
+                "title": "Maitrise - Arts et sciences de l'enregistrement (quitte en juin 2007)",
+                "school": "Université de Marne-La-Vallée"
+            },
+            {
+                "from": "2004",
+                "to": "2005",
+                "title": "Licence Multimedia",
+                "school": "Université de Marne-La-Vallée"
+            },
+            {
+                "from": "2002",
+                "to": "2004",
+                "title": "DEC Technique - Services et reseaux de communication",
+                "school": "Université de Grenoble - IUT"
+            },
+            {
+                "from": "2002",
+                "to": "",
+                "title": "Baccalaureat Scientifique - option Physique-Chimie - Mention AB",
+                "school": "Lycée polyvalent de Vienne - Saint-Romain-en-Gal"
+            }
+        ]
+    },
+    "skills": {
+        "title": "competences",
+        "domain": {
+            "web": [
+                {
+                    "name": "javascript",
+                    "level": 4.5
+                },
+                {
+                    "name": "html",
+                    "level": 4
+                },
+                {
+                    "name": "css",
+                    "level": 4
+                },
+                {
+                    "name": "php",
+                    "level": 2
+                },
+                {
+                    "name": "node.js",
+                    "level": 2
+                }
+            ],
+            "framework": [
+                {
+                    "name": "backbone",
+                    "level": 2.5
+                },
+                {
+                    "name": "angular",
+                    "level": 1.5
+                },
+                {
+                    "name": "react",
+                    "level": 1
+                }
+            ],
+            "game": [
+                {
+                    "name": "flash",
+                    "level": 4
+                },
+                {
+                    "name": "3DSMax",
+                    "level": 2.5
+                },
+                {
+                    "name": "Unity3D",
+                    "level": 3
+                },
+                {
+                    "name": "C#",
+                    "level": 3
+                },
+                {
+                    "name": "AE",
+                    "level": 2
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "year": "2015",
+    "agency": "Happyend",
+    "client": "Rémy Cointreau",
+    "title": "Application TheCraftLibrary",
+    "techno": "Flash (compilation Android)",
+    "screenshots": [
+        "images/references/remy-cointreau-2.jpg",
+        "images/references/remy-cointreau-3.jpg",
+        "images/references/remy-cointreau-4.jpg"
+    ],
+    "features": [
+        {
+            "title": "Realisations",
+            "text": "Développement et animation d'une application android de présentation de la gamme Rémy Cointreau"
+        },
+        {
+            "title": "Outils",
+            "text": "Flash"
+        }
+    ]
+}
