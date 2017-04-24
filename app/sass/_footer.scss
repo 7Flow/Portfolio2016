@@ -18,7 +18,9 @@ footer {
       height: 62px;
       left: 0;
       color: $space-cadetblue;
-      font-size: 1.5rem;
+      font-size: 1rem;
+      padding-top: 2px;
+      padding-right: 5px;
       @include transition(color 0.2s);
       overflow: visible;
       &:hover {
@@ -27,24 +29,14 @@ footer {
       i {
         overflow: visible;
       }
-      i:after {
-        content: "";
-        display: block;
-        position: relative;
-        width: 18px;
-        height: 18px;
-        top: -22px;
-        left: 22px;
-        background: white;
-        z-index: -1;
-      }
       svg {
         left: 0 !important;
       }
     }
   }
   li {
-    margin-left: 20px;
+    margin-left: -20px;
+
     &:first-of-type {
       margin: 0;
     }
@@ -79,21 +71,23 @@ footer {
     @include background( linear-gradient(5deg, $green, $blue) );
     @include single-box-shadow(0, 0, 20px, 0, $brown-dark, false);
 
-    ul a {
-      color: $red-dark;
+    a {
       &:hover, &:focus {
         color: $orange;
+      }
+    }
+    ul a {
+      color: white;
+      &:focus {
+        color: $orange;
+      }
+      &:hover {
+        color: white;
       }
     }
     > a {
       @include title(1.1rem);
       outline-color: $orange;
-      &:hover {
-        color: $orange;
-      }
-      &:focus {
-        color: $yellow;
-      }
     }
   }
 
