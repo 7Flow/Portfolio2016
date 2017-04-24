@@ -1,0 +1,272 @@
+@import "compass/css3";
+
+#cv {
+    overflow: scroll;
+    .timeline {
+        @include transform-style();
+        @include perspective(1000px);
+        margin-top: 70px;
+        &:before {
+            content: "";
+            height: 85%;
+            width: 2px;
+            position: absolute;
+            left: 50%;
+            top: 8%;
+            border: 1px solid $red-dark;
+            background: $yellow;
+            @include transform( translateZ(-10px) );
+        }
+
+        article {
+            width: 100%;
+            margin: 0 0 60px;
+            &:after {
+                width: 80%;
+                left: 10%;
+                top: 10%;
+            }
+            h2 {
+                margin-left: 15%;
+            }
+            h4 {
+                font-size: 1.4rem;
+                margin-bottom: 0;
+            }
+            div {
+                position: relative;
+                top: 0;
+                width: 35%;
+                @include transform-style();
+                @include backface-visibility( hidden );
+                @include transition(all 0.5s ease-out);
+
+                &:first-of-type {
+                    margin-top: 60px;
+                }
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 20px;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 5px;
+                    background: $orange;
+                    border: 1px solid $red-dark;
+                    @include transform( translateZ(-10px) );
+                    @include backface-visibility( hidden );
+                }
+            }
+            div:nth-child(even) {
+                text-align: right;
+                left: 13%;
+                padding-right: 2%;
+                @include transform-origin(100%, 0%);
+                @include transform( rotateY(95deg) );
+                &:before {
+                    right: -15px;
+                }
+                &.visible {
+                    @include transform( rotateY(30deg) );
+                }
+            }
+            div:nth-child(odd) {
+                text-align: left;
+                left: 50%;
+                padding-left: 2%;
+                @include transform-origin(0%, 0%);
+                @include transform( rotateY(-95deg) );
+                &:before {
+                    left: -10px;
+                }
+                &.visible {
+                    @include transform( rotateY(-30deg) );
+                }
+            }
+        }
+    }
+
+    article {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 80%;
+        margin: 0 10% 60px;
+        &:after {
+            content: "";
+            background: rgba(255,255,255,0.85);
+            position: absolute;
+            width: 95%;
+            height: 95%;
+            top: 15%;
+            left: 2.5%;
+            @include transform( translateZ(-50px) );
+            z-index: -1;
+        }
+
+        h2 {
+            margin-left: 5.5%;
+        }
+        h4 {
+            font-size: 1.7rem;
+            margin-bottom: 14px;
+            @include text-shadow( $red-dark 1px 1px 0,
+                $red-dark 1px -1px 0,
+                $red-dark -1px -1px 0,
+                $red-dark -1px 1px 0,
+                $red-dark -2px 2px 0
+            );
+        }
+        h5 {
+            display: inline-block;
+            font-size: 1.2rem;
+            margin-top: -2px;
+            @include transform( translateZ(10px) );
+            @include backface-visibility( hidden );
+            &:after {
+                position: relative;
+                display: inline-block;
+                bottom: 12px;
+            }
+        }
+
+        p {
+            @include transform( translateZ(-5px) );
+            @include backface-visibility( hidden );
+        }
+
+        ul {
+            position: relative;
+            width: 90%;
+            left: 5%;
+            margin: 3% 0 0;
+        }
+        li {
+            position: relative;
+            top: 0;
+            width: 33%;
+        }
+    }
+}
+
+
+// mobile
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    #cv {
+        overflow: scroll;
+
+        .timeline {
+            margin-top: 20px;
+            @include perspective(none);
+            -webkit-transform-style: none;
+            transform-style: none;
+            -moz-perspective: none;
+            &:before {
+                display: none;
+            }
+
+            article {
+                width: 90%;
+                margin: 0 5% 60px;
+                &:after {
+                    width: 100%;
+                    top: 30px;
+                    left: 0;
+                }
+
+                h2 {
+                    font-size: 1.4rem;
+                    margin-left: 0;
+                    span.fx {
+                        font-size: 1.4rem;
+                    }
+                }
+                h4 {
+                    font-size: 1.3rem;
+                }
+                h5 {
+                    font-size: 1.5rem;
+                    @include transform(rotate(-3deg));
+                }
+                h6 {
+                    margin: -10px 0 0;
+                    text-align: right;
+                }
+                div {
+                    &:first-of-type {
+                        margin-top: 20px;
+                    }
+                    &:before {
+                        display: none;
+                    }
+                    &:nth-child(odd), &:nth-child(even) {
+                        width: 94%;
+                        left: 3%;
+                        padding: 0 0 26px;
+                        text-align: left;
+                        @include transform-origin(0% 0);
+                        @include transform( none );
+                        &.visible {
+                            @include transform( none );
+                        }
+                    }
+                }
+            }
+        }
+        article {
+            width: 90%;
+            margin: 0 5% 60px;
+            &:after {
+                top: 30px;
+                left: 0;
+                width: 100%;
+            }
+            h2 {
+                font-size: 1.4rem;
+                margin-left: 0;
+                span.fx {
+                    font-size: 1.4rem;
+                }
+            }
+            li {
+                width: 100%;
+                padding: 20px 0;
+            }
+        }
+    }
+}
+
+// tablet
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    #cv {
+        .timeline {
+            article {
+                div {
+                    width: 38%;
+                    @include backface-visibility( visible );
+                    &:nth-child(even) {
+                        left: 9.75%;
+                        @include transform( rotateY(15deg) );
+                    }
+                    &:nth-child(odd) {
+                        left: 50.25%;
+                        @include transform( rotateY(-15deg) );
+                    }
+
+                    &:before {
+                        @include transform( translateZ(-7.5px) );
+                    }
+
+                    &.visible {
+                        &:nth-child(odd) {
+                            @include transform( rotateY(-15deg) );
+                        }
+                        &:nth-child(even) {
+                            @include transform( rotateY(15deg) );
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

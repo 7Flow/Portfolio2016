@@ -1,0 +1,41 @@
+<div class="timeline">
+    <article>
+        <h2>{{xp.title}}<span class="fx">{{xp.title}}</span></h2>
+        {{#each xp.dates}}
+        <div>
+            <h4>{{position}}</h4>
+            <h5>{{company}}</h5>
+            <h6>{{from}}{{#if to}} - {{to}}{{/if}}</h6>
+            <p>
+                {{description}}
+            </p>
+        </div>
+        {{/each}}
+    </article>
+
+    <article>
+        <h2>{{education.title}}<span class="fx">{{education.title}}</span></h2>
+        {{#each education.dates}}
+        <div>
+            <h4>{{title}}</h4>
+            <h5>{{school}}</h5>
+            <h6>{{from}}{{#if to}} - {{to}}{{/if}}</h6>
+            <p>
+                {{description}}
+            </p>
+        </div>
+        {{/each}}
+    </article>
+</div>
+
+<article>
+    <h2>{{skills.title}}<span class="fx">{{skills.title}}</span></h2>
+    <ul><!--
+        {{#each skills.domain}}
+        --><li id="{{@key}}" class="chart {{@key}}">
+            <h4>{{@key}}</h4>
+            <canvas></canvas>
+        </li><!--
+        {{/each}}
+    --></ul>
+</article>

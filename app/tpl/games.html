@@ -1,0 +1,50 @@
+<svg width="0" height="0">
+    <defs>
+        <clipPath id="panel-over" clipPathUnits="objectBoundingBox">
+            <polygon points="0 0.25, 1 0.25, 1 0.75, 0 0.75" />
+        </clipPath>
+        <clipPath id="panel-out" clipPathUnits="objectBoundingBox">
+            <polygon points="0 0.25, 0 0.25, 0 0.75, 0 0.75" />
+        </clipPath>
+    </defs>
+</svg>
+
+<div class="all-pages"><!--
+    {{#each pages}}
+    --><div class="page">
+        <ul><!--
+        {{#each this}}
+            --><li>
+                <a href="javascript:void(0);" data-json="json/games/{{id}}.json" aria-haspopup="true">
+                    <div class="highlight"></div>
+                    <div class="thumb">
+                        <img src="{{image}}" alt="Capture d'écran du jeu" aria-labelledby="game-title-{{@index}}" aria-describedby="game-desc-{{@index}}">
+                    </div>
+                    <div class="overlay" style="background: url({{image}}) no-repeat 0 0/cover;"></div>
+                    <div class="details">
+                        <div class="valign">
+                            <h2 id="game-title-{{@index}}">{{title}}<span class="fx" aria-hidden="true">{{title}}</span></h2>
+                            <h3 id="game-desc={{@index}}" class="label">{{client}}</h3>
+                            <hr/>
+                            <span>{{type}}</span><span>{{techno}}</span>
+                        </div>
+                    </div>
+                </a>
+            </li><!--
+        {{/each}}
+        --></ul>
+    </div><!--
+    {{/each}}
+--></div>
+
+<button class="controls previous js-random-bg icon-navigate_before"><span hidden>Page précédente</span></button>
+
+<ul class="pagination">
+    {{#times this.num}}
+    <li class="js-random-btn {{#if @first}}first active{{/if}}" data-index="{{this}}">
+        <button><span hidden>Allez à la page {{this}}</span></button>
+    </li>
+    {{/times}}
+</ul>
+
+<button class="controls next js-random-bg icon-navigate_next"><span hidden>Page suivante</span></button>

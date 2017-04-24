@@ -1,0 +1,344 @@
+@import "compass/css3";
+
+header {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: -126px;
+  left: 0;
+  @include background( linear-gradient(top, $space-blue, $space-violet) );
+
+  z-index: 5;
+  @include transition( top 0.5s ease-out );
+
+  &.fixed {
+    position: fixed;
+    height: 60px;
+  }
+
+  .profile {
+    position: relative;
+    top: 10px;
+    left: 5%;
+    &:before, &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    .avatar {
+      position: relative;
+      display: inline-block;
+      transform-origin: left;
+      top: 15px;
+      left: 15px;
+      @include perspective(140px);
+      img {
+        pointer-events: none;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        border: 1px solid $space-aquablue;
+      }
+      svg {
+        left: -22px !important;
+        @include transform( rotateY(-23deg) rotateX(49deg) );
+        .safari & {
+            @include transform(none);
+        }
+      }
+    }
+    .name {
+      position: absolute;
+      top: 15px;
+      left: 95px;
+      width: 450px;
+      @include transition( all 0.55s ease );
+      &:after {
+        content: "";
+        width: 45%;
+        height: 2px;
+        position: relative;
+        bottom: 20px;
+        background-color: $space-green;
+        display: block;
+      }
+    }
+    h1 {
+      margin-left: -2px;
+    }
+    h3 {
+      letter-spacing: 0.25rem;
+      margin-top: 4px;
+      &:after {
+        width: 0%;
+        height: 2px;
+      }
+    }
+  }
+
+  ul {
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    margin-right: 20px;
+    li {
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 10px;
+      box-sizing: content-box;
+      &.active, &:focus {
+        color: $space-green;
+      }
+      a:focus {
+        color: $space-green;
+      }
+    }
+  }
+  span {
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 4px;
+    width: 30px;
+    background-color: $space-green;
+
+    @include transition(all 0.3s ease-in-out);
+    &.current {
+      @include opacity(0);
+    }
+  }
+  .polygon {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100px;
+    height: 47px;
+    display: none;
+    overflow: hidden;
+    @include transition(all 0.55s ease);
+
+    // prevent safari redraw artefacts
+    @include backface-visibility( hidden );
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .loaded & {
+    top: 0;
+  }
+
+  .nineties & {
+    @include background( linear-gradient(5deg, $blue, $green) );
+    @include single-box-shadow(0, 0, 20px, 0, $brown-dark, false);
+
+    .profile {
+      &:before {
+        border-width: 0 20px 9px 10px;
+        border-color: transparent transparent $orange transparent;
+        top: 12px;
+        left: -26px;
+        @include transform( rotate(40deg) );
+      }
+      &:after {
+        border-width: 0 11px 5px 3px;
+        border-color: transparent transparent $red transparent;
+        top: 35px;
+        left: -13px;
+        @include transform( rotate(-25deg) );
+      }
+      img {
+        border: 2px inset $red-dark;
+        @include box-shadow( $red-dark -1px 1px 0,
+          $red-dark -2px 2px 0,
+          $red-dark -3px 3px 0,
+          $red-dark -4px 4px 0,
+          $red-dark -5px 5px 0);
+      }
+      .avatar {
+        @include transform( rotate(-8.5deg) );
+      }
+      .name {
+        &:before, &:after {
+          content: "";
+          width: 0;
+          height: 0;
+          border-style: solid;
+          position: absolute;
+          background-color: transparent;
+        }
+        &:before {
+          border-width: 0px 1px 7px 24px;
+          border-color: transparent transparent $red transparent;
+          top: 32px;
+          left: 218px;
+          @include transform( rotate(-6deg) );
+        }
+        &:after {
+          border-width: 0 11px 5px 3px;
+          border-color: transparent $orange transparent transparent;
+          top: 45px;
+          left: 208px;
+          @include transform( rotate(15deg) );
+        }
+      }
+    }
+    ul li {
+      position: relative;
+
+      &:after, &:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        top: 4px;
+        border-style: solid;
+        border-color: transparent;
+        @include transition(all 0.5s ease-out );
+      }
+      &:before {
+        left: 10px;
+      }
+      &:after {
+        right: 10px;
+      }
+
+      &.active {
+        color: inherit;
+        &:after {
+          border-width: 0px 1px 8px 18px;
+          border-color: transparent transparent $orange transparent;
+          top: -16px;
+          right: -18px;
+          transform: rotate(16deg);
+        }
+        &:before {
+          border-width: 0px 30px 7px 2px;
+          border-color: transparent transparent $red-medium transparent;
+          top: 33px;
+          left: -21px;
+          transform: rotate(24deg);
+        }
+      }
+      a {
+        @include title(1.1rem);
+        outline-color: $orange;
+        &:focus {
+          color: $red;
+        }
+      }
+    }
+    .polygon {
+      display: block;
+    }
+    h3 {
+      margin-top: -10px;
+      letter-spacing: 0.1rem;
+      width: 210px;
+      &:after {
+        width: 80%;
+      }
+    }
+    span {
+      background-color: $red-medium;
+      &.current {
+        @include opacity(1);
+      }
+    }
+  }
+
+  .to-nineties & {
+    @include transition( all 1s ease-out );
+    .profile {
+      .avatar, img {
+        @include transition(all 0.8s ease-out);
+      }
+      h3 {
+        @include transition(all 0.5s ease-out);
+        &:after {
+          @include transition(width 0.5s ease-out);
+        }
+      }
+    }
+  }
+}
+
+.safari {
+    &.nineties {
+        header .profile .avatar img {
+            border: 2px solid $red-dark;
+        }
+    }
+}
+
+// mobile
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    header {
+        height: 70px;
+        h1 {
+            font-size: 1.6rem;
+        }
+        .profile {
+            .name {
+                top: -5px;
+                left: 0px;
+                &:after {
+                    left: -5%;
+                    top: -15px;
+                    width: 165px;
+                }
+            }
+            .avatar {
+                display: none;
+            }
+            h3 {
+                margin-top: 0px;
+                letter-spacing: .1rem;
+            }
+        }
+    }
+    .nineties header {
+        height: 70px;
+        .profile {
+            &:after {
+                top: 25px;
+                left: -16px;
+            }
+            a:before {
+                top: 7px;
+                left: -31px;
+            }
+            .avatar {
+                display: none;
+            }
+            h1 {
+                font-size: 1.5rem;
+                span.fx {
+                    font-size: 1.5rem;
+                }
+            }
+            h3 {
+                margin-top: -8px;
+            }
+            .name {
+                left: 0px;
+                top: -5px;
+                &:before {
+                    top: 10px;
+                    left: 191px;
+                }
+                &:after {
+                    top: 26px;
+                    left: 193px;
+                }
+            }
+        }
+    }
+}

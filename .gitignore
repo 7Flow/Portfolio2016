@@ -1,0 +1,13 @@
+# OS or Editor folders
+/.project
+/.idea
+**/*.DS_Store
+
+# Folders and files to ignore
+git_save/
+node_modules/
+npm-debug.log
+.sass-cache
+
+www/js/
+www/css/

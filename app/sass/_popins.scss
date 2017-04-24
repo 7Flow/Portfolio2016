@@ -1,0 +1,397 @@
+@import "compass/css3/transform";
+@import "compass/css3/flexbox";
+
+dialog {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 0;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  z-index: 10;
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: $overlay;
+    z-index: -1;
+    @include opacity(0);
+    @include transition( all 0.4s ease-out );
+  }
+
+  article {
+    position: relative;
+    top: 15%;
+    width: 90%;
+    height: 90%;
+    margin: 2.5% auto;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 40px 60px;
+    @include opacity(0);
+    @include single-box-shadow(0, 0, 20px, 0, #000, false);
+    @include transform2d( scale(0.4,0.8) );
+    @include transition( all 0.3s ease-out );
+  }
+
+  .title {
+    @include display-flex;
+    flex-direction: column;
+    align-items: center;
+    svg {
+      top: -5px !important;
+    }
+  }
+
+  h2 span.fx {
+    font-size: 2.0rem;
+  }
+  h3 {
+    align-self: center;
+    position: relative;
+    font-size: 2rem;
+    text-align: center;
+    margin-left: -50%;
+    margin-bottom: 10px;
+    @include opacity(0);
+    @include transition( all 0.3s ease-out 0.25s );
+
+    &:first-letter {
+      font-size: 2.2rem;
+    }
+
+    svg {
+      @include transform( translate(50%, 8%) skew(10deg, -10deg) );
+      @include opacity(0);
+      @include transition( all 0.3s ease-out 0.5s );
+    }
+  }
+
+  .description {
+    width: 55%;
+    height: 80%;
+    @include display-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    float: left;
+    @include opacity(0);
+    @include transition( all 0.3s ease-out 0.25s );
+  }
+  .paragraph {
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: left;
+
+    h4 {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 1rem;
+      -webkit-text-fill-color: $yellow;
+      text-fill-color: $yellow;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      text-align: left;
+      letter-spacing: 1px;
+      margin-left: 50%;
+      @include opacity(0);
+      @include transition( all 0.3s ease-out 0.25s );
+      span.fx {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+      }
+      svg {
+        left: -20px !important;
+        top: -15px !important;
+      }
+
+    }
+
+    p {
+      font-size: 1rem;
+      font-family: 'Roboto Condensed', sans-serif;
+      line-height: 1.2rem;
+      margin-bottom: 10px;
+      &:first-letter {
+        text-transform: uppercase;
+      }
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  svg {
+    @include transform2d( skew(10deg, -10deg) );
+  }
+
+  object {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    min-height: 400px;
+    background: url('../images/loading.gif') no-repeat center;
+  }
+  .icon-close {
+    position: absolute;
+    right: 2%;
+    font-size: 3rem;
+    top: 2%;
+    cursor: pointer;
+      color: $orange;
+      padding: 0 0 2px 2px;
+      @include text-shadow( $red-dark 1px 1px 0,
+              $red-dark 1px -1px 0,
+              $red-dark -1px -1px 0,
+              $red-dark -1px 1px 0,
+              $red-dark -2px 2px 0,
+              $red-dark -3px 3px 0,
+              $red-dark -4px 4px 0,
+              $red-dark -5px 5px 0
+      );
+    z-index: 1;
+
+      svg {
+          @include transition(all 0.3s ease-out);
+      }
+
+    &:focus, &:hover {
+        color: $yellow;
+        padding: 2px 2px 0 0;
+        @include text-shadow( $red-dark 1px 1px 0,
+                $red-dark 1px -1px 0,
+                $red-dark -1px -1px 0,
+                $red-dark -1px 1px 0,
+                $red-dark -2px 2px 0
+        );
+    }
+  }
+  ul {
+    list-style: inherit;
+    font-size: 1.0rem;
+    width: 50%;
+    margin: 10px auto 0;
+    color: black;
+  }
+
+  // PHYSICS JS PARTS
+  .break-part {
+    position: absolute;
+    display: block;
+    pointer-events: none;
+    // PhysicsJS apply transform rotate to el
+    // -> css will rotate around the center of the div by default
+    // => change transform-origin to top-left
+    transform-origin: 0 0;
+  }
+  .broken {
+    @include opacity(0);
+    pointer-events: none;
+  }
+  .renderer {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  li canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+    a.button {
+        font-family: 'Market Deco', sans;
+        font-size: 2.2rem;
+        color: $orange;
+        padding: 0 0 2px 2px;
+        @include text-shadow( $red-dark 1px 1px 0,
+              $red-dark 1px -1px 0,
+              $red-dark -1px -1px 0,
+              $red-dark -1px 1px 0,
+              $red-dark -2px 2px 0,
+              $red-dark -3px 3px 0,
+              $red-dark -4px 4px 0,
+              $red-dark -5px 5px 0
+        );
+
+        svg {
+            width: auto;
+            height: auto;
+            @include opacity(0);
+            @include transition(all 0.3s ease-out);
+        }
+
+        &:hover, &:focus {
+            color: $yellow;
+            padding: 2px 2px 0 0;
+            @include text-shadow( $red-dark 1px 1px 0,
+                    $red-dark 1px -1px 0,
+                    $red-dark -1px -1px 0,
+                    $red-dark -1px 1px 0,
+                    $red-dark -2px 2px 0
+            );
+            svg {
+                @include opacity(1);
+            }
+        }
+    }
+
+  a[rel="author"] {
+    font-style: italic;
+    font-size: 1rem;
+    text-transform: capitalize;
+    color: grey;
+  }
+
+  figure {
+    margin-left: 5%;
+    width: 40%;
+    height: 80%;
+    float: left;
+    @include perspective(600px);
+    transform-style: preserve-3d;
+    transform-origin: bottom left;
+
+    ul {
+      width: 100%;
+      @include display-flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      transform: rotateX(-10deg) rotateY(-20deg);
+      transform-style: preserve-3d;
+
+
+
+      li {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include opacity(1);
+        // needed by jQuery.breakable & PhysicsJS
+        transform-origin: top left;
+        @include transition( all 0.5s ease-out );
+
+        @for $i from 1 through 10 {
+          $zindex: 11 - $i;
+          $z: (($i - 1) * -100) - 1px;
+          &:nth-of-type(#{$i}) {
+            transform: translate3d(0,0, $z);
+            z-index: $zindex;
+          }
+        }
+        @include transition( all 0.5s ease );
+      }
+      img {
+        @include single-box-shadow(-20px, 20px, 0px, 0, $orange, false);
+      }
+    }
+  }
+}
+
+dialog:not([open]) {
+  pointer-events: none;
+  h3, h4 {
+    @include opacity(0);
+  }
+  .description {
+    @include opacity(0);
+  }
+}
+
+dialog[open] {
+  .overlay {
+    @include opacity(1);
+  }
+  article {
+    top: 0;
+    @include opacity(1);
+    @include transform2d(scale(1, 1));
+  }
+}
+dialog.opened {
+  h3, h4 {
+    @include opacity(1);
+    margin-left: 0;
+  }
+  .description {
+    @include opacity(1);
+  }
+  svg {
+    @include opacity(1);
+  }
+  button {
+    svg {
+        @include opacity(0);
+    }
+    &:hover, &focus {
+      svg {
+        @include opacity(1);
+      }
+    }
+  }
+}
+
+// mobile
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .nineties dialog {
+        width: 100%;
+
+        .icon-close {
+            right: 0;
+            top: 0;
+        }
+
+        article {
+            width: 100%;
+            min-width: 100%;
+            height: 100%;
+            padding: 20px 25px;
+            margin: 0;
+        }
+
+        .description {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 35px 0 60px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            span.fx {
+                font-size: 2rem;
+            }
+        }
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        figure {
+            width: 88%;
+            height: auto;
+            min-height: 200px;
+            float: none;
+            margin-left: 4%;
+            margin-top: 30px;
+            @include transition(all 0.4s ease-out);
+            pointer-events: none;
+        }
+
+        a {
+            display: inherit;
+            svg {
+                display: none;
+            }
+        }
+    }
+}

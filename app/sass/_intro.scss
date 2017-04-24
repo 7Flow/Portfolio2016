@@ -1,0 +1,251 @@
+@import "compass/css3";
+
+// Browser Prefixes - Which CSS prefixes should be used?
+$webkit: true !default;
+$moz: false !default;
+$ms: false !default;
+$o: false !default;
+
+@mixin prefixed($property, $value) {
+  @if $webkit == true {
+    -webkit-#{$property}: #{$value};
+  }
+
+  @if $moz == true {
+    -moz-#{$property}: #{$value};
+  }
+
+  @if $ms == true {
+    -ms-#{$property}: #{$value};
+  }
+
+  @if $o == true {
+    -o-#{$property}: #{$value};
+  }
+
+  #{$property}: #{$value};
+}
+
+// prefix keyframes
+@mixin keyframes($name) {
+  @if $webkit == true {
+    @-webkit-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @if $moz == true {
+    @-moz-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @if $ms == true {
+    @-ms-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @if $o == true {
+    @-o-keyframes #{$name} {
+      @content;
+    }
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+
+
+#intro {
+  background-color: black;
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  blockquote {
+    position: relative;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    p {
+      @include opacity(0);
+      margin-bottom: 10px;
+      @include transition( all 0.5s ease-out );
+
+      @for $i from 1 through 2 {
+        $delay: $i * 0.55s + 0.4s;
+        &:nth-of-type(#{$i}) {
+          transition-delay: $delay;
+        }
+      }
+
+      @for $i from 4 through 6 {
+        $delay: ($i - 4) * 1.5s + 4s;
+        &:nth-of-type(#{$i}) {
+          transition-delay: $delay;
+        }
+      }
+
+      i {
+        display: inline-block;
+        @include opacity(0);
+        @include transition( all 0.1s ease-out );
+      }
+
+      @for $i from 1 through 3 {
+        $delay: $i * 0.3s + 2s;
+        i:nth-of-type(#{$i}) {
+          transition-delay: $delay;
+          @include animation-delay($delay !important);
+        }
+      }
+    }
+  }
+
+  &.intro {
+    blockquote p {
+      @include opacity(1);
+
+      &.blablabla {
+        @include opacity(0);
+        @include animation( blablabla 2.2s 1.9s forwards );
+      }
+      i {
+        @include opacity(1);
+        @include animation( buzzOut 0.75s 0s forwards );
+      }
+    }
+    .btn-discover {
+      @include opacity(1);
+    }
+
+    .nineties & {
+      p {
+        margin-left: 300px;
+        @include opacity(0);
+
+        @include transition( all 0.3s ease-out );
+
+        @for $i from 1 through 6 {
+          $delay: $i * 0.2s;
+          &:nth-of-type(#{$i}) {
+            transition-delay: $delay;
+          }
+        }
+      }
+      .btn-discover {
+        @include opacity(0);
+      }
+    }
+  }
+
+  .btn-discover {
+    width: 280px;
+    height: 56px;
+    line-height: 56px;
+    white-space: nowrap;
+    overflow: visible;
+    margin-top: 40px;
+    color: $space-white;
+
+    @include opacity(0);
+    @include transition(all 0.5s 1s ease-out);
+
+    svg {
+      transform-origin: center;
+      -webkit-transition: height 0.5s ease 0.1s, width 0.35s ease 0.25s, left 0.35s ease 0.25s, top 0.6s, transform 0.5s ease;
+      transition: height 0.5s ease 0.1s, width 0.35s ease 0.25s, left 0.35s ease 0.25s, top 0.6s, transform 0.5s ease;
+      z-index: 0;
+    }
+
+    rect {
+      fill: none;
+      stroke-width: 3;
+      stroke-dasharray: 800, 0;
+      -webkit-transition: all 0.7s;
+      transition: all 0.7s;
+    }
+
+    &:hover {
+      svg {
+        width: 45px;
+        height: 45px;
+        left: 120px;
+        top: 12px;
+        transform: rotate(45deg);
+
+        -webkit-transition: height 0.5s ease 0.4s, width 0.6s, left 0.6s, top 0.6s ease 0.4s, transform 0.6s ease 0.3s;
+        transition: height 0.5s ease 0.4s, width 0.6s, left 0.6s, top 0.6s ease 0.4s, transform 0.6s ease 0.3s;
+      }
+      rect {
+        stroke-width: 5;
+        stroke-dasharray: 36, 300;
+        stroke-dashoffset: -72;
+        -webkit-transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+        transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+      }
+    }
+  }
+}
+
+.canvasjs-chart-credit {
+  display: none !important;
+}
+
+
+@keyframes buzzOut {
+  10% {
+    @include prefixed(transform, translateX(3px) rotate(2deg));
+  }
+  20% {
+    @include prefixed(transform, translateX(-3px) rotate(-2deg));
+  }
+  30% {
+    @include prefixed(transform, translateX(3px) rotate(2deg));
+  }
+  40% {
+    @include prefixed(transform, translateX(-3px) rotate(-2deg));
+  }
+  50% {
+    @include prefixed(transform, translateX(2px) rotate(1deg));
+  }
+  60% {
+    @include prefixed(transform, translateX(-2px) rotate(-1deg));
+  }
+  70% {
+    @include prefixed(transform, translateX(2px) rotate(1deg));
+  }
+  80% {
+    @include prefixed(transform, translateX(-2px) rotate(-1deg));
+  }
+  90% {
+    @include prefixed(transform, translateX(1px) rotate(0));
+  }
+  100% {
+    @include prefixed(transform, translateX(-1px) rotate(0));
+  }
+}
+
+@keyframes blablabla {
+  0% {
+    @include opacity(0);
+  }
+  20% {
+    @include opacity(1);
+  }
+  80% {
+    @include opacity(1);
+    margin-left: 0;
+  }
+  100% {
+    @include opacity(0);
+    margin-left: 200px;
+  }
+}

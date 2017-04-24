@@ -1,0 +1,128 @@
+@import "compass/css3";
+
+footer {
+  width: 100%;
+  position: fixed;
+  bottom: -62px;
+  @include background( linear-gradient(top, $space-blue, $space-violet) );
+  z-index: 4;
+  @include transition( bottom 0.5s ease-out );
+
+  ul {
+    text-align: center;
+    height: 48px;
+    margin-top: -3px;
+    a {
+      position: relative;
+      width: 62px;
+      height: 62px;
+      left: 0;
+      color: $space-cadetblue;
+      font-size: 1.5rem;
+      @include transition(color 0.2s);
+      overflow: visible;
+      &:hover {
+        color: $space-green;
+      }
+      i {
+        overflow: visible;
+      }
+      i:after {
+        content: "";
+        display: block;
+        position: relative;
+        width: 18px;
+        height: 18px;
+        top: -22px;
+        left: 22px;
+        background: white;
+        z-index: -1;
+      }
+      svg {
+        left: 0 !important;
+      }
+    }
+  }
+  li {
+    margin-left: 20px;
+    &:first-of-type {
+      margin: 0;
+    }
+    [class^="icon-"], [class*=" icon-"] {
+      pointer-events: none;
+    }
+    a:focus {
+      outline: none;
+    }
+  }
+
+  a, span {
+    position: absolute;
+    top: 15px;
+  }
+  a {
+    left: 20px;
+    &:hover, &:focus {
+      outline-color: $space-green;
+      color: $space-green;
+    }
+  }
+  span {
+    right: 20px;
+  }
+
+  .loaded & {
+    bottom: 0;
+  }
+
+  .nineties & {
+    @include background( linear-gradient(5deg, $green, $blue) );
+    @include single-box-shadow(0, 0, 20px, 0, $brown-dark, false);
+
+    ul a {
+      color: $red-dark;
+      &:hover, &:focus {
+        color: $orange;
+      }
+    }
+    > a {
+      @include title(1.1rem);
+      outline-color: $orange;
+      &:hover {
+        color: $orange;
+      }
+      &:focus {
+        color: $yellow;
+      }
+    }
+  }
+
+  .to-nineties & {
+    @include transition(all 1s ease-out);
+  }
+}
+
+// mobile
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    footer {
+        ul {
+            height: 40px;
+            margin-top: 0px;
+            a {
+                top: 10px;
+                width: 40px;
+                height: 55px;
+                i:after {
+                    top: -23px;
+                    left: 12px;
+                }
+                svg {
+                    display: none;
+                }
+            }
+        }
+        li {
+            margin: 0;
+        }
+    }
+}

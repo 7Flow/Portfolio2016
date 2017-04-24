@@ -1,0 +1,33 @@
+
+<button class="icon-close invisible-text js-close js-random-btn"><span hidden>Fermer</span></button>
+
+<div class="title">
+    <h1 id="popin-website-title" class="js-random-poly">{{title}}<span class="fx" aria-hidden="true">{{title}}</span></h1>
+    <h3 id="popin-website-desc">{{client}}</h3>
+</div>
+
+<div class="description">
+    {{#each features}}
+    <div class="paragraph">
+        <h4 class="js-random-poly">{{title}}<span class="fx" aria-hidden="true">{{title}}</span></h4>
+        <p>{{text}}</p>
+    </div>
+    {{/each}}
+    {{#if link}}
+    <a class="button js-random-btn" href="{{link}}" target="_blank">Decouvrir</a>
+    {{/if}}
+</div>
+
+<figure>
+    <ul>
+        {{#each screenshots}}
+        <li class="js-breakable">
+            <img class="js-container" src="{{this}}" alt="Capture d'écran" aria-labelledby="popin-website-title" aria-describedby="popin-website-desc" />
+        </li>
+        {{/each}}
+    </ul>
+</figure>
+
+<div id="domRenderer" class="renderer"></div>
+
+<canvas id="debug" width="1300" height="617"></canvas>

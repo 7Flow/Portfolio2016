@@ -1,0 +1,480 @@
+@import "compass/reset";
+@import "compass/css3";
+
+$red-dark: #400029;
+$red-medium: #873649;
+$red: #b3474b;
+
+$orange: #ffb162;
+$yellow: #ffe476;
+
+$blue: #93bdf5;
+$blue-dark: #00275C;
+
+$green: #739973;
+$green-dark: #1f4d34;
+
+$space-violet: #342e3a;
+$space-blue: #232737;
+$space-aquablue: #124e54;
+$space-cadetblue: #27A69B;
+$space-green: #3acba9;
+$space-white: #CCD2DB;
+
+$highlight: rgba(255,178,0, 0.2);
+$highlight-dark: rgba(255,145,0, 0.1);
+$overlay: rgba(0,0,0, 0.6);
+
+$brown-light: #C9876D;
+$brown-dark: #745754;
+$brown-dark-trans: rgba(116,87,84, 0.6);
+
+@font-face {
+  font-family: 'Market Deco';
+  src: url('../fonts/Market Deco.eot');
+  src: url('../fonts/Market Deco.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Market Deco.woff2') format('woff2'),
+  url('../fonts/Market Deco.woff') format('woff'),
+  url('../fonts/Market Deco.svg#Market Deco') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-F005;
+}
+.market-deco {
+  font-family: 'Market Deco', sans;
+}
+.damion {
+  font-family: 'Damion', cursive;
+}
+
+@mixin title( $size ) {
+  font-family: 'Market Deco', sans;
+  font-size: $size;
+}
+@mixin titleBg( $size ) {
+  font-family: 'Market Deco', sans;
+  font-size: $size;
+  color: $orange;
+  @include text-shadow( $red-dark 1px 1px 0,
+    $red-dark 1px -1px 0,
+    $red-dark -1px -1px 0,
+    $red-dark -1px 1px 0,
+    $red-dark -2px 2px 0,
+    $red-dark -3px 3px 0,
+    $red-dark -4px 4px 0,
+    $red-dark -5px 5px 0
+  );
+}
+
+@mixin subtitle( $size ) {
+  font-family: 'Damion', cursive;
+  font-size: $size;
+
+  color: $yellow;
+  @include text-shadow( $red-dark 1px 1px 0,
+    $red-dark 1px -1px 0,
+    $red-dark -1px -1px 0,
+    $red-dark -1px 1px 0
+  );
+
+  @include transform( rotate(-5deg) );
+  margin-top: -15px;
+  letter-spacing: 0.05rem;
+  text-transform: capitalize;
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+  background: black;
+  @include transition(all, 0.6s ease);
+  &.nineties {
+    background-color: #f0ffe8;
+  }
+}
+body {
+  width: 100%;
+  height: calc(100% - 125px);
+  margin-top: 80px;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  position: relative;
+  color: $space-white;
+  overflow: hidden;
+  @include transition(all, 0.6s ease);
+  .nineties & {
+    color: $red-dark;
+    background-color: #f0ffe8;
+  }
+}
+
+h1, h2 {
+  font-family: 'Roboto Condensed', sans-serif;
+  position: relative;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+
+  span.fx {
+    display: none;
+  }
+
+  .nineties & {
+    @include title(2.2rem);
+    font-weight: bolder;
+    @include background( linear-gradient(top, $yellow 0, $yellow 50%, $red-dark 51%, $red-dark 52%, $orange 53%, $orange 59%, $red-dark 60%, $red-dark 61%, $red 62%, $red 70%, $red-dark 71%, $red-dark 72%, $red 73% ) );
+    @include background-origin(padding-box);
+    @include background-clip(text);
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+
+    .no-backgroundcliptext & {
+      color: $orange;
+      background: none;
+    }
+
+    span.fx {
+      position: absolute;
+      display: block;
+      width: 100%;
+      top: 0;
+      left: 0;
+      @include titleBg(2.2rem);
+      z-index: -1;
+      background: none;
+    }
+  }
+}
+.no-textshadow span.fx {
+  display: none;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h3, h5 {
+  -webkit-font-smoothing: antialiased;
+  .nineties & {
+    @include subtitle(1.6rem);
+  }
+  &:after {
+    content: "";
+    background: $yellow;
+    height: 2px;
+    width: 80%;
+    position: absolute;
+    bottom: -2px;
+    left: 10%;
+    @include box-shadow( $red-dark 1px 1px 0, $red-dark 1px -1px 0, $red-dark -1px -1px 0, $red-dark -1px 1px 0 );
+    z-index: -1;
+  }
+}
+
+h4 {
+    font-size: 2rem;
+    font-family: 'Market Deco', sans;
+    position: relative;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-fill-color: $orange;
+    text-fill-color: $orange;
+    background: none;
+    color: $orange;
+
+    span.fx {
+        position: absolute;
+        display: block;
+        width: 100%;
+        top: 0;
+        left: 0;
+        @include titleBg(2rem);
+        z-index: -1;
+        background: none;
+    }
+}
+
+ul {
+  li {
+    display: inline-block;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+a {
+  outline: none;
+}
+button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:focus, &:hover {
+    color: $yellow;
+  }
+}
+
+.valign {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  @include transform( translateY(-50%) );
+  padding: 10px 5px;
+  box-sizing: border-box;
+}
+
+.one-page {
+  margin: 0 5% 0;
+  padding-top: 120px;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.1rem;
+  font-weight: lighter;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+.btn {
+  width: 280px;
+  height: 56px;
+  line-height: 56px;
+  white-space: nowrap;
+  cursor: pointer;
+  rect {
+    fill: none;
+    stroke-width: 3;
+    stroke-dasharray: 300, 0;
+    -webkit-transition: all 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    transition: all 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    -webkit-transition-delay: .1s;
+    transition-delay: .1s;
+  }
+  &:hover, .hover {
+    rect {
+      stroke-width: 5;
+      stroke-dasharray: 35, 300;
+      stroke-dashoffset: 17;
+      -webkit-transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+      -webkit-transition-delay: 0s;
+      transition-delay: 0s;
+    }
+  }
+  span {
+    vertical-align: -webkit-baseline-middle;
+    vertical-align: baseline;
+  }
+}
+.controls {
+  cursor: pointer;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+    display: block;
+  background-color: #f0ffe8;
+
+  shape-inside: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  -webkit-clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+
+  -webkit-transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+  transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+
+    overflow: hidden;
+
+  &.previous, &.current {
+    display: block;
+  }
+  &.previous {
+    -webkit-transition: none;
+    transition: none;
+
+    shape-inside: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  &.active {
+    z-index: 1;
+    shape-inside: polygon(0% 0%, 100% 0%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .page-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    img {
+      display: none;
+    }
+
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.loading {
+  width: 100%;
+  height: 350px;
+  position: absolute;
+  top: 98%;
+  z-index: 3;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+
+  &::-webkit-progress-bar {
+    background: transparent;
+  }
+  &::-webkit-progress-value {
+    background-color: $space-green;
+  }
+  &::-moz-progress-bar {
+    background-color: $space-green;
+  }
+  &::-ms-fill {
+    background-color: $space-green;
+  }
+
+  &.animate {
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+  }
+
+  &.complete {
+    width: 100%;
+    transform: skewY(-5deg);
+    top: -80%;
+
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+  }
+
+  .nineties & {
+    &::-webkit-progress-value {
+      background-color: $orange;
+      @include single-box-shadow(0, 0, 20px, 0, #000, false);
+    }
+    &::-moz-progress-bar {
+      background-color: $orange;
+      @include single-box-shadow(0, 0, 20px, 0, #000, false);
+    }
+    &::-ms-fill {
+      background-color: $orange;
+      @include single-box-shadow(0, 0, 20px, 0, #000, false);
+    }
+  }
+}
+.animate {
+  @include transition( all 0.7s );
+}
+body .hidden {
+  display: none;
+}
+body .inactive {
+  pointer-events: none;
+}
+
+.no-clip-text.nineties {
+    h1, h2 {
+        background: none;
+        color: $orange;
+        -webkit-text-fill-color: $orange;
+        text-fill-color: $orange;
+    }
+}
+.no-bg-blend-mode.nineties {
+
+}
+
+@import "_header.scss";
+@import "_footer.scss";
+
+@import "_pagination.scss";
+
+@import "_intro.scss";
+@import "_about.scss";
+@import "_games.scss";
+@import "_websites.scss";
+@import "_cv.scss";
+
+@import "_popins.scss";
+
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    html {
+        font-size: 12px;
+    }
+}
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media screen and (min-width: 1401px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+// mobile
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    body {
+        height: calc(100% - 110px);
+        margin-top: 70px;
+    }
+    .loading.complete {
+        top: -95%;
+    }
+}
+// tablet
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+}
+

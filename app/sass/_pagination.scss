@@ -1,0 +1,334 @@
+@import "compass/css3/animation";
+@import "compass/css3/filter";
+@import "compass/css3/transform";
+@import "compass/css3/opacity";
+@import "compass/css3/text-shadow";
+
+.all-pages {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    @include transition(left 0.8s cubic-bezier(0.65, 0, 0.35, 1));
+}
+
+.page {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin: 0;
+    display: inline-block;
+
+    ul {
+      position: relative;
+      @include perspective(900px);
+      perspective-origin: center 55%;
+      height: 100%;
+    }
+
+    li {
+      display: block;
+      position: relative;
+      height: 40%;
+      max-height: 250px;
+      float: left;
+      margin-left: 2.5%;
+      margin-bottom: 2.5%;
+
+      color: $red-medium;
+
+      @include transform-style(preserve-3d);
+      -webkit-backface-visibility: hidden;
+
+      &:nth-child(3n+1), &:first-of-type {
+        clear: both;
+        margin-left: 0;
+      }
+
+      a {
+        height: 100%;
+      }
+
+      img {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+
+      .thumb {
+        height: 100%;
+        width: auto;
+        overflow: hidden;
+        @include filter(sepia(60%));
+        @include transition(all 0.3s);
+      }
+      .highlight {
+        position: absolute;
+        top: -5%;
+        left: -5%;
+        width: 110%;
+        height: 110%;
+        background-color: none;
+        @include transition(transform 0.3s);
+        @include skew(-2deg, 2deg);
+      }
+
+      .overlay {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        -webkit-clip-path: polygon(0% 25%, 0% 25%, 0% 75%, 0% 75%);
+        clip-path: polygon(0% 25%, 0% 25%, 0% 75%, 0% 75%);
+        @include translate3d(0,0,0);
+        @include transition(all 0.3s);
+
+        background-color: $orange !important;
+        background-blend-mode: soft-light;
+        background-size: 100%;
+        background-size: cover;
+
+      }
+
+      .details {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-weight: 900;
+        color: black;
+        @include opacity(0);
+        @include translate3d(0,0,10px);
+        pointer-events: none;
+
+        color: white;
+
+        .valign {
+          text-align: center;
+        }
+        h2 {
+          font-size: 1.5rem;
+          font-weight: 900;
+          .fx {
+            @include titleBg(1.5rem);
+          }
+        }
+        h3 {
+          font-size: 1.2rem;
+          margin-top: 1px;
+          &:after {
+            width: 32%;
+            left: 35%;
+          }
+        }
+        span {
+          font-size: 1.2rem;
+          font-weight: 900;
+            color: #fff;
+          @include text-shadow( $red-dark 1px 1px 0 0 );
+          /*.safari & {
+              color: $red;
+          }*/
+        }
+        hr {
+          background-color: $red-dark;
+          border: none;
+          height: 2px;
+          width: 0%;
+          @include transition(all 0.3s);
+        }
+      }
+
+      a:hover, a:focus {
+        outline: none;
+        .thumb {
+          @include animation( over_flash 0.8s 0s forwards );
+          @include box-shadow( 1px 1px 8px -2px #000 );
+          @include filter(sepia(0%));
+          @include translate3d(0,0,10px);
+          &:after {
+            width: 100%;
+          }
+        }
+        .highlight {
+          @include background( linear-gradient(5deg, $orange, $yellow) );
+          @include translate3d(0,-2px,-20px);
+        }
+        .overlay {
+          -webkit-clip-path: polygon(0% 25%, 100% 25%, 100% 75%, 0% 75%);
+          clip-path: polygon(0% 25%, 100% 25%, 100% 75%, 0% 75%);
+          @include translate3d(0,0,10px);
+        }
+        .details {
+          @include transition(all 0.3s);
+          @include opacity(1);
+          @include translate3d(0,0,40px);
+          hr {
+            width: 40%;
+          }
+        }
+      }
+    }
+}
+
+.pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    z-index: 3;
+    li {
+      width: 10px;
+      height: 10px;
+      position: relative;
+      margin-left: 12px;
+      &.first {
+        margin: 0;
+      }
+    }
+    button {
+      width: 30px;
+      height: 30px;
+      &:focus {
+        outline-color: red;
+      }
+    }
+}
+.controls {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 46%;
+    z-index: 3;
+    font-size: 3rem;
+    svg {
+      opacity: 0;
+      @include transition(opacity 0.3s);
+    }
+    &:hover, &:focus {
+      svg {
+        opacity: 1;
+      }
+    }
+    &.inactive {
+      color: grey;
+      svg {
+        opacity: 0;
+      }
+        button {
+            color: grey;
+            @include opacity(0.5);
+        }
+    }
+
+    &.next {
+      right: 20px;
+      button {
+        font-size: 60px;
+      }
+    }
+    &.previous {
+      left: 20px;
+      button {
+        font-size: 60px;
+      }
+    }
+}
+
+.no-bg-blend-mode.nineties {
+    .page li {
+        .overlay {
+            top: 25%;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background-image: none !important;
+            background-color: $orange !important;
+            display: none;
+            @include opacity(0.6);
+        }
+        a:hover, a:focus {
+            .overlay {
+                display: block;
+            }
+        }
+    }
+}
+
+
+
+@keyframes over_flash {
+  5% {
+    filter: saturate(2.0) contrast(2.0);
+    -webkit-filter: saturate(2.0) contrast(2.0);
+    -moz-filter: saturate(2.0) contrast(2.0);
+  }
+  100% {
+    filter: saturate(1.0) contrast(1.0);
+    -webkit-filter: saturate(1.0) contrast(1.0);
+    -moz-filter: saturate(1.0) contrast(1.0);
+  }
+}
+
+// mobile
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .all-pages {
+        width: 100%;
+        .page {
+            left: 0;
+        }
+        ul {
+            width: 90%;
+            margin: 0 5%;
+            left: 0 !important;
+        }
+        li {
+            width: 48%;
+            height: auto;
+            margin-left: 4%;
+
+            &:nth-child(3n+1) {
+                clear: none;
+                margin-left: 4%;
+            }
+            &:nth-child(2n+1) {
+                clear: both;
+                margin-left: 0;
+            }
+
+            a {
+                width: 100%;
+                height: auto;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    .controls {
+        top: initial;
+        bottom: 20px;
+    }
+}
+// tablet
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .all-pages {
+        .page li {
+            height: 35%;
+        }
+    }
+    .controls {
+        top: initial;
+        bottom: 20px;
+    }
+}

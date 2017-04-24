@@ -1,0 +1,51 @@
+@import "compass/css3";
+
+$red-dark: #400029;
+$red-medium: #873649;
+$red: #b3474b;
+
+$orange: #ffb162;
+$yellow: #ffe476;
+
+[hidden] {
+  display: none;
+}
+
+span.fx {
+  display: none !important;
+}
+/* prefer outline than skew: IE9 doesn't support transform + filter -> black background */
+.name {
+  -ms-transform: none !important;
+}
+h1, h2 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=1, Color=#400029)progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=-1, Color=#400029)progid:DXImageTransform.Microsoft.dropshadow(OffX=-1, OffY=-1, Color=#400029)progid:DXImageTransform.Microsoft.dropshadow(OffX=-1, OffY=1, Color=#400029)progid:DXImageTransform.Microsoft.dropshadow(OffX=-2, OffY=2, Color=#400029)progid:DXImageTransform.Microsoft.dropshadow(OffX=-3, OffY=3, Color=#400029)progid:DXImageTransform.Microsoft.dropshadow(OffX=-4, OffY=4, Color=#400029)progid:DXImageTransform.Microsoft.dropshadow(OffX=-5, OffY=5, Color=#400029)";
+  z-index: -1;
+}
+h3 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=1, Color=#400029)progid:DXImageTransform.Microsoft.dropshadow(OffX=1, OffY=-1, Color=#400029)progid:DXImageTransform.Microsoft.dropshadow(OffX=-1, OffY=-1, Color=#400029)progid:DXImageTransform.Microsoft.dropshadow(OffX=-1, OffY=1, Color=#400029)";
+  -ms-transform: none !important;
+}
+
+.page {
+  li {
+    .overlay {
+      top: 25%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background-image: none !important;
+      background-color: $orange !important;
+      display: none;
+      @include opacity(0.6);
+    }
+    .highlight {
+      z-index: -1;
+    }
+    a:hover, a:focus {
+      .overlay {
+        display: block;
+      }
+    }
+  }
+}
