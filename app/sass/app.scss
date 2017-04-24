@@ -300,7 +300,7 @@ section {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-    display: block;
+  display: block;
   background-color: #f0ffe8;
 
   shape-inside: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
@@ -310,7 +310,9 @@ section {
   -webkit-transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
   transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
 
-    overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
 
   &.previous, &.current {
     display: block;
