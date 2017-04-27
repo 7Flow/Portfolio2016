@@ -238,6 +238,19 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">../menu/grass.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>16,16,32,32</rect>
+                <key>scale9Paddings</key>
+                <rect>16,16,32,32</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">../menu/key-ctrl.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>

@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>4</int>
         <key>texturePackerVersion</key>
-        <string>4.2.0</string>
+        <string>4.4.0</string>
         <key>fileName</key>
         <string>/Users/Florian/Documents/PROJETS/Portfolio/app/sprites/backdrop.tps</string>
         <key>autoSDSettings</key>
@@ -47,6 +47,8 @@
         <uint>32768</uint>
         <key>etc1CompressionQuality</key>
         <enum type="SettingsBase::Etc1CompressionQuality">ETC1_QUALITY_LOW_PERCEPTUAL</enum>
+        <key>etc2CompressionQuality</key>
+        <enum type="SettingsBase::Etc2CompressionQuality">ETC2_QUALITY_LOW_PERCEPTUAL</enum>
         <key>dxtCompressionMode</key>
         <enum type="SettingsBase::DxtCompressionMode">DXT_PERCEPTUAL</enum>
         <key>jxrColorFormat</key>
@@ -78,6 +80,8 @@
         <key>webpQualityLevel</key>
         <uint>101</uint>
         <key>textureSubPath</key>
+        <string></string>
+        <key>atfFormats</key>
         <string></string>
         <key>textureFormat</key>
         <enum type="SettingsBase::TextureFormat">png</enum>
@@ -118,6 +122,11 @@
                 <enum type="AlgorithmBasicSettings::SortBy">Best</enum>
                 <key>order</key>
                 <enum type="AlgorithmBasicSettings::Order">Ascending</enum>
+            </struct>
+            <key>polygon</key>
+            <struct type="AlgorithmPolygonSettings">
+                <key>alignToGrid</key>
+                <uint>1</uint>
             </struct>
         </struct>
         <key>andEngine</key>
@@ -163,6 +172,8 @@
         <false/>
         <key>prependSmartFolderName</key>
         <false/>
+        <key>autodetectAnimations</key>
+        <true/>
         <key>globalSpriteSettings</key>
         <struct type="SpriteSettings">
             <key>scale</key>
@@ -191,12 +202,21 @@
             <key type="filename">../backdrop/atmo.png</key>
             <key type="filename">../backdrop/hills.png</key>
             <key type="filename">../backdrop/lyon-skyline.png</key>
+            <key type="filename">../backdrop/montreal-skyline.png</key>
             <key type="filename">../backdrop/paris-skyline.png</key>
             <key type="filename">../backdrop/rural.png</key>
             <key type="filename">../backdrop/vienne-skyline.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>128,32,256,64</rect>
+                <key>scale9Paddings</key>
+                <rect>128,32,256,64</rect>
+                <key>scale9FromFile</key>
+                <false/>
             </struct>
         </map>
         <key>fileList</key>
@@ -223,5 +243,7 @@
         <string></string>
         <key>normalMapSheetFileName</key>
         <filename></filename>
+        <key>exporterProperties</key>
+        <map type="ExporterProperties"/>
     </struct>
 </data>

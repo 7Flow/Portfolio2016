@@ -24,7 +24,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":128},
 	"sourceSize": {"w":512,"h":128}
 },
-"paris-skyline.png":
+"montreal-skyline.png":
 {
 	"frame": {"x":0,"y":384,"w":512,"h":128},
 	"rotated": false,
@@ -32,7 +32,7 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":128},
 	"sourceSize": {"w":512,"h":128}
 },
-"rural.png":
+"paris-skyline.png":
 {
 	"frame": {"x":0,"y":512,"w":512,"h":128},
 	"rotated": false,
@@ -40,9 +40,17 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":128},
 	"sourceSize": {"w":512,"h":128}
 },
-"vienne-skyline.png":
+"rural.png":
 {
 	"frame": {"x":0,"y":640,"w":512,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":128},
+	"sourceSize": {"w":512,"h":128}
+},
+"vienne-skyline.png":
+{
+	"frame": {"x":0,"y":768,"w":512,"h":128},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":128},
@@ -55,6 +63,6 @@
 	"format": "RGBA8888",
 	"size": {"w":512,"h":1024},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:d78bb1ca57d9b780d62a799d5daeb469:e47f5929708176bce9bb8a8e71a39969:2aab9dc42902d356dc2477162f97bace$"
+	"smartupdate": "$TexturePacker:SmartUpdate:9c10fc0082394728f0e26457886e4b41:52a97666474efaf37c81d3445fcadf77:2aab9dc42902d356dc2477162f97bace$"
 }
 }
