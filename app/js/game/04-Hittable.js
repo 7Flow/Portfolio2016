@@ -29,8 +29,6 @@ Hittable.prototype.init = function( game, x, y, data ) {
     this.body.allowGravity = false;
 
     this.data = data.data;
-
-    game.groups[ data.group ].add( this );
 };
 
 Hittable.prototype.hit = function() {};

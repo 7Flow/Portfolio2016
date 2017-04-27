@@ -32,7 +32,7 @@ Player = function( game, x, y, data )
     this.playerSteps.minRotation = 0;
     this.playerSteps.maxRotation = 0;
     // emitter gravity will not override global gravity, but it will be added
-    this.playerSteps.gravity = -450;
+    this.playerSteps.gravity = 0;
     this.playerSteps.on = false;
     this.playerSteps.start(true, 200, 0, 5);
 
@@ -100,7 +100,12 @@ Player.prototype.update = function()
         this.playerSteps.on = false;
         if (!this.body.touching.down) {
             this.animations.play( 'jump'+this.animNameSuffix );
+            this.platform = null;
         }
+    }
+
+    if (this.platform) {
+        this.platform.moveWith( this );
     }
 };
 
@@ -114,8 +119,8 @@ Player.prototype.moveLeft = function( deltaTime )
     if (this.body.touching.down) {
         this.animations.play( 'walk'+this.animNameSuffix );
 
-        this.playerSteps.minParticleSpeed.setTo(10, -10);
-        this.playerSteps.maxParticleSpeed.setTo(80, -60);
+        this.playerSteps.minParticleSpeed.setTo(10, -40);
+        this.playerSteps.maxParticleSpeed.setTo(80, -100);
     }
 };
 
@@ -128,8 +133,8 @@ Player.prototype.moveRight = function( deltaTime )
     this.scale.x = this.dir;
     if (this.body.touching.down) {
         this.animations.play( 'walk'+this.animNameSuffix );
-        this.playerSteps.minParticleSpeed.setTo(-10, -10);
-        this.playerSteps.maxParticleSpeed.setTo(-80, -60);
+        this.playerSteps.minParticleSpeed.setTo(-10, -40);
+        this.playerSteps.maxParticleSpeed.setTo(-80, -100);
     }
 };
 
@@ -149,6 +154,8 @@ Player.prototype.jump = function( deltaTime )
         if (this.jumpStart > this.jumpingDuration) {
             this.jumpingEnabled = false;
         }
+
+        this.platform = null;
     } else {
         this.stopJump();
     }
@@ -169,6 +176,11 @@ Player.prototype.stand = function()
     }
 };
 
+/**
+ *
+ * @param player
+ * @param ground
+ */
 Player.prototype.onGround = function( player, ground )
 {
     if (ground.data && ground.data.material) {
@@ -183,6 +195,17 @@ Player.prototype.onGround = function( player, ground )
         this.ground = this.groundDefault;
         this.playerSteps.removeAll(true);
     }
+};
+
+/**
+ *
+ * @param player
+ * @param platform
+ */
+Player.prototype.onPlatform = function( player, platform )
+{
+    this.platform = platform;
+    this.onGround( player, platform );
 };
 
 Player.prototype.onCollect = function( player, collectable )
@@ -319,8 +342,10 @@ Player.prototype.refill = function( num )
  * All ammo remove 1 heart (for now...)
  * - become invincible for 1sec
  * - fx: flick for 1sec
+ * @param player
+ * @param ammo [optionnal]
  */
-Player.prototype.onHit = function( player, ammo)
+Player.prototype.onHit = function( player, ammo )
 {
     if (!this.invincible) {
         --this.life;
@@ -336,7 +361,7 @@ Player.prototype.onHit = function( player, ammo)
             }, 500);
         }
 
-        ammo.kill();
+        if (ammo) ammo.kill();
 
         this.game.gui.lostLife( this.life );
         this.game.camera.shake( 0.002, 100, true, Phaser.Camera.SHAKE_HORIZONTAL );

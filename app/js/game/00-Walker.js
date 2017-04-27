@@ -25,9 +25,11 @@ Walker.prototype.constructor = Walker;
 Walker.prototype.dir = 1;
 /**
  * An object describing the walkable area :
- * int x A world's tile coordinate
- * int y A world's tile coordinate
- * int width A world's tile length
+ * {string} axis
+ * {string} fixedAxis
+ * {int} length A world's tile length
+ * {int} x A world's tile coordinate
+ * {int} y A world's tile coordinate
  * - don't make default param, cause it will break inheritence (each instance should have its own object, not shared the same) -
  * @type {object}
  */
@@ -53,14 +55,14 @@ Walker.prototype.onEdge = 0;
 Walker.prototype.init = function( game, x, y, data )
 {
     if (data.texture.atlas) {
-        Phaser.Sprite.call( this, game, x, y, data.texture.atlas, data.texture.id );
+        Phaser.Sprite.call(this, game, x, y, data.texture.atlas, data.texture.id);
     } else {
-        Phaser.Sprite.call( this, game, x, y, data.texture.id );
+        Phaser.Sprite.call(this, game, x, y, data.texture.id);
     }
-    this.anchor.set( 0.5, 1 );
+    this.anchor.set(0.5, 1);
     this.smoothed = false;
 
-    game.physics.arcade.enable( this );
+    game.physics.arcade.enable(this);
     this.body.immovable = false;
     this.body.collideWorldBounds = true;
 
@@ -68,21 +70,49 @@ Walker.prototype.init = function( game, x, y, data )
     this.position.x += game.data.tileSize * this.anchor.x;
     this.position.y += game.data.tileSize * this.anchor.y;
 
-    this.walkableArea = {
-        left: data.area.x * game.data.tileSize + (this.anchor.x * this.body.width),
-        right: (data.area.x + data.area.width) * game.data.tileSize - ((1 - this.anchor.x) * this.body.width),
-        y: data.area.y,
-        width: data.area.width,
-        height: 1
-    };
+    this.setArea( game, data.area );
 };
+
+/**
+ * Precompute all data to define the walkable area in pixels (not in tile).
+ * For y axis, this need to be recomputed on resize.
+ * @param game
+ * @param area
+ */
+Walker.prototype.setArea = function( game, area )
+{
+    this.walkableArea = area;
+    this.walkableArea.fixedAxis = area.axis == "x" ? "y" : "x";
+
+    this.updateArea();
+};
+
+Walker.prototype.updateArea = function()
+{
+    var area = this.walkableArea;
+    var _dimension = area.axis == "x" ? this.body.width : this.body.height;
+
+    if (area.axis === "x") {
+        this.walkableArea.start = area[area.axis] * this.game.data.tileSize + (this.anchor[area.axis] * _dimension);
+        this.walkableArea.end = (area[area.axis] + area.length) * this.game.data.tileSize - ((1 - this.anchor[area.axis]) * _dimension);
+    } else {
+        this.walkableArea.start = (this.game.data.world.height - area[area.axis] - 1) * this.game.data.tileSize + (this.anchor[area.axis] * _dimension);
+        this.walkableArea.end = (this.game.data.world.height - area[area.axis] - 1 + area.length) * this.game.data.tileSize - ((1 - this.anchor[area.axis]) * _dimension);
+    }
+}
 
 Walker.prototype.update = function()
 {
     if (this.walking && !this.onWalkableArea()) {
-        this.dir *= -1;
-        this.body.velocity.x = -this.body.velocity.x;
+        this.reverse();
     }
+};
+
+Walker.prototype.reverse = function()
+{
+    this.dir *= -1;
+    this.body.velocity[this.walkableArea.axis] = -this.body.velocity[this.walkableArea.axis];
+    this.walking = true;
 };
 
 /**
@@ -104,19 +134,26 @@ Walker.prototype.getTile = function()
  */
 Walker.prototype.onWalkableArea = function()
 {
-    var _y = Math.floor( (this.game.data.world.height * this.game.data.tileSize - this.position.y) / this.game.data.tileSize );
-    if (_y != this.walkableArea.y) {
+    // check if Walker is out of its axis
+    var _axis = false;
+    if (this.walkableArea.fixedAxis == "y") {
+        _axis = Math.floor( (this.game.data.world.height * this.game.data.tileSize - this.position.y) / this.game.data.tileSize );
+    } else {
+        _axis = Math.floor( this.position.x / this.game.data.tileSize );
+    }
+
+    if (_axis != this.walkableArea[this.walkableArea.fixedAxis]) {
         this.walking = false;
         return true;
     } else {
         // body position is top-left, but this position is the anchor
-        if (this.dir < 0 && this.position.x < this.walkableArea.left) {
-            this.position.x = this.walkableArea.left;
+        if (this.dir < 0 && this.position[this.walkableArea.axis] < this.walkableArea.start) {
+            this.position[this.walkableArea.axis] = this.walkableArea.start;
             this.onEdge = -1;
             return false;
         }
-        if (this.dir > 0 && this.position.x > this.walkableArea.right) {
-            this.position.x = this.walkableArea.right;
+        if (this.dir > 0 && this.position[this.walkableArea.axis] > this.walkableArea.end) {
+            this.position[this.walkableArea.axis] = this.walkableArea.end;
             this.onEdge = 1;
             return false;
         }

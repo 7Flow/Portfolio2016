@@ -137,7 +137,7 @@ Enemy.prototype.wait = function()
 
 Enemy.prototype.stopWaiting = function()
 {
-    if (this.state != "engage") {
+    if (this.state != "engage" && this.state != "dead") {
         this.patrol();
     }
 };

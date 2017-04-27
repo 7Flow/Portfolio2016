@@ -259,6 +259,7 @@ playGame.prototype = {
 
         // grounds & platforms (one-way collisions)
         this.game.physics.arcade.collide( this.player, this.groups.grounds, this.player.onGround, null, this.player );
+        this.game.physics.arcade.collide( this.player, this.groups.movingPlatforms, this.player.onPlatform, null, this.player);
         this.game.physics.arcade.collide( this.groups.collectable, this.groups.grounds, null, null, this);
         this.game.physics.arcade.collide( this.groups.enemies, this.groups.grounds, null, null, this);
 
@@ -267,6 +268,8 @@ playGame.prototype = {
         this.game.physics.arcade.collide( this.groups.collectable, this.groups.hittable, null, null, this);
         // bonus - powerup: collectables
         this.game.physics.arcade.overlap( this.player, this.groups.collectable, this.onCollect, null, this);
+
+        this.game.physics.arcade.collide( this.player, this.groups.deaths, this.onDeath, null, this);
 
         // enemy ammos
         var _group;
@@ -351,6 +354,12 @@ playGame.prototype = {
         ammo.kill();
     },
 
+    onDeath: function( player, death )
+    {
+        player.life = 1;
+        player.onHit();
+    },
+
     onDestroy: function( ammo, ground )
     {
         ammo.kill();
@@ -365,6 +374,12 @@ playGame.prototype = {
         this.camera.lookBounds.offsetX = -_w * 0.5;
         this.backdrop.cameraOffset.y = -(this.data.world.height * this.data.tileSize - this.game.height);
         this.backdrop.resize();
+
+        this.groups.movingPlatforms.forEach( function( platform ) {
+            if (platform.walkableArea.axis === "y") {
+                platform.updateArea();
+            }
+        }, this );
     },
 
     /**
