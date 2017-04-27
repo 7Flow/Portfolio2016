@@ -207,10 +207,10 @@ module.exports = function(grunt) {
     ]);
     
     grunt.registerTask('build', [
-        'sprite:desktop',
-        'concat:sass',
+        /*'sprite:desktop',*/
         'compass:desktop',
         'concat:js',
+        'uglify',
         'concat:css',
         'copy:assets',
         'imagemin'
