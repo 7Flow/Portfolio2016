@@ -21,6 +21,8 @@ MovingPlatform = function( game, x, y, data )
 
     this.walking = true;
     this.speed = data.data.speed;
+
+    this._lastPosition = {x: x, y: y}
 };
 
 MovingPlatform.prototype = Object.create( Walker.prototype );
@@ -28,7 +30,7 @@ MovingPlatform.prototype.constructor = MovingPlatform;
 
 MovingPlatform.prototype.speed = 5;
 
-MovingPlatform.prototype._lastPosition = {x: 0, y:0};
+MovingPlatform.prototype._lastPosition = null;
 
 MovingPlatform.prototype.update = function()
 {
@@ -52,6 +54,5 @@ MovingPlatform.prototype.update = function()
 MovingPlatform.prototype.moveWith = function( player )
 {
     var _delta = this.position[this.walkableArea.axis] -  this._lastPosition[this.walkableArea.axis];
-    console.log( _delta );
     player.position[this.walkableArea.axis] += _delta;
 };
