@@ -81,7 +81,10 @@ SideCamera.prototype.update = function()
     this.lookTarget.x = this.lookTarget.object.x + this.lookBounds.forward + this.lookBounds.offsetX;
 
     this.x += (this.lookTarget.x - this.x) * 0.04;
-    this.y = this.lookTarget.object.y;
+
+    // y center
+    var _h = window.Game.canvas.clientHeight * 0.5;
+    this.y = this.lookTarget.object.y - _h;
 
     Phaser.Camera.prototype.update.call( this );
 };
