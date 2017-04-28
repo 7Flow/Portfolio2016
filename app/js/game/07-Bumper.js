@@ -12,6 +12,9 @@ Bumper = function( game, x, y, data )
     this.init( game, x, y, data );
 
     this.body.setSize(56, 42, 4, 22);
+    this.body.checkCollision.left = false;
+    this.body.checkCollision.right = false;
+    this.body.checkCollision.down = false;
 
     this.body.onCollide = new Phaser.Signal();
     this.body.onCollide.add( this.bump, this );
