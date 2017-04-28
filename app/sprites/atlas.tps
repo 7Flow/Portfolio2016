@@ -213,13 +213,21 @@
             <key type="filename">expedit.png</key>
             <key type="filename">grass.png</key>
             <key type="filename">ground.png</key>
+            <key type="filename">ice.png</key>
             <key type="filename">mac.png</key>
             <key type="filename">parpaing.png</key>
+            <key type="filename">parquet-ground.png</key>
             <key type="filename">parquet.png</key>
             <key type="filename">plant.png</key>
             <key type="filename">printer.png</key>
+            <key type="filename">rocks.png</key>
+            <key type="filename">snow.png</key>
             <key type="filename">water-1.png</key>
             <key type="filename">water-2.png</key>
+            <key type="filename">water-ice-1.png</key>
+            <key type="filename">water-ice-2.png</key>
+            <key type="filename">water-rocks-1.png</key>
+            <key type="filename">water-rocks-2.png</key>
             <key type="filename">waterfall-1.png</key>
             <key type="filename">waterfall-2.png</key>
             <struct type="IndividualSpriteSettings">
@@ -262,6 +270,7 @@
             <key type="filename">carpet-particle.png</key>
             <key type="filename">default-particle.png</key>
             <key type="filename">grass-particle.png</key>
+            <key type="filename">snow-particle.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>

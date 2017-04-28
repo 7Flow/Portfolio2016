@@ -200,6 +200,7 @@
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
             <key type="filename">../backdrop/atmo.png</key>
+            <key type="filename">../backdrop/clouds.png</key>
             <key type="filename">../backdrop/hills.png</key>
             <key type="filename">../backdrop/lyon-skyline.png</key>
             <key type="filename">../backdrop/montreal-skyline.png</key>
