@@ -16,7 +16,9 @@ Player = function( game, x, y, data )
     game.physics.arcade.enable( this );
     // look right by default
     this.dir = 1;
-    this.data = data;
+    this.data = Object.assign({}, data);
+    // clone to inital data (restore default player stats on death)
+    this.initialData = Object.assign({}, data);
 
     this.level = 1;
     this.animNameSuffix = this.level;
@@ -58,19 +60,23 @@ Player.prototype.jumpingDuration = 0.25;
 Player.prototype.jumpStart = 0;
 
 Player.prototype.data = null;
+Player.prototype.initialData = null;
 
 Player.prototype.level = 1;
 
 Player.prototype.playerSteps = null;
 Player.prototype.ground = null;
-Player.prototype.movingThreshold = 80;
+Player.prototype.movingThreshold = 1;
 
 Player.prototype.equipment = null;
 Player.prototype.bullets = null;
 Player.prototype.nextAttack = 0;
 
+Player.prototype.health = 3;
 Player.prototype.life = 3;
 Player.prototype.invincible = false;
+
+Player.prototype.airDrag = 0.95;
 
 Player.prototype.times = 0;
 Player.prototype.highlight = 0xffffff;
@@ -81,7 +87,8 @@ Player.prototype.duration = 0;
  * @type {{friction: number}} Range(0,1) 1 for no friction at all
  */
 Player.prototype.groundDefault = {
-    friction: 0
+    drag: 0.85,
+    friction: 1
 };
 
 Player.prototype.update = function()
@@ -112,13 +119,12 @@ Player.prototype.update = function()
 Player.prototype.moveLeft = function( deltaTime )
 {
     this.dir = -1;
-    this.body.velocity.x -= this.data.accel * deltaTime;
-    if (this.body.velocity.x < this.data.maxSpeed) this.body.velocity.x = -this.data.maxSpeed;
+    this.body.velocity.x -= this.data.accel * this.ground.drag * deltaTime * this.ground.friction;
+    if (this.body.velocity.x < -this.data.maxSpeed) this.body.velocity.x = -this.data.maxSpeed;
     // update sprite
     this.scale.x = this.dir;
     if (this.body.touching.down) {
         this.animations.play( 'walk'+this.animNameSuffix );
-
         this.playerSteps.minParticleSpeed.setTo(10, -40);
         this.playerSteps.maxParticleSpeed.setTo(80, -100);
     }
@@ -127,7 +133,7 @@ Player.prototype.moveLeft = function( deltaTime )
 Player.prototype.moveRight = function( deltaTime )
 {
     this.dir = 1;
-    this.body.velocity.x += this.data.accel * deltaTime;
+    this.body.velocity.x += this.data.accel * this.ground.drag * deltaTime * this.ground.friction;
     if (this.body.velocity.x > this.data.maxSpeed) this.body.velocity.x = this.data.maxSpeed;
     // update sprite
     this.scale.x = this.dir;
@@ -168,11 +174,11 @@ Player.prototype.stopJump = function()
 Player.prototype.stand = function()
 {
     if (!this.body.touching.down) {
-        this.body.velocity.x *= 0.8;
+        this.body.velocity.x *= this.airDrag;
     } else if (!this.jumping) {
         this.animations.play( 'stand'+this.animNameSuffix );
         // slight slow down
-        if (this.body.velocity.x != 0) this.body.velocity.x *= this.ground.friction;
+        if (this.body.velocity.x != 0) this.body.velocity.x *= this.ground.drag;
     }
 };
 
@@ -214,7 +220,7 @@ Player.prototype.onCollect = function( player, collectable )
     {
         case "buff":
             this.flicker( 0xffff66, 4, 0.2 );
-            for (var param in collectable.  data) {
+            for (var param in collectable.data) {
                 if (this.data[param]) {
                     this.data[param] += collectable.data[param];
                 }
@@ -348,24 +354,42 @@ Player.prototype.refill = function( num )
 Player.prototype.onHit = function( player, ammo )
 {
     if (!this.invincible) {
-        --this.life;
+        --this.health;
+        this.game.gui.lostHealth( this.health );
         this.invincible = true;
-        this.flicker( 0xff0000, 5, 0.15 );
 
-        if (this.life <= 0) {
-            this.game.state.getCurrentState().freeze();
-            var _this = this;
-            setTimeout( function() {
-                //this.game.state.start("Menu");
-                _this.game.state.restart();
-            }, 500);
+        if (this.health <= 0) {
+            this.onDeath();
+        } else {
+            this.game.camera.shake( 0.0025, 100, true, Phaser.Camera.SHAKE_HORIZONTAL );
+            this.flicker( 0xff0000, 5, 0.15 );
         }
 
         if (ammo) ammo.kill();
-
-        this.game.gui.lostLife( this.life );
-        this.game.camera.shake( 0.002, 100, true, Phaser.Camera.SHAKE_HORIZONTAL );
     }
+};
+
+Player.prototype.onDeath = function()
+{
+    --this.life;
+    this.game.gui.lostLife( this.life );
+
+    this.game.camera.shake( 0.003, 100, true, Phaser.Camera.SHAKE_HORIZONTAL );
+    this.flicker( 0xff0000, 5, 0.15 );
+
+    this.game.state.getCurrentState().freeze();
+    this.data = Object.assign({}, this.initialData);
+    this.equipment = null;
+
+    var _this = this;
+    setTimeout(function () {
+        if (_this.life > 0) {
+            //this.game.state.start("Menu");
+            _this.game.state.restart();
+        } else {
+            _this.game.state.start("Over");
+        }
+    }, 500);
 };
 
 /**
