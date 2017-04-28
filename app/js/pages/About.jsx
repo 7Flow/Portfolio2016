@@ -2,6 +2,7 @@ import Page from '../modules/Page.jsx';
 
 import GameMenu from '../modules/GameMenu.js';
 import GamePlay from '../modules/GamePlay.js';
+import GameOver from '../modules/GameOver.js';
 
 class About extends Page
 {
@@ -61,6 +62,7 @@ class About extends Page
         this.game = new Phaser.Game( w, h, Phaser.CANVAS, this.$el.attr('id') );
         this.game.state.add("Menu", GameMenu);
         this.game.state.add("Play", GamePlay);
+        this.game.state.add("Over", GameOver);
 
         this.game.state.states.Menu.data = this.game.state.states.Play.data = this.data;
 

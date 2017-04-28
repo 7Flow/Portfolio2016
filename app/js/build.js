@@ -239,7 +239,7 @@ exports.default = App;
 new App();
 window.App = App;
 
-},{"./modules/Footer.jsx":3,"./modules/Header.jsx":8,"./pages/About.jsx":12,"./pages/CV.jsx":13,"./pages/Games.jsx":14,"./pages/Intro.jsx":15,"./pages/Websites.jsx":16,"./plugins/jquery.breakable.js":17,"./plugins/jquery.randomPoly.js":18}],2:[function(require,module,exports){
+},{"./modules/Footer.jsx":3,"./modules/Header.jsx":9,"./pages/About.jsx":13,"./pages/CV.jsx":14,"./pages/Games.jsx":15,"./pages/Intro.jsx":16,"./pages/Websites.jsx":17,"./plugins/jquery.breakable.js":18,"./plugins/jquery.randomPoly.js":19}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -484,7 +484,7 @@ var Background = function () {
 
 exports.default = Background;
 
-},{"../utils/Particle.jsx":19,"../utils/ParticleTrail.jsx":20}],3:[function(require,module,exports){
+},{"../utils/Particle.jsx":20,"../utils/ParticleTrail.jsx":21}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -530,7 +530,7 @@ var Footer = function () {
 
 exports.default = Footer;
 
-},{"../modules/Popin.jsx":11}],4:[function(require,module,exports){
+},{"../modules/Popin.jsx":12}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -563,12 +563,24 @@ var GUI = function GUI(game) {
 GUI.prototype = {
 
     hearts: [],
+    lives: "x3",
 
     infosWindow: null,
     pauseLayer: null,
 
-    lostLife: function lostLife(index) {
+    /**
+     * Update hearts after losing health point.
+     * @param index The number of life remaining. As hearts are 0 based, it corresponds to the lost heart index.
+     */
+    lostHealth: function lostHealth(index) {
         this.hearts[index].frameName = 'heart-loss.png';
+    },
+
+    /**
+     * @param num The number of life remaining.
+     */
+    lostLife: function lostLife(num) {
+        this.lives = "x" + num;
     },
 
     /**
@@ -988,6 +1000,95 @@ menuGame.prototype = {
 exports.default = menuGame;
 
 },{}],6:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var menuOver = function menuOver(game) {
+    this.game = game;
+};
+
+menuOver.prototype = {
+
+    game: null,
+
+    // Phaser.Game.State interface
+    create: function create() {
+        console.log('create');
+
+        this.game.stage.backgroundColor = '#000000';
+        // 8bit pixel style
+        this.game.renderer.renderSession.roundPixels = true;
+        Phaser.Canvas.setImageRenderingCrisp(this.game.canvas);
+
+        this.cursors = this.game.input.keyboard.addKeys({
+            'enter': Phaser.KeyCode.ENTER
+        });
+        this.cursors.enter.onUp.add(this.restart, this);
+
+        // MAIN MENU
+        this.mainMenu = this.game.add.group();
+
+        // GAME OVER
+        var _style = {
+            font: 'press_start_2pregular',
+            fontSize: 32,
+            align: 'left',
+            stroke: '#ffffff',
+            fill: '#9999cc',
+            strokeThickness: 4
+        };
+
+        var _txt = new Phaser.Text(this.game, -74, 0, "GAME OVER", _style);
+        var grd = _txt.context.createLinearGradient(0, 0, 0, _txt.canvas.height);
+        grd.addColorStop(0, '#9999cc');
+        grd.addColorStop(1, '#990000');
+        _txt.fill = grd;
+
+        this.mainMenu.add(_txt);
+
+        // REPLAY
+        var _start = new Button(this.game, -128, 128, 256, 64, "REJOUER", 0);
+        _start.over();
+        this.mainMenu.add(_start);
+
+        // enable mouse only on main menu
+        _start.onInputDown.add(this.restart, this);
+
+        $('#about').trigger('state:created');
+    },
+
+    restart: function restart() {
+        this.game.state.start("Play");
+    },
+
+    resize: function resize() {
+        this.game.width = this.game.world.width = $('#about').width();
+        this.game.height = this.game.stage.height = this.game.world.height = $('#about').height();
+
+        var _centerX = this.game.width * 0.5;
+        this.mainMenu.x = _centerX;
+
+        var _contentH = this.mainMenu.height;
+        var _margin = (window.Game.height - _contentH) * 0.5;
+        this.mainMenu.y = _margin;
+    },
+
+    // Phaser.Game.State interface
+    destroy: function destroy() {
+        this.cache.destroy();
+        //this.game.cache = new Phaser.Cache( this.game );
+        this.game.load.reset();
+        this.game.load.removeAll();
+        this.game = null;
+    }
+};
+
+exports.default = menuOver;
+
+},{}],7:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1015,7 +1116,7 @@ playGame.prototype = {
     bulletsGroups: [],
     bulletsGroupsLength: 0,
 
-    data: {},
+    data: null,
 
     camera: null,
 
@@ -1143,6 +1244,7 @@ playGame.prototype = {
         }
 
         // adding the hero
+        console.log(this.data.player);
         this.player = new Player(this.game, 2 * this.data.tileSize, (this.data.world.height - 1) * this.data.tileSize, this.data.player);
         this.game.player = this.player;
         // don't use target property
@@ -1336,8 +1438,7 @@ playGame.prototype = {
     },
 
     onDeath: function onDeath(player, death) {
-        player.life = 1;
-        player.onHit();
+        player.onDeath();
     },
 
     onDestroy: function onDestroy(ammo, ground) {
@@ -1400,7 +1501,7 @@ playGame.prototype = {
 
 exports.default = playGame;
 
-},{"../modules/GUI.js":4}],7:[function(require,module,exports){
+},{"../modules/GUI.js":4}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1546,7 +1647,7 @@ var Grid3D = function () {
 
 exports.default = Grid3D;
 
-},{"../app.jsx":1,"../utils/Transform.jsx":21,"../utils/Vector2.jsx":22,"../utils/Vector3.jsx":23}],8:[function(require,module,exports){
+},{"../app.jsx":1,"../utils/Transform.jsx":22,"../utils/Vector2.jsx":23,"../utils/Vector3.jsx":24}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1795,7 +1896,7 @@ var Header = function () {
 
 exports.default = Header;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1939,7 +2040,7 @@ Page.LOADING = $(document.getElementById('loading'));
 
 exports.default = Page;
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2107,7 +2208,7 @@ var Pagination = function () {
 
 exports.default = Pagination;
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2375,7 +2476,7 @@ var Popin = function () {
 
 exports.default = Popin;
 
-},{"../app.jsx":1,"../utils/Transform.jsx":21,"../utils/Vector3.jsx":23}],12:[function(require,module,exports){
+},{"../app.jsx":1,"../utils/Transform.jsx":22,"../utils/Vector3.jsx":24}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2395,6 +2496,10 @@ var _GameMenu2 = _interopRequireDefault(_GameMenu);
 var _GamePlay = require('../modules/GamePlay.js');
 
 var _GamePlay2 = _interopRequireDefault(_GamePlay);
+
+var _GameOver = require('../modules/GameOver.js');
+
+var _GameOver2 = _interopRequireDefault(_GameOver);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2474,6 +2579,7 @@ var About = function (_Page) {
             this.game = new Phaser.Game(w, h, Phaser.CANVAS, this.$el.attr('id'));
             this.game.state.add("Menu", _GameMenu2.default);
             this.game.state.add("Play", _GamePlay2.default);
+            this.game.state.add("Over", _GameOver2.default);
 
             this.game.state.states.Menu.data = this.game.state.states.Play.data = this.data;
 
@@ -2523,7 +2629,7 @@ var About = function (_Page) {
 
 exports.default = About;
 
-},{"../modules/GameMenu.js":5,"../modules/GamePlay.js":6,"../modules/Page.jsx":9}],13:[function(require,module,exports){
+},{"../modules/GameMenu.js":5,"../modules/GameOver.js":6,"../modules/GamePlay.js":7,"../modules/Page.jsx":10}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2766,7 +2872,7 @@ var CV = function (_Page) {
 
 exports.default = CV;
 
-},{"../modules/Page.jsx":9,"../utils/Transform.jsx":21,"../utils/Vector3.jsx":23}],14:[function(require,module,exports){
+},{"../modules/Page.jsx":10,"../utils/Transform.jsx":22,"../utils/Vector3.jsx":24}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2884,7 +2990,7 @@ var Games = function (_Page) {
 
 exports.default = Games;
 
-},{"../modules/Grid3D.jsx":7,"../modules/Page.jsx":9,"../modules/Pagination.jsx":10,"../modules/Popin.jsx":11}],15:[function(require,module,exports){
+},{"../modules/Grid3D.jsx":8,"../modules/Page.jsx":10,"../modules/Pagination.jsx":11,"../modules/Popin.jsx":12}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2968,7 +3074,7 @@ var Intro = function (_Page) {
 
 exports.default = Intro;
 
-},{"../modules/Background.jsx":2,"../modules/Page.jsx":9}],16:[function(require,module,exports){
+},{"../modules/Background.jsx":2,"../modules/Page.jsx":10}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3090,7 +3196,7 @@ var Websites = function (_Page) {
 
 exports.default = Websites;
 
-},{"../modules/Grid3D.jsx":7,"../modules/Page.jsx":9,"../modules/Pagination.jsx":10,"../modules/Popin.jsx":11}],17:[function(require,module,exports){
+},{"../modules/Grid3D.jsx":8,"../modules/Page.jsx":10,"../modules/Pagination.jsx":11,"../modules/Popin.jsx":12}],18:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -3292,7 +3398,7 @@ exports.default = Websites;
     };
 })(jQuery);
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -3492,7 +3598,7 @@ exports.default = Websites;
     };
 })(jQuery);
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3613,7 +3719,7 @@ var Particle = function () {
 
 exports.default = Particle;
 
-},{"../utils/Vector2.jsx":22}],20:[function(require,module,exports){
+},{"../utils/Vector2.jsx":23}],21:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3712,7 +3818,7 @@ var ParticleTrail = function (_Particle) {
 
 exports.default = ParticleTrail;
 
-},{"../utils/Particle.jsx":19,"../utils/Vector2.jsx":22}],21:[function(require,module,exports){
+},{"../utils/Particle.jsx":20,"../utils/Vector2.jsx":23}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3851,7 +3957,7 @@ var Transform = function () {
 
 exports.default = Transform;
 
-},{"../utils/Vector2.jsx":22,"../utils/Vector3.jsx":23}],22:[function(require,module,exports){
+},{"../utils/Vector2.jsx":23,"../utils/Vector3.jsx":24}],23:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -3921,7 +4027,7 @@ var Vector2 = function () {
 
 exports.default = Vector2;
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

@@ -26,13 +26,26 @@ var GUI = function(game)
 GUI.prototype = {
 
     hearts: [],
+    lives: "x3",
 
     infosWindow: null,
     pauseLayer: null,
 
-    lostLife: function( index )
+    /**
+     * Update hearts after losing health point.
+     * @param index The number of life remaining. As hearts are 0 based, it corresponds to the lost heart index.
+     */
+    lostHealth: function( index )
     {
         this.hearts[index].frameName = 'heart-loss.png';
+    },
+
+    /**
+     * @param num The number of life remaining.
+     */
+    lostLife: function( num )
+    {
+        this.lives = "x"+num;
     },
 
     /**

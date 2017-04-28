@@ -231,7 +231,6 @@ menuGame.prototype = {
         }
     },
 
-
     select: function()
     {
         if (this.currentMenu == this.mainMenu) {

@@ -16,7 +16,7 @@ playGame.prototype = {
     bulletsGroups: [],
     bulletsGroupsLength: 0,
 
-    data: {},
+    data: null,
 
     camera: null,
 
@@ -356,8 +356,7 @@ playGame.prototype = {
 
     onDeath: function( player, death )
     {
-        player.life = 1;
-        player.onHit();
+        player.onDeath();
     },
 
     onDestroy: function( ammo, ground )
