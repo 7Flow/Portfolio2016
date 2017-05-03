@@ -17,8 +17,6 @@ Player = function( game, x, y, data )
     // look right by default
     this.dir = 1;
     this.data = Object.assign({}, data);
-    // clone to inital data (restore default player stats on death)
-    this.initialData = Object.assign({}, data);
 
     this.level = 1;
     this.animNameSuffix = this.level;
@@ -40,11 +38,12 @@ Player = function( game, x, y, data )
 
     // all level's animations
     var _s = '.png';
-    for (var i=1; i<4; ++i) {
+    for (var i=1; i<5; ++i) {
         var _p = 'level'+i+'-';
         this.createAnimSet( i, _p, _s );
     }
 
+    this.dead = false;
     game.add.existing( this );
 };
 
@@ -60,7 +59,6 @@ Player.prototype.jumpingDuration = 0.25;
 Player.prototype.jumpStart = 0;
 
 Player.prototype.data = null;
-Player.prototype.initialData = null;
 
 Player.prototype.level = 1;
 
@@ -82,6 +80,8 @@ Player.prototype.times = 0;
 Player.prototype.highlight = 0xffffff;
 Player.prototype.duration = 0;
 
+Player.prototype.dead = false;
+
 /**
  * Default ground material
  * @type {{friction: number}} Range(0,1) 1 for no friction at all
@@ -93,6 +93,8 @@ Player.prototype.groundDefault = {
 
 Player.prototype.update = function()
 {
+    if (this.dead) return;
+
     // steps particles
     if (this.body.velocity.x != 0 && this.body.touching.down) {
         this.playerSteps.x = this.position.x;
@@ -269,7 +271,7 @@ Player.prototype.flickering = function()
  */
 Player.prototype.equip = function( data )
 {
-    this.equipment = data;
+    this.equipment = Object.assign( {}, data );
     // create a bullet pool
     if (!this.game.groups.hasOwnProperty('playerAmmos')) {
         this.bullets = this.game.add.group();
@@ -364,22 +366,23 @@ Player.prototype.onHit = function( player, ammo )
             this.game.camera.shake( 0.0025, 100, true, Phaser.Camera.SHAKE_HORIZONTAL );
             this.flicker( 0xff0000, 5, 0.15 );
         }
-
-        if (ammo) ammo.kill();
     }
+    if (ammo) ammo.kill();
 };
 
 Player.prototype.onDeath = function()
 {
+    this.dead = this.invincible = true;
     --this.life;
     this.game.gui.lostLife( this.life );
 
     this.game.camera.shake( 0.003, 100, true, Phaser.Camera.SHAKE_HORIZONTAL );
     this.flicker( 0xff0000, 5, 0.15 );
 
-    this.game.state.getCurrentState().freeze();
-    this.data = Object.assign({}, this.initialData);
-    this.equipment = null;
+    this.body.checkCollision.none = true;
+    this.body.velocity.x = 0;
+    this.body.velocity.y = -350;
+    this.animations.play( 'death'+this.level );
 
     var _this = this;
     setTimeout(function () {
@@ -389,7 +392,7 @@ Player.prototype.onDeath = function()
         } else {
             _this.game.state.start("Over");
         }
-    }, 500);
+    }, 1350);
 };
 
 /**
@@ -405,4 +408,5 @@ Player.prototype.createAnimSet = function( name, prefix, suffix )
     //this.animations.add('attack'+name, Phaser.Animation.generateFrameNames(prefix+'-attack', 1, 3, suffix), 5, false);
     //this.animations.add('hit'+name,    Phaser.Animation.generateFrameNames(prefix+'-hit', 1, 1, suffix), 1, false);
     this.animations.add('jump'+name, [prefix+'jump'+suffix], 1, false);
+    this.animations.add('death'+name, [prefix+'death'+suffix], 1, false);
 };
