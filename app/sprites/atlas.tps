@@ -213,7 +213,24 @@
             <key type="filename">expedit.png</key>
             <key type="filename">grass.png</key>
             <key type="filename">ground.png</key>
+            <key type="filename">ice-platform.png</key>
             <key type="filename">ice.png</key>
+            <key type="filename">lava-1.png</key>
+            <key type="filename">lava-10.png</key>
+            <key type="filename">lava-11.png</key>
+            <key type="filename">lava-12.png</key>
+            <key type="filename">lava-13.png</key>
+            <key type="filename">lava-14.png</key>
+            <key type="filename">lava-15.png</key>
+            <key type="filename">lava-16.png</key>
+            <key type="filename">lava-2.png</key>
+            <key type="filename">lava-3.png</key>
+            <key type="filename">lava-4.png</key>
+            <key type="filename">lava-5.png</key>
+            <key type="filename">lava-6.png</key>
+            <key type="filename">lava-7.png</key>
+            <key type="filename">lava-8.png</key>
+            <key type="filename">lava-9.png</key>
             <key type="filename">mac.png</key>
             <key type="filename">parpaing.png</key>
             <key type="filename">parquet-ground.png</key>
@@ -324,6 +341,31 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
+            <key type="filename">emi-attack1.png</key>
+            <key type="filename">emi-attack2.png</key>
+            <key type="filename">emi-attack3.png</key>
+            <key type="filename">emi-die1.png</key>
+            <key type="filename">emi-die2.png</key>
+            <key type="filename">emi-die3.png</key>
+            <key type="filename">emi-die4.png</key>
+            <key type="filename">emi-die5.png</key>
+            <key type="filename">emi-hit1.png</key>
+            <key type="filename">emi-walk1.png</key>
+            <key type="filename">emi-walk2.png</key>
+            <key type="filename">emi-walk3.png</key>
+            <key type="filename">emi.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>11,22,21,43</rect>
+                <key>scale9Paddings</key>
+                <rect>11,22,21,43</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
             <key type="filename">excel.png</key>
             <key type="filename">jira.png</key>
             <key type="filename">ppt.png</key>
@@ -338,6 +380,59 @@
                 <rect>8,8,16,16</rect>
                 <key>scale9Paddings</key>
                 <rect>8,8,16,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">fireball.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>6,8,11,16</rect>
+                <key>scale9Paddings</key>
+                <rect>6,8,11,16</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">lava-bubble-1.png</key>
+            <key type="filename">lava-bubble-10.png</key>
+            <key type="filename">lava-bubble-11.png</key>
+            <key type="filename">lava-bubble-12.png</key>
+            <key type="filename">lava-bubble-2.png</key>
+            <key type="filename">lava-bubble-3.png</key>
+            <key type="filename">lava-bubble-4.png</key>
+            <key type="filename">lava-bubble-5.png</key>
+            <key type="filename">lava-bubble-6.png</key>
+            <key type="filename">lava-bubble-7.png</key>
+            <key type="filename">lava-bubble-8.png</key>
+            <key type="filename">lava-bubble-9.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>16,6,32,12</rect>
+                <key>scale9Paddings</key>
+                <rect>16,6,32,12</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">level1-death.png</key>
+            <key type="filename">level2-death.png</key>
+            <key type="filename">level3-death.png</key>
+            <key type="filename">level4-death.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>11,19,22,37</rect>
+                <key>scale9Paddings</key>
+                <rect>11,19,22,37</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -359,6 +454,12 @@
             <key type="filename">level3-walk1.png</key>
             <key type="filename">level3-walk2.png</key>
             <key type="filename">level3-walk3.png</key>
+            <key type="filename">level4-jump.png</key>
+            <key type="filename">level4-stand1.png</key>
+            <key type="filename">level4-stand2.png</key>
+            <key type="filename">level4-walk1.png</key>
+            <key type="filename">level4-walk2.png</key>
+            <key type="filename">level4-walk3.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -395,6 +496,18 @@
             <key type="filename">level3-walk2-nerf.png</key>
             <key type="filename">level3-walk3-elite.png</key>
             <key type="filename">level3-walk3-nerf.png</key>
+            <key type="filename">level4-jump-elite.png</key>
+            <key type="filename">level4-jump-nerf.png</key>
+            <key type="filename">level4-stand1-elite.png</key>
+            <key type="filename">level4-stand1-nerf.png</key>
+            <key type="filename">level4-stand2-elite.png</key>
+            <key type="filename">level4-stand2-nerf.png</key>
+            <key type="filename">level4-walk1-elite.png</key>
+            <key type="filename">level4-walk1-nerf.png</key>
+            <key type="filename">level4-walk2-elite.png</key>
+            <key type="filename">level4-walk2-nerf.png</key>
+            <key type="filename">level4-walk3-elite.png</key>
+            <key type="filename">level4-walk3-nerf.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>

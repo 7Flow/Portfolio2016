@@ -1,7 +1,7 @@
 {
     "tileSize": 64,
     "world": {
-        "width": 155,
+        "width": 158,
         "height": 16
     },
     "gravity": 600,
@@ -474,10 +474,386 @@
             "group": "decoration",
             "x": 76,
             "y": 0,
-            "repeat": 4,
+            "repeat": 5,
             "texture": {
                 "atlas": "atlas",
                 "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 80,
+            "y": 0,
+            "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 82,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 83,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 84,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 85,
+            "y": 0,
+            "repeat": 7,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 89,
+            "y": 1,
+            "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 91,
+            "y": 1,
+            "repeat": 3,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 93,
+            "y": 3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "plant.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 94,
+            "y": 1,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 92,
+            "y": 0,
+            "repeat": 5,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 97,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 98,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 99,
+            "y": 0,
+            "repeat": 3,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 102,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 128,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 129,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "waterfall-1.png",
+                "width": 1
+            },
+            "ctor": "AnimatedSprite",
+            "data": {
+                "prefix": "waterfall-",
+                "length": 2,
+                "fps": 5
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 130,
+            "y": 1,
+            "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 130,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 131,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 131,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 132,
+            "y": 1,
+            "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "lava-1.png",
+                "width": 1
+            },
+            "ctor": "AnimatedSprite",
+            "data": {
+                "prefix": "lava-",
+                "length": 16,
+                "fps": 4
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 132,
+            "y": 0,
+            "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "lava-1.png",
+                "width": 1
+            },
+            "ctor": "AnimatedSprite",
+            "data": {
+                "prefix": "lava-",
+                "length": 16,
+                "fps": 4
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 132,
+            "y": 2.375,
+            "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "lava-bubble-1.png",
+                "width": 1
+            },
+            "ctor": "AnimatedSprite",
+            "data": {
+                "prefix": "lava-bubble-",
+                "length": 12,
+                "fps": 4
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 134,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 134,
+            "y": 1,
+            "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 134,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 135,
+            "y": 0,
+            "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 151,
+            "y": 0,
+            "repeat": 3,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 154,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 155,
+            "y": 0,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ground.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 156,
+            "y": 0,
+            "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "rocks.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 152,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "plant.png",
                 "width": 1
             }
         }
@@ -890,7 +1266,7 @@
             },
             "data": {
                 "type": "platform",
-                "material": "carpet"
+                "material": "default"
             }
         },
         {
@@ -937,6 +1313,7 @@
                 "width": 1
             },
             "data": {
+                "type": "platform",
                 "material": "default"
             }
         },
@@ -1027,11 +1404,11 @@
             "repeat": 6,
             "texture": {
                 "atlas": "atlas",
-                "id": "carpet.png",
+                "id": "parquet-ground.png",
                 "width": 1
             },
             "data": {
-                "material": "carpet"
+                "material": "default"
             }
         },
         {
@@ -1046,6 +1423,42 @@
             },
             "data": {
                 "material": "carpet"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 100,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "table.png",
+                "width": 1
+            },
+            "data": {
+                "type": "platform"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 102,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "expedit.png",
+                "width": 1
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 102,
+            "y": 3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "expedit.png",
+                "width": 1
             }
         },
         {
@@ -1077,10 +1490,25 @@
             }
         },
         {
+            "group": "grounds",
+            "x": 110,
+            "y": 4,
+            "repeat": 5,
+            "texture": {
+                "atlas": "atlas",
+                "id": "parquet.png",
+                "width": 1
+            },
+            "data": {
+                "type": "platform",
+                "material": "default"
+            }
+        },
+        {
             "group": "deaths",
             "x": 108,
             "y": 0,
-            "repeat": 2,
+            "repeat": 3,
             "texture": {
                 "atlas": "atlas",
                 "id": "water-1.png",
@@ -1095,77 +1523,43 @@
         },
         {
             "group": "grounds",
-            "x": 110,
-            "y": 0,
-            "repeat": 1,
-            "texture": {
-                "atlas": "atlas",
-                "id": "water-rocks-1.png",
-                "width": 1
-            },
-            "ctor": "AnimatedSprite",
-            "data": {
-                "prefix": "water-rocks-",
-                "length": 2,
-                "fps": 5
-            }
-        },
-        {
-            "group": "deaths",
             "x": 111,
             "y": 0,
             "repeat": 2,
             "texture": {
                 "atlas": "atlas",
-                "id": "water-1.png",
+                "id": "water-ice-1.png",
                 "width": 1
             },
             "ctor": "AnimatedSprite",
             "data": {
-                "prefix": "water-",
+                "prefix": "water-ice-",
                 "length": 2,
-                "fps": 5
+                "fps": 5,
+                "material": "ice"
             }
         },
         {
-            "group": "grounds",
+            "group": "deaths",
             "x": 113,
             "y": 0,
             "repeat": 2,
             "texture": {
                 "atlas": "atlas",
-                "id": "water-ice-1.png",
+                "id": "water-1.png",
                 "width": 1
             },
             "ctor": "AnimatedSprite",
             "data": {
-                "prefix": "water-ice-",
+                "prefix": "water-",
                 "length": 2,
-                "fps": 5,
-                "material": "ice"
+                "fps": 5
             }
         },
         {
-            "group": "deaths",
+            "group": "grounds",
             "x": 115,
             "y": 0,
-            "repeat": 2,
-            "texture": {
-                "atlas": "atlas",
-                "id": "water-1.png",
-                "width": 1
-            },
-            "ctor": "AnimatedSprite",
-            "data": {
-                "prefix": "water-",
-                "length": 2,
-                "fps": 5
-            }
-        },
-        {
-            "group": "grounds",
-            "x": 117,
-            "y": 0,
             "repeat": 1,
             "texture": {
                 "atlas": "atlas",
@@ -1182,7 +1576,7 @@
         },
         {
             "group": "deaths",
-            "x": 118,
+            "x": 116,
             "y": 0,
             "repeat": 3,
             "texture": {
@@ -1199,7 +1593,7 @@
         },
         {
             "group": "grounds",
-            "x": 121,
+            "x": 119,
             "y": 0,
             "repeat": 3,
             "texture": {
@@ -1217,9 +1611,9 @@
         },
         {
             "group": "deaths",
-            "x": 124,
+            "x": 122,
             "y": 0,
-            "repeat": 1,
+            "repeat": 6,
             "texture": {
                 "atlas": "atlas",
                 "id": "water-1.png",
@@ -1234,37 +1628,40 @@
         },
         {
             "group": "grounds",
-            "x": 125,
-            "y": 0,
-            "repeat": 2,
-            "texture": {
-                "atlas": "atlas",
-                "id": "snow.png",
-                "width": 1
-            },
-            "data": {
-                "material": "snow"
-            }
-        },
-        {
-            "group": "grounds",
-            "x": 127,
+            "x": 128,
             "y": 1,
-            "repeat": 2,
+            "repeat": 1,
             "texture": {
                 "atlas": "atlas",
-                "id": "snow.png",
+                "id": "ice.png",
                 "width": 1
             },
             "data": {
-                "material": "snow"
+                "material": "ice"
             }
         },
         {
-            "group": "grounds",
+            "group": "deaths",
             "x": 129,
             "y": 1,
-            "repeat": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "water-1.png",
+                "width": 1
+            },
+            "ctor": "AnimatedSprite",
+            "data": {
+                "prefix": "water-",
+                "length": 2,
+                "fps": 5
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 130,
+            "y": 2,
+            "repeat": 1,
             "texture": {
                 "atlas": "atlas",
                 "id": "ice.png",
@@ -1277,8 +1674,89 @@
         {
             "group": "grounds",
             "x": 131,
+            "y": 3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ice.png",
+                "width": 1
+            },
+            "data": {
+                "material": "ice"
+            }
+        },
+        {
+            "group": "deaths",
+            "x": 132,
             "y": 2,
             "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "lava-1.png",
+                "width": 1
+            },
+            "ctor": "AnimatedSprite",
+            "data": {
+                "prefix": "lava-",
+                "length": 16,
+                "fps": 4
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 132,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "fireball.png",
+                "width": 1
+            },
+            "ctor": "Thrower",
+            "data": {       
+                "group": "fireballs",
+                "rof": 0.333,
+                "delay": 1.75,
+                "offset": {
+                    "x": 32,
+                    "y": 16
+                },
+                "velocity": {
+                    "x": 0,
+                    "y": -600
+                }
+            }
+        },
+        {
+            "group": "decoration",
+            "x": 133,
+            "y": 2,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "fireball.png",
+                "width": 1
+            },
+            "ctor": "Thrower",
+            "data": {
+                "group": "ammos",
+                "rof": 0.333,
+                "delay": 2.0,
+                "offset": {
+                    "x": 32,
+                    "y": 16
+                },
+                "velocity": {
+                    "x": 0,
+                    "y": -600
+                }
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 134,
+            "y": 3,
+            "repeat": 1,
             "texture": {
                 "atlas": "atlas",
                 "id": "ice.png",
@@ -1290,21 +1768,49 @@
         },
         {
             "group": "grounds",
-            "x": 133,
-            "y": 1,
-            "repeat": 4,
+            "x": 135,
+            "y": 2,
+            "repeat": 1,
             "texture": {
                 "atlas": "atlas",
-                "id": "ice.png",
+                "id": "snow.png",
                 "width": 1
             },
             "data": {
-                "material": "ice"
+                "material": "snow"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 136,
+            "y": 1,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "snow.png",
+                "width": 1
+            },
+            "data": {
+                "material": "snow"
             }
         },
         {
             "group": "grounds",
             "x": 137,
+            "y": 0,
+            "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "snow.png",
+                "width": 1
+            },
+            "data": {
+                "material": "snow"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 139,
             "y": 0,
             "repeat": 5,
             "texture": {
@@ -1318,7 +1824,7 @@
         },
         {
             "group": "grounds",
-            "x": 142,
+            "x": 144,
             "y": 0,
             "repeat": 2,
             "texture": {
@@ -1328,6 +1834,73 @@
             },
             "data": {
                 "material": "snow"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 146,
+            "y": 0,
+            "repeat": 3,
+            "texture": {
+                "atlas": "atlas",
+                "id": "grass.png",
+                "width": 1
+            },
+            "data": {
+                "material": "grass"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 146,
+            "y": 0,
+            "repeat": 3,
+            "texture": {
+                "atlas": "atlas",
+                "id": "grass.png",
+                "width": 1
+            },
+            "data": {
+                "material": "grass"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 149,
+            "y": 0,
+            "repeat": 2,
+            "texture": {
+                "atlas": "atlas",
+                "id": "carpet.png",
+                "width": 1
+            },
+            "data": {
+                "material": "carpet"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 151,
+            "y": 1,
+            "repeat": 7,
+            "texture": {
+                "atlas": "atlas",
+                "id": "parquet-ground.png",
+                "width": 1
+            },
+            "data": {
+                "material": "default"
+            }
+        },
+        {
+            "group": "grounds",
+            "x": 157,
+            "y": 3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "coffee-machine.png",
+                "width": 1
             }
         }
     ],
@@ -1572,6 +2145,35 @@
             }
         },
         {
+            "group": "enemies",
+            "x": 60,
+            "y": 5,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "emi.png",
+                "width": 1
+            },
+            "ctor": "Enemy",
+            "area": {
+                "axis": "x",
+                "length": 3,
+                "x": 59,
+                "y": 5
+            },
+            "data": {
+                "type": "mine",
+                "bullet": "jira.png",
+                "rof": 0.5,
+                "offset": {
+                    "x": 30,
+                    "y": 1
+                },
+                "velocity": 350,
+                "mass": 10
+            }
+        },
+        {
             "group": "triggerable",
             "x": 69,
             "y": 6,
@@ -1679,6 +2281,157 @@
                 "num": 1,
                 "hit": "bonus-hit.png"
             }
+        },
+        {
+            "group": "enemies",
+            "x": 90,
+            "y": 3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "marine.png",
+                "width": 1
+            },
+            "ctor": "Enemy",
+            "area": {
+                "axis": "x",
+                "length": 6,
+                "x": 89,
+                "y": 3
+            },
+            "data": {
+                "type": "bullet",
+                "bullet": "dart.png",
+                "rof": 0.8,
+                "offset": {
+                    "x": 30,
+                    "y": 36
+                },
+                "velocity": 950,
+                "mass": 1
+            }
+        },
+        {
+            "group": "movingPlatforms",
+            "x": 106,
+            "y": 3,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "parquet.png",
+                "width": 1
+            },
+            "ctor": "MovingPlatform",
+            "area": {
+                "axis": "x",
+                "length": 3,
+                "x": 106,
+                "y": 3
+            },
+            "data": {
+                "speed": 2,
+                "wait": 0
+            }
+        },
+        {
+            "group": "hittable",
+            "x": 111,
+            "y": 7,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "brick.png",
+                "width": 1
+            },
+            "ctor": "Breakable",
+            "data": {
+                "life": 3,
+                "material": "brick"
+            }
+        },
+        {
+            "name": "m1",
+            "group": "collectable",
+            "x": 112,
+            "y": 7,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "scroll.png",
+                "width": 1
+            },
+            "data": {
+                "type": "buff",
+                "accel": 1900,
+                "maxSpeed": 32,
+                "jumpAccel": 3050,
+                "jumpMax": -305,
+                "onCollect": "Niveau 4 ! Enoorme !"
+            },
+            "ctor": "Walker",
+            "area": {
+                "axis": "x",
+                "length": 3,
+                "x": 111,
+                "y": 8
+            }
+        },
+        {
+            "group": "hittable",
+            "x": 112,
+            "y": 7,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "bonus.png",
+                "width": 1
+            },
+            "ctor": "Bonus",
+            "data": {
+                "type": "revealator",
+                "group": "collectable",
+                "name": "m1",
+                "num": 1,
+                "hit": "bonus-hit.png"
+            }
+        },
+        {
+            "group": "hittable",
+            "x": 113,
+            "y": 7,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "brick.png",
+                "width": 1
+            },
+            "ctor": "Breakable",
+            "data": {
+                "life": 3,
+                "material": "brick"
+            }
+        },
+        {
+            "group": "movingPlatforms",
+            "x": 124,
+            "y": 1,
+            "repeat": 1,
+            "texture": {
+                "atlas": "atlas",
+                "id": "ice-platform.png",
+                "width": 1
+            },
+            "ctor": "MovingPlatform",
+            "area": {
+                "axis": "x",
+                "length": 5,
+                "x": 123,
+                "y": 1
+            },
+            "data": {
+                "speed": 3,
+                "wait": 0
+            }
         }
     ],
     "player": {
@@ -1715,7 +2468,7 @@
             "particle": "snow-particle.png"
         },
         "ice": {
-            "friction": 0.1,
+            "friction": 0.05,
             "drag": 1,
             "atlas": "atlas",
             "particle": "snow-particle.png"
