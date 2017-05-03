@@ -104,6 +104,8 @@ playGame.prototype = {
             // assume a top-left anchor (custom type have to deal with that)
             // and tilemap is 0-based
             var _group = this.getGroup( _data.group, false );
+            _group.classType = Phaser.Image;
+
             var _y = (this.data.world.height - _data.y - 1) * this.data.tileSize;
             for (j=0; j<_l; ++j) {
                 var _tile = this.createSprite( _data, _group, _pos * this.data.tileSize, _y );
@@ -210,7 +212,7 @@ playGame.prototype = {
 
         if (data.ctor) {
             _tile = new window[data.ctor]( this.game, x, y, data );
-            group.add( _tile );
+            if (_tile.hasOwnProperty('key')) group.add( _tile );
         } else {
             if (data.texture.atlas) {
                 _tile = group.create(x, y, data.texture.atlas, data.texture.id);
@@ -293,34 +295,36 @@ playGame.prototype = {
 
         var _deltaTime = this.game.time.physicsElapsed;
 
-        if (this.cursors.left.isDown) {
-            this.player.moveLeft.call( this.player, _deltaTime );
-            this.camera.lookTo( -1 );
-        }
-        else if (this.cursors.right.isDown) {
-            this.player.moveRight.call( this.player, _deltaTime );
-            this.camera.lookTo( 1 );
-        }
-        else {
-            this.player.stand.call( this.player );
-        }
-
-        if (this.cursors.action.isDown) {
-            var _collision = this.game.physics.arcade.overlap( this.player, this.groups.triggerable, this.onTrigger, null, this);
-            if (!_collision ) {
-                this.player.attack();
+        if (!this.player.dead) {
+            if (this.cursors.left.isDown) {
+                this.player.moveLeft.call(this.player, _deltaTime);
+                this.camera.lookTo(-1);
             }
-        }
-        if (this.cursors.reload.isDown) {
-            this.player.reload();
-        }
+            else if (this.cursors.right.isDown) {
+                this.player.moveRight.call(this.player, _deltaTime);
+                this.camera.lookTo(1);
+            }
+            else {
+                this.player.stand.call(this.player);
+            }
 
-        // Jumping: need to be on ground
-        // the longer we hold jumping btn, the higher we go
-        if (this.cursors.up.isDown) {
-            this.player.jump.call( this.player, _deltaTime );
-        } else {
-            this.player.stopJump.call( this.player );
+            if (this.cursors.action.isDown) {
+                var _collision = this.game.physics.arcade.overlap(this.player, this.groups.triggerable, this.onTrigger, null, this);
+                if (!_collision) {
+                    this.player.attack();
+                }
+            }
+            if (this.cursors.reload.isDown) {
+                this.player.reload();
+            }
+
+            // Jumping: need to be on ground
+            // the longer we hold jumping btn, the higher we go
+            if (this.cursors.up.isDown) {
+                this.player.jump.call(this.player, _deltaTime);
+            } else {
+                this.player.stopJump.call(this.player);
+            }
         }
     },
 
