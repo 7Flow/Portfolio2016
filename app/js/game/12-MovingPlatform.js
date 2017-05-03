@@ -1,9 +1,9 @@
 /**
- * Triggerable sprite that holds a loot
+ * Sprite with an animation
  * @param game
  * @param x
  * @param y
- * @param data: sprite & loot parameters (usually an equipment)
+ * @param data animation parameters (prefix, length, fps)
  * @constructor
  * @extends Walker
  */
@@ -22,7 +22,7 @@ MovingPlatform = function( game, x, y, data )
     this.walking = true;
     this.speed = data.data.speed;
 
-    this._lastPosition = {x: x, y: y}
+    this._lastPosition = {x: x, y: y};
 };
 
 MovingPlatform.prototype = Object.create( Walker.prototype );

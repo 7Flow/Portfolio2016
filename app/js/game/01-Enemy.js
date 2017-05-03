@@ -12,7 +12,7 @@ Enemy = function( game, x, y, data )
 {
     this.init( game, x, y, data );
 
-    this.position.x += 10   ;
+    this.position.x += 10;
     // adjust hit box
     this.body.setSize(34, 82, 4, 2);
     this.body.allowGravity = true;
