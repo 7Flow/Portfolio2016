@@ -49,7 +49,6 @@ class Games extends Page
     initPage( $page )
     {
         this.$el.find('a[data-json]').on('click', (e)=> {
-            console.log('click');
             var $this = $(e.currentTarget);
             this.popin.load( $this.data('json'), 'games' );
         });
@@ -60,6 +59,7 @@ class Games extends Page
     resize()
     {
         this.pagination.resize();
+        this.grid3D.resize();
     }
 
     freeze()

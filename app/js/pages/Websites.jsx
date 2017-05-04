@@ -74,7 +74,8 @@ class Websites extends Page {
 
     resize()
     {
-
+        this.pagination.resize();
+        this.grid3D.resize();
     }
 }
 

@@ -1586,13 +1586,16 @@ var Grid3D = function () {
         key: 'init',
         value: function init($page) {
             var _this = this;
+            this.$page = $page;
             this.panels = [];
 
-            $page.find('li').each(function (i) {
+            // create all panels that will be moved in 3D
+            this.$page.find('li').each(function (i) {
                 var $this = $(this);
+
                 var _panel = {
-                    x: $this.position().left + $this.width() * 0.5,
-                    y: $this.position().top + $this.height() * 0.5,
+                    x: 0,
+                    y: 0,
                     $el: $this
                 };
                 _this.panels.push(_panel);
@@ -1616,6 +1619,8 @@ var Grid3D = function () {
                  $(this).removeClass('over');
                  });*/
             });
+            // precompute positions
+            this.resize();
 
             this.$el = $page.parents('section:first');
             this.$el.off('mousemove').on('mousemove', $.proxy(this.onMouseMove, this));
@@ -1662,6 +1667,21 @@ var Grid3D = function () {
         key: 'unfreeze',
         value: function unfreeze() {
             this.$el.off('mousemove').on('mousemove', $.proxy(this.onMouseMove, this));
+        }
+    }, {
+        key: 'resize',
+        value: function resize() {
+            var $parent = this.$page.find('ul');
+            var _top = $parent.position().top;
+            var _left = $parent.position().left;
+
+            for (var i = 0; i < this.panels.length; ++i) {
+                var _panel = this.panels[i];
+                var $this = _panel.$el;
+
+                _panel.x = $this.position().left + _left + $this.width() * 0.5;
+                _panel.y = $this.position().top + _top + $this.height() * 0.5;
+            }
         }
     }, {
         key: 'destroy',
@@ -2993,7 +3013,6 @@ var Games = function (_Page) {
             var _this2 = this;
 
             this.$el.find('a[data-json]').on('click', function (e) {
-                console.log('click');
                 var $this = $(e.currentTarget);
                 _this2.popin.load($this.data('json'), 'games');
             });
@@ -3004,6 +3023,7 @@ var Games = function (_Page) {
         key: 'resize',
         value: function resize() {
             this.pagination.resize();
+            this.grid3D.resize();
         }
     }, {
         key: 'freeze',
@@ -3220,7 +3240,10 @@ var Websites = function (_Page) {
         }
     }, {
         key: 'resize',
-        value: function resize() {}
+        value: function resize() {
+            this.pagination.resize();
+            this.grid3D.resize();
+        }
     }]);
 
     return Websites;
