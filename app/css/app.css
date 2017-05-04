@@ -1072,7 +1072,13 @@ footer span {
   font-size: 1.1rem;
   outline-color: #ffb162;
 }
-/* line 94, ../sass/_footer.scss */
+/* line 92, ../sass/_footer.scss */
+.nineties footer span {
+  right: 20px;
+  font-size: 1.1rem;
+  font-family: 'Market Deco', sans;
+}
+/* line 99, ../sass/_footer.scss */
 .to-nineties footer {
   -moz-transition: all 1s ease-out;
   -o-transition: all 1s ease-out;
@@ -1081,27 +1087,27 @@ footer span {
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  /* line 102, ../sass/_footer.scss */
+  /* line 107, ../sass/_footer.scss */
   footer ul {
     height: 40px;
     margin-top: 0px;
   }
-  /* line 105, ../sass/_footer.scss */
+  /* line 110, ../sass/_footer.scss */
   footer ul a {
     top: 10px;
     width: 40px;
     height: 55px;
   }
-  /* line 109, ../sass/_footer.scss */
+  /* line 114, ../sass/_footer.scss */
   footer ul a i:after {
     top: -23px;
     left: 12px;
   }
-  /* line 113, ../sass/_footer.scss */
+  /* line 118, ../sass/_footer.scss */
   footer ul a svg {
     display: none;
   }
-  /* line 118, ../sass/_footer.scss */
+  /* line 123, ../sass/_footer.scss */
   footer li {
     margin: 0;
   }
@@ -2192,10 +2198,10 @@ dialog .overlay {
 /* line 28, ../sass/_popins.scss */
 dialog article {
   position: relative;
-  top: 15%;
-  width: 90%;
-  height: 90%;
-  margin: 2.5% auto;
+  width: 980px;
+  height: 660px;
+  top: 50%;
+  margin: -330px auto 0;
   background-color: #fff;
   box-sizing: border-box;
   padding: 40px 60px;
@@ -2283,14 +2289,14 @@ dialog .description {
 /* line 87, ../sass/_popins.scss */
 dialog .paragraph {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   text-align: left;
 }
 /* line 92, ../sass/_popins.scss */
 dialog .paragraph h4 {
   position: relative;
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   -webkit-text-fill-color: #ffe476;
   text-fill-color: #ffe476;
   font-size: 1.4rem;
@@ -2563,7 +2569,6 @@ dialog[open] .overlay {
 }
 /* line 315, ../sass/_popins.scss */
 dialog[open] article {
-  top: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
   -moz-transform: scale(1, 1);
@@ -2572,44 +2577,44 @@ dialog[open] article {
   transform: scale(1, 1);
 }
 
-/* line 322, ../sass/_popins.scss */
+/* line 321, ../sass/_popins.scss */
 dialog.opened h3, dialog.opened h4 {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
   margin-left: 0;
 }
-/* line 326, ../sass/_popins.scss */
+/* line 325, ../sass/_popins.scss */
 dialog.opened .description {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 329, ../sass/_popins.scss */
+/* line 328, ../sass/_popins.scss */
 dialog.opened svg {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 333, ../sass/_popins.scss */
+/* line 332, ../sass/_popins.scss */
 dialog.opened button svg {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 337, ../sass/_popins.scss */
+/* line 336, ../sass/_popins.scss */
 dialog.opened button:hover svg, dialog.opened buttonfocus svg {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  /* line 346, ../sass/_popins.scss */
+  /* line 345, ../sass/_popins.scss */
   .nineties dialog {
     width: 100%;
   }
-  /* line 349, ../sass/_popins.scss */
+  /* line 348, ../sass/_popins.scss */
   .nineties dialog .icon-close {
     right: 0;
     top: 0;
   }
-  /* line 354, ../sass/_popins.scss */
+  /* line 353, ../sass/_popins.scss */
   .nineties dialog article {
     width: 100%;
     min-width: 100%;
@@ -2617,26 +2622,26 @@ dialog.opened button:hover svg, dialog.opened buttonfocus svg {
     padding: 20px 25px;
     margin: 0;
   }
-  /* line 362, ../sass/_popins.scss */
+  /* line 361, ../sass/_popins.scss */
   .nineties dialog .description {
     width: 100%;
     height: auto;
     display: block;
     margin: 35px 0 60px;
   }
-  /* line 369, ../sass/_popins.scss */
+  /* line 368, ../sass/_popins.scss */
   .nineties dialog h1 {
     font-size: 2rem;
   }
-  /* line 371, ../sass/_popins.scss */
+  /* line 370, ../sass/_popins.scss */
   .nineties dialog h1 span.fx {
     font-size: 2rem;
   }
-  /* line 375, ../sass/_popins.scss */
+  /* line 374, ../sass/_popins.scss */
   .nineties dialog h3 {
     font-size: 1.2rem;
   }
-  /* line 379, ../sass/_popins.scss */
+  /* line 378, ../sass/_popins.scss */
   .nineties dialog figure {
     width: 88%;
     height: auto;
@@ -2650,19 +2655,19 @@ dialog.opened button:hover svg, dialog.opened buttonfocus svg {
     transition: all 0.4s ease-out;
     pointer-events: none;
   }
-  /* line 390, ../sass/_popins.scss */
+  /* line 389, ../sass/_popins.scss */
   .nineties dialog a {
     display: inherit;
   }
-  /* line 392, ../sass/_popins.scss */
+  /* line 391, ../sass/_popins.scss */
   .nineties dialog a svg {
     display: none;
   }
 }
-@media screen and (min-width: 1025px) and (max-width: 1200px) {
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
   /* line 448, ../sass/app.scss */
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 @media screen and (min-width: 1201px) and (max-width: 1400px) {

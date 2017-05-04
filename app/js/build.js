@@ -550,6 +550,16 @@ var GUI = function GUI(game) {
         _x += 30;
     }
 
+    this.lives = this.game.add.text(_x + 10, 82, "x" + this.game.data.life, null, this.game.groups.gui);
+    this.lives.anchor.setTo(0, 1);
+    this.lives.font = 'press_start_2pregular';
+    this.lives.fontSize = 20;
+    this.lives.fill = '#ffffff';
+    // outline
+    this.lives.align = 'left';
+    this.lives.stroke = '#000000';
+    this.lives.strokeThickness = 4;
+
     // game info
     this.infosWindow = new Modal(game, (game.width - 350) * 0.5, 50, 350, 100);
 
@@ -563,7 +573,6 @@ var GUI = function GUI(game) {
 GUI.prototype = {
 
     hearts: [],
-    lives: "x3",
 
     infosWindow: null,
     pauseLayer: null,
@@ -580,7 +589,7 @@ GUI.prototype = {
      * @param num The number of life remaining.
      */
     lostLife: function lostLife(num) {
-        this.lives = "x" + num;
+        this.lives.text = "x" + num;
     },
 
     /**
@@ -739,6 +748,12 @@ menuGame.prototype = {
 
     // Phaser.Game.State interface
     create: function create() {
+        if (this.game.defaultCamera == null) {
+            this.game.defaultCamera = this.game.camera;
+        } else {
+            this.game.camera = this.game.defaultCamera;
+        }
+
         this.game.stage.backgroundColor = '#36688B';
         // 8bit pixel style
         this.game.renderer.renderSession.roundPixels = true;
@@ -908,7 +923,6 @@ menuGame.prototype = {
     },
 
     onDown: function onDown(e) {
-        console.log("#onDown: " + e.data.id);
         switch (e.data.id) {
             case 0:
                 this.game.state.start("Play");
@@ -1016,7 +1030,11 @@ menuOver.prototype = {
 
     // Phaser.Game.State interface
     create: function create() {
-        console.log('create');
+        if (this.game.defaultCamera == null) {
+            this.game.defaultCamera = this.game.camera;
+        } else {
+            this.game.camera = this.game.defaultCamera;
+        }
 
         this.game.stage.backgroundColor = '#000000';
         // 8bit pixel style
@@ -1041,24 +1059,30 @@ menuOver.prototype = {
             strokeThickness: 4
         };
 
-        var _txt = new Phaser.Text(this.game, -74, 0, "GAME OVER", _style);
+        var _txt = new Phaser.Text(this.game, -144, -600, "GAME OVER", _style);
         var grd = _txt.context.createLinearGradient(0, 0, 0, _txt.canvas.height);
-        grd.addColorStop(0, '#9999cc');
-        grd.addColorStop(1, '#990000');
+        grd.addColorStop(0, '#fe493a');
+        grd.addColorStop(1, '#dd070c');
         _txt.fill = grd;
+        this.game.add.tween(_txt).to({ y: -50 }, 1200, Phaser.Easing.Bounce.Out, true, 250);
 
         this.mainMenu.add(_txt);
+        this.mainMenu.visible = true;
 
         // REPLAY
-        var _start = new Button(this.game, -128, 128, 256, 64, "REJOUER", 0);
+        var _start = new Button(this.game, -128, 50, 256, 64, "REJOUER", 0);
         _start.over();
+        _start.alpha = 0;
         this.mainMenu.add(_start);
+        this.game.add.tween(_start).to({ alpha: 1 }, 750, Phaser.Easing.Bounce.Out, true, 750);
 
         // enable mouse only on main menu
         _start.onInputDown.add(this.restart, this);
 
         $('#about').trigger('state:created');
     },
+
+    update: function update() {},
 
     restart: function restart() {
         this.game.state.start("Play");
@@ -1071,9 +1095,8 @@ menuOver.prototype = {
         var _centerX = this.game.width * 0.5;
         this.mainMenu.x = _centerX;
 
-        var _contentH = this.mainMenu.height;
-        var _margin = (window.Game.height - _contentH) * 0.5;
-        this.mainMenu.y = _margin;
+        var _centerY = this.game.height * 0.5;
+        this.mainMenu.y = _centerY;
     },
 
     // Phaser.Game.State interface
@@ -1155,6 +1178,7 @@ playGame.prototype = {
 
         // make data accessible
         this.game.data = this.data;
+        if (this.game.data.life === undefined) this.game.data.life = 3;
 
         this.game.stage.backgroundColor = '#e0e4f1';
         this.backdrop = new Backdrop(this.game);
@@ -1484,13 +1508,17 @@ playGame.prototype = {
         this.game.load.reset();
         this.game.load.removeAll();
 
+        //this.camera.destroy();
+        delete this.camera;
+        this.game.camera = null;
+
         this.game.gui.destroy();
         delete this.game.gui;
 
         this.backdrop = null;
         this.cursors = null;
         this.player = null;
-        this.game = null;
+        //this.game = null;
 
         this.ammosGroups = [];
         this.ammosGroupsLength = 0;
@@ -2624,6 +2652,7 @@ var About = function (_Page) {
             this.game.state.getCurrentState().destroy();
             this.game.state.destroy();
             this.game.destroy();
+            this.game = null;
         }
     }]);
 

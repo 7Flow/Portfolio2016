@@ -27,10 +27,10 @@ dialog {
 
   article {
     position: relative;
-    top: 15%;
-    width: 90%;
-    height: 90%;
-    margin: 2.5% auto;
+    width: 980px;
+    height: 660px;
+    top: 50%;
+    margin: -330px auto 0;
     background-color: #fff;
     box-sizing: border-box;
     padding: 40px 60px;
@@ -86,13 +86,13 @@ dialog {
   }
   .paragraph {
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
     text-align: left;
 
     h4 {
       position: relative;
       display: inline-block;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       -webkit-text-fill-color: $yellow;
       text-fill-color: $yellow;
       font-size: 1.4rem;
@@ -313,7 +313,6 @@ dialog[open] {
     @include opacity(1);
   }
   article {
-    top: 0;
     @include opacity(1);
     @include transform2d(scale(1, 1));
   }

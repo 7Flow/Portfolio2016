@@ -444,9 +444,9 @@ body .inactive {
 @import "_popins.scss";
 
 
-@media screen and (min-width: 1025px) and (max-width: 1200px) {
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
     html {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 @media screen and (min-width: 1201px) and (max-width: 1400px) {
