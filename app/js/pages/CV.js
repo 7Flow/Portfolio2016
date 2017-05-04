@@ -1,8 +1,8 @@
 
-import Page from '../modules/Page.jsx';
+import Page from '../modules/Page.js';
 
-import Transform from '../utils/Transform.jsx';
-import Vector3 from '../utils/Vector3.jsx';
+import Transform from '../utils/Transform.js';
+import Vector3 from '../utils/Vector3.js';
 
 class CV extends Page {
 

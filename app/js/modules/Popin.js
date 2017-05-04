@@ -1,8 +1,8 @@
 
-import Transform from '../utils/Transform.jsx';
-import Vector3 from '../utils/Vector3.jsx';
+import Transform from '../utils/Transform.js';
+import Vector3 from '../utils/Vector3.js';
 
-import App from '../app.jsx';
+import App from '../app.js';
 
 class Popin {
 

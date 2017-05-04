@@ -1,13 +1,13 @@
 
-import Footer from './modules/Footer.jsx';
-import Header from './modules/Header.jsx';
+import Footer from './modules/Footer.js';
+import Header from './modules/Header.js';
 
-import About from './pages/About.jsx';
-import Games from './pages/Games.jsx';
-import Websites from './pages/Websites.jsx';
-import CV from './pages/CV.jsx';
+import About from './pages/About.js';
+import Games from './pages/Games.js';
+import Websites from './pages/Websites.js';
+import CV from './pages/CV.js';
 
-import Intro from './pages/Intro.jsx';
+import Intro from './pages/Intro.js';
 
 import RandomPoly from './plugins/jquery.randomPoly.js';
 import Breakable from './plugins/jquery.breakable.js';

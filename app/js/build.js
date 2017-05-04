@@ -7,31 +7,31 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Footer = require('./modules/Footer.jsx');
+var _Footer = require('./modules/Footer.js');
 
 var _Footer2 = _interopRequireDefault(_Footer);
 
-var _Header = require('./modules/Header.jsx');
+var _Header = require('./modules/Header.js');
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _About = require('./pages/About.jsx');
+var _About = require('./pages/About.js');
 
 var _About2 = _interopRequireDefault(_About);
 
-var _Games = require('./pages/Games.jsx');
+var _Games = require('./pages/Games.js');
 
 var _Games2 = _interopRequireDefault(_Games);
 
-var _Websites = require('./pages/Websites.jsx');
+var _Websites = require('./pages/Websites.js');
 
 var _Websites2 = _interopRequireDefault(_Websites);
 
-var _CV = require('./pages/CV.jsx');
+var _CV = require('./pages/CV.js');
 
 var _CV2 = _interopRequireDefault(_CV);
 
-var _Intro = require('./pages/Intro.jsx');
+var _Intro = require('./pages/Intro.js');
 
 var _Intro2 = _interopRequireDefault(_Intro);
 
@@ -239,7 +239,7 @@ exports.default = App;
 new App();
 window.App = App;
 
-},{"./modules/Footer.jsx":3,"./modules/Header.jsx":9,"./pages/About.jsx":13,"./pages/CV.jsx":14,"./pages/Games.jsx":15,"./pages/Intro.jsx":16,"./pages/Websites.jsx":17,"./plugins/jquery.breakable.js":18,"./plugins/jquery.randomPoly.js":19}],2:[function(require,module,exports){
+},{"./modules/Footer.js":3,"./modules/Header.js":9,"./pages/About.js":13,"./pages/CV.js":14,"./pages/Games.js":15,"./pages/Intro.js":16,"./pages/Websites.js":17,"./plugins/jquery.breakable.js":18,"./plugins/jquery.randomPoly.js":19}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -248,11 +248,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Particle = require('../utils/Particle.jsx');
+var _Particle = require('../utils/Particle.js');
 
 var _Particle2 = _interopRequireDefault(_Particle);
 
-var _ParticleTrail = require('../utils/ParticleTrail.jsx');
+var _ParticleTrail = require('../utils/ParticleTrail.js');
 
 var _ParticleTrail2 = _interopRequireDefault(_ParticleTrail);
 
@@ -484,7 +484,7 @@ var Background = function () {
 
 exports.default = Background;
 
-},{"../utils/Particle.jsx":20,"../utils/ParticleTrail.jsx":21}],3:[function(require,module,exports){
+},{"../utils/Particle.js":20,"../utils/ParticleTrail.js":21}],3:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -493,7 +493,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Popin = require('../modules/Popin.jsx');
+var _Popin = require('../modules/Popin.js');
 
 var _Popin2 = _interopRequireDefault(_Popin);
 
@@ -530,7 +530,7 @@ var Footer = function () {
 
 exports.default = Footer;
 
-},{"../modules/Popin.jsx":12}],4:[function(require,module,exports){
+},{"../modules/Popin.js":12}],4:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1541,19 +1541,19 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Transform = require('../utils/Transform.jsx');
+var _Transform = require('../utils/Transform.js');
 
 var _Transform2 = _interopRequireDefault(_Transform);
 
-var _Vector = require('../utils/Vector3.jsx');
+var _Vector = require('../utils/Vector3.js');
 
 var _Vector2 = _interopRequireDefault(_Vector);
 
-var _Vector3 = require('../utils/Vector2.jsx');
+var _Vector3 = require('../utils/Vector2.js');
 
 var _Vector4 = _interopRequireDefault(_Vector3);
 
-var _app = require('../app.jsx');
+var _app = require('../app.js');
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -1698,7 +1698,7 @@ var Grid3D = function () {
 
 exports.default = Grid3D;
 
-},{"../app.jsx":1,"../utils/Transform.jsx":22,"../utils/Vector2.jsx":23,"../utils/Vector3.jsx":24}],9:[function(require,module,exports){
+},{"../app.js":1,"../utils/Transform.js":22,"../utils/Vector2.js":23,"../utils/Vector3.js":24}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2268,15 +2268,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Transform = require('../utils/Transform.jsx');
+var _Transform = require('../utils/Transform.js');
 
 var _Transform2 = _interopRequireDefault(_Transform);
 
-var _Vector = require('../utils/Vector3.jsx');
+var _Vector = require('../utils/Vector3.js');
 
 var _Vector2 = _interopRequireDefault(_Vector);
 
-var _app = require('../app.jsx');
+var _app = require('../app.js');
 
 var _app2 = _interopRequireDefault(_app);
 
@@ -2527,7 +2527,7 @@ var Popin = function () {
 
 exports.default = Popin;
 
-},{"../app.jsx":1,"../utils/Transform.jsx":22,"../utils/Vector3.jsx":24}],13:[function(require,module,exports){
+},{"../app.js":1,"../utils/Transform.js":22,"../utils/Vector3.js":24}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2536,7 +2536,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Page2 = require('../modules/Page.jsx');
+var _Page2 = require('../modules/Page.js');
 
 var _Page3 = _interopRequireDefault(_Page2);
 
@@ -2681,7 +2681,7 @@ var About = function (_Page) {
 
 exports.default = About;
 
-},{"../modules/GameMenu.js":5,"../modules/GameOver.js":6,"../modules/GamePlay.js":7,"../modules/Page.jsx":10}],14:[function(require,module,exports){
+},{"../modules/GameMenu.js":5,"../modules/GameOver.js":6,"../modules/GamePlay.js":7,"../modules/Page.js":10}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2690,15 +2690,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Page2 = require('../modules/Page.jsx');
+var _Page2 = require('../modules/Page.js');
 
 var _Page3 = _interopRequireDefault(_Page2);
 
-var _Transform = require('../utils/Transform.jsx');
+var _Transform = require('../utils/Transform.js');
 
 var _Transform2 = _interopRequireDefault(_Transform);
 
-var _Vector = require('../utils/Vector3.jsx');
+var _Vector = require('../utils/Vector3.js');
 
 var _Vector2 = _interopRequireDefault(_Vector);
 
@@ -2924,7 +2924,7 @@ var CV = function (_Page) {
 
 exports.default = CV;
 
-},{"../modules/Page.jsx":10,"../utils/Transform.jsx":22,"../utils/Vector3.jsx":24}],15:[function(require,module,exports){
+},{"../modules/Page.js":10,"../utils/Transform.js":22,"../utils/Vector3.js":24}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2933,19 +2933,19 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Page2 = require('../modules/Page.jsx');
+var _Page2 = require('../modules/Page.js');
 
 var _Page3 = _interopRequireDefault(_Page2);
 
-var _Grid3D = require('../modules/Grid3D.jsx');
+var _Grid3D = require('../modules/Grid3D.js');
 
 var _Grid3D2 = _interopRequireDefault(_Grid3D);
 
-var _Pagination = require('../modules/Pagination.jsx');
+var _Pagination = require('../modules/Pagination.js');
 
 var _Pagination2 = _interopRequireDefault(_Pagination);
 
-var _Popin = require('../modules/Popin.jsx');
+var _Popin = require('../modules/Popin.js');
 
 var _Popin2 = _interopRequireDefault(_Popin);
 
@@ -3042,7 +3042,7 @@ var Games = function (_Page) {
 
 exports.default = Games;
 
-},{"../modules/Grid3D.jsx":8,"../modules/Page.jsx":10,"../modules/Pagination.jsx":11,"../modules/Popin.jsx":12}],16:[function(require,module,exports){
+},{"../modules/Grid3D.js":8,"../modules/Page.js":10,"../modules/Pagination.js":11,"../modules/Popin.js":12}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3051,11 +3051,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Page2 = require('../modules/Page.jsx');
+var _Page2 = require('../modules/Page.js');
 
 var _Page3 = _interopRequireDefault(_Page2);
 
-var _Background = require('../modules/Background.jsx');
+var _Background = require('../modules/Background.js');
 
 var _Background2 = _interopRequireDefault(_Background);
 
@@ -3126,7 +3126,7 @@ var Intro = function (_Page) {
 
 exports.default = Intro;
 
-},{"../modules/Background.jsx":2,"../modules/Page.jsx":10}],17:[function(require,module,exports){
+},{"../modules/Background.js":2,"../modules/Page.js":10}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3135,19 +3135,19 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Page2 = require('../modules/Page.jsx');
+var _Page2 = require('../modules/Page.js');
 
 var _Page3 = _interopRequireDefault(_Page2);
 
-var _Grid3D = require('../modules/Grid3D.jsx');
+var _Grid3D = require('../modules/Grid3D.js');
 
 var _Grid3D2 = _interopRequireDefault(_Grid3D);
 
-var _Pagination = require('../modules/Pagination.jsx');
+var _Pagination = require('../modules/Pagination.js');
 
 var _Pagination2 = _interopRequireDefault(_Pagination);
 
-var _Popin = require('../modules/Popin.jsx');
+var _Popin = require('../modules/Popin.js');
 
 var _Popin2 = _interopRequireDefault(_Popin);
 
@@ -3251,7 +3251,7 @@ var Websites = function (_Page) {
 
 exports.default = Websites;
 
-},{"../modules/Grid3D.jsx":8,"../modules/Page.jsx":10,"../modules/Pagination.jsx":11,"../modules/Popin.jsx":12}],18:[function(require,module,exports){
+},{"../modules/Grid3D.js":8,"../modules/Page.js":10,"../modules/Pagination.js":11,"../modules/Popin.js":12}],18:[function(require,module,exports){
 'use strict';
 
 (function ($) {
@@ -3662,7 +3662,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Vector = require('../utils/Vector2.jsx');
+var _Vector = require('../utils/Vector2.js');
 
 var _Vector2 = _interopRequireDefault(_Vector);
 
@@ -3774,7 +3774,7 @@ var Particle = function () {
 
 exports.default = Particle;
 
-},{"../utils/Vector2.jsx":23}],21:[function(require,module,exports){
+},{"../utils/Vector2.js":23}],21:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3783,11 +3783,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Vector = require('../utils/Vector2.jsx');
+var _Vector = require('../utils/Vector2.js');
 
 var _Vector2 = _interopRequireDefault(_Vector);
 
-var _Particle2 = require('../utils/Particle.jsx');
+var _Particle2 = require('../utils/Particle.js');
 
 var _Particle3 = _interopRequireDefault(_Particle2);
 
@@ -3873,7 +3873,7 @@ var ParticleTrail = function (_Particle) {
 
 exports.default = ParticleTrail;
 
-},{"../utils/Particle.jsx":20,"../utils/Vector2.jsx":23}],22:[function(require,module,exports){
+},{"../utils/Particle.js":20,"../utils/Vector2.js":23}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3882,11 +3882,11 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _Vector = require('../utils/Vector3.jsx');
+var _Vector = require('../utils/Vector3.js');
 
 var _Vector2 = _interopRequireDefault(_Vector);
 
-var _Vector3 = require('../utils/Vector2.jsx');
+var _Vector3 = require('../utils/Vector2.js');
 
 var _Vector4 = _interopRequireDefault(_Vector3);
 
@@ -4012,7 +4012,7 @@ var Transform = function () {
 
 exports.default = Transform;
 
-},{"../utils/Vector2.jsx":23,"../utils/Vector3.jsx":24}],23:[function(require,module,exports){
+},{"../utils/Vector2.js":23,"../utils/Vector3.js":24}],23:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

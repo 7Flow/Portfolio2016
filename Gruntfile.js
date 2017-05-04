@@ -23,9 +23,9 @@ module.exports = function(grunt) {
         browserify: {
             dist: {
                 options: {
-                    transform: [["babelify", {presets: ["es2015", "stage-0", "stage-1", "stage-2"]}]]
+                    transform: [["babelify", {presets: ["es2015", "stage-0"]}]]
                 },
-                src: ['app/js/app.jsx'],
+                src: ['app/js/app.js'],
                 dest: 'app/js/build.js'
             }
         },

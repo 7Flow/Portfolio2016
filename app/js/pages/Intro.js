@@ -1,6 +1,6 @@
-import Page from '../modules/Page.jsx';
+import Page from '../modules/Page.js';
 
-import Background from '../modules/Background.jsx';
+import Background from '../modules/Background.js';
 
 class Intro extends Page
 {

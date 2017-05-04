@@ -1,4 +1,4 @@
-import Page from '../modules/Page.jsx';
+import Page from '../modules/Page.js';
 
 import GameMenu from '../modules/GameMenu.js';
 import GamePlay from '../modules/GamePlay.js';

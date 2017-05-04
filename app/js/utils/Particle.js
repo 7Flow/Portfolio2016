@@ -1,5 +1,5 @@
 
-import Vector2 from '../utils/Vector2.jsx';
+import Vector2 from '../utils/Vector2.js';
 
 class Particle {
 

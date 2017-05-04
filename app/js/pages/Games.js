@@ -1,31 +1,17 @@
-import Page from '../modules/Page.jsx';
+import Page from '../modules/Page.js';
 
-import Grid3D from '../modules/Grid3D.jsx';
+import Grid3D from '../modules/Grid3D.js';
 
-import Pagination from '../modules/Pagination.jsx';
-import Popin from '../modules/Popin.jsx';
+import Pagination from '../modules/Pagination.js';
+import Popin from '../modules/Popin.js';
 
-class Websites extends Page {
-    json = 'json/websites.json';
-    tpl = 'app/tpl/websites.html';
-    $el = $('#websites');
+class Games extends Page
+{
+    json = 'json/games.json';
+    tpl = 'app/tpl/games.html';
+    $el = $('#games');
 
-    worldConfig = {
-        // timestep
-        timestep: 6,
-        // maximum number of iterations per step
-        maxIPF: 4,
-        // default integrator
-        integrator: 'verlet',
-        // is sleeping disabled?
-        sleepDisabled: false,
-        // speed at which bodies wake up
-        sleepSpeedLimit: 0.1,
-        // variance in position below which bodies fall asleep
-        sleepVarianceLimit: 2,
-        // time (ms) before sleepy bodies fall asleep
-        sleepTimeLimit: 500
-    };
+    grid3D = null;
 
     processData()
     {
@@ -57,16 +43,14 @@ class Websites extends Page {
             this.grid3D = new Grid3D();
         }
 
-        this.popin = new Popin( document.getElementById("popin"), 'app/tpl/websitePopin.html' );
-
-        var _this = this;
+        this.popin = new Popin( document.getElementById("popin"), 'app/tpl/gamePopin.html' );
     }
 
     initPage( $page )
     {
         this.$el.find('a[data-json]').on('click', (e)=> {
             var $this = $(e.currentTarget);
-            this.popin.load( $this.data('json'), 'websites' );
+            this.popin.load( $this.data('json'), 'games' );
         });
 
         if (this.grid3D) this.grid3D.init( $page );
@@ -77,6 +61,15 @@ class Websites extends Page {
         this.pagination.resize();
         this.grid3D.resize();
     }
+
+    freeze()
+    {
+        if (this.grid3D) this.grid3D.freeze();
+    }
+    unfreeze()
+    {
+        if (this.grid3D) this.grid3D.unfreeze();
+    }
 }
 
-export default Websites;
+export default Games;

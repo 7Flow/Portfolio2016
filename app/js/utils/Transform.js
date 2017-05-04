@@ -1,6 +1,6 @@
 
-import Vector3 from '../utils/Vector3.jsx';
-import Vector2 from '../utils/Vector2.jsx';
+import Vector3 from '../utils/Vector3.js';
+import Vector2 from '../utils/Vector2.js';
 
 class Transform
 {

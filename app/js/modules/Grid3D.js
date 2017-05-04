@@ -1,9 +1,9 @@
 
-import Transform from '../utils/Transform.jsx';
-import Vector3 from '../utils/Vector3.jsx';
-import Vector2 from '../utils/Vector2.jsx';
+import Transform from '../utils/Transform.js';
+import Vector3 from '../utils/Vector3.js';
+import Vector2 from '../utils/Vector2.js';
 
-import App from '../app.jsx';
+import App from '../app.js';
 
 /**
  * A grid, each panel/case will be rotated according to cursor's position

@@ -1,6 +1,6 @@
 
-import Vector2 from '../utils/Vector2.jsx';
-import Particle from '../utils/Particle.jsx';
+import Vector2 from '../utils/Vector2.js';
+import Particle from '../utils/Particle.js';
 
 class ParticleTrail extends Particle {
 

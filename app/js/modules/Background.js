@@ -1,8 +1,8 @@
 
 window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
-import Particle from '../utils/Particle.jsx';
-import ParticleTrail from '../utils/ParticleTrail.jsx';
+import Particle from '../utils/Particle.js';
+import ParticleTrail from '../utils/ParticleTrail.js';
 
 class Background {
 

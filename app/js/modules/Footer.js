@@ -1,5 +1,5 @@
 
-import Popin from '../modules/Popin.jsx';
+import Popin from '../modules/Popin.js';
 
 class Footer
 {
