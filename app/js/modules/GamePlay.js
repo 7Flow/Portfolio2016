@@ -57,6 +57,7 @@ playGame.prototype = {
 
         // make data accessible
         this.game.data = this.data;
+        if (this.game.data.life === undefined) this.game.data.life = 3;
 
         this.game.stage.backgroundColor = '#e0e4f1';
         this.backdrop = new Backdrop( this.game );
@@ -409,13 +410,17 @@ playGame.prototype = {
         this.game.load.reset();
         this.game.load.removeAll();
 
+        //this.camera.destroy();
+        delete this.camera;
+        this.game.camera = null;
+
         this.game.gui.destroy();
         delete this.game.gui;
 
         this.backdrop = null;
         this.cursors = null;
         this.player = null;
-        this.game = null;
+        //this.game = null;
 
         this.ammosGroups = [];
         this.ammosGroupsLength = 0;

@@ -13,6 +13,16 @@ var GUI = function(game)
         _x += 30;
     }
 
+    this.lives = this.game.add.text( _x+10, 82, "x"+this.game.data.life, null, this.game.groups.gui);
+    this.lives.anchor.setTo(0, 1);
+    this.lives.font = 'press_start_2pregular';
+    this.lives.fontSize = 20;
+    this.lives.fill = '#ffffff';
+    // outline
+    this.lives.align = 'left';
+    this.lives.stroke = '#000000';
+    this.lives.strokeThickness = 4;
+
     // game info
     this.infosWindow = new Modal( game, (game.width - 350) * 0.5, 50, 350, 100 );
 
@@ -26,7 +36,6 @@ var GUI = function(game)
 GUI.prototype = {
 
     hearts: [],
-    lives: "x3",
 
     infosWindow: null,
     pauseLayer: null,
@@ -45,7 +54,7 @@ GUI.prototype = {
      */
     lostLife: function( num )
     {
-        this.lives = "x"+num;
+        this.lives.text = "x"+num;
     },
 
     /**

@@ -103,6 +103,7 @@ class About extends Page
         this.game.state.getCurrentState().destroy();
         this.game.state.destroy();
         this.game.destroy();
+        this.game = null;
     }
 }
 

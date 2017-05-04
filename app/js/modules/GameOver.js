@@ -10,7 +10,11 @@ menuOver.prototype = {
     // Phaser.Game.State interface
     create: function()
     {
-        console.log('create');
+        if (this.game.defaultCamera == null) {
+            this.game.defaultCamera = this.game.camera;
+        } else {
+            this.game.camera = this.game.defaultCamera;
+        }
 
         this.game.stage.backgroundColor = '#000000';
         // 8bit pixel style
@@ -35,23 +39,32 @@ menuOver.prototype = {
             strokeThickness: 4
         };
 
-        var _txt = new Phaser.Text( this.game, -74, 0, "GAME OVER", _style);
+        var _txt = new Phaser.Text( this.game, -144, -600, "GAME OVER", _style);
         var grd = _txt.context.createLinearGradient(0, 0, 0, _txt.canvas.height);
-        grd.addColorStop(0, '#9999cc');
-        grd.addColorStop(1, '#990000');
+        grd.addColorStop(0, '#fe493a');
+        grd.addColorStop(1, '#dd070c');
         _txt.fill = grd;
+        this.game.add.tween( _txt ).to( {y: -50}, 1200, Phaser.Easing.Bounce.Out, true, 250 );
 
         this.mainMenu.add( _txt );
+        this.mainMenu.visible = true;
 
         // REPLAY
-        var _start = new Button( this.game, -128, 128, 256, 64, "REJOUER", 0 );
+        var _start = new Button( this.game, -128, 50, 256, 64, "REJOUER", 0 );
         _start.over();
+        _start.alpha = 0;
         this.mainMenu.add( _start );
+        this.game.add.tween( _start ).to( {alpha: 1}, 750, Phaser.Easing.Bounce.Out, true, 750 );
 
         // enable mouse only on main menu
         _start.onInputDown.add( this.restart, this );
 
         $('#about').trigger('state:created');
+    },
+
+    update: function()
+    {
+
     },
 
     restart: function()
@@ -67,9 +80,8 @@ menuOver.prototype = {
         var _centerX = this.game.width * 0.5;
         this.mainMenu.x = _centerX;
 
-        var _contentH = this.mainMenu.height;
-        var _margin = (window.Game.height - _contentH) * 0.5;
-        this.mainMenu.y = _margin;
+        var _centerY = this.game.height * 0.5;
+        this.mainMenu.y = _centerY;
     },
 
     // Phaser.Game.State interface

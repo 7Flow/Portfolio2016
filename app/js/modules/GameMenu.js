@@ -39,6 +39,12 @@ menuGame.prototype = {
     // Phaser.Game.State interface
     create: function()
     {
+        if (this.game.defaultCamera == null) {
+            this.game.defaultCamera = this.game.camera;
+        } else {
+            this.game.camera = this.game.defaultCamera;
+        }
+
         this.game.stage.backgroundColor = '#36688B';
         // 8bit pixel style
         this.game.renderer.renderSession.roundPixels = true;
@@ -214,7 +220,6 @@ menuGame.prototype = {
 
     onDown: function(e)
     {
-        console.log("#onDown: "+e.data.id);
         switch (e.data.id) {
             case 0:
                 this.game.state.start("Play");

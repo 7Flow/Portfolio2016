@@ -71,7 +71,6 @@ Player.prototype.bullets = null;
 Player.prototype.nextAttack = 0;
 
 Player.prototype.health = 3;
-Player.prototype.life = 3;
 Player.prototype.invincible = false;
 
 Player.prototype.airDrag = 0.95;
@@ -373,8 +372,9 @@ Player.prototype.onHit = function( player, ammo )
 Player.prototype.onDeath = function()
 {
     this.dead = this.invincible = true;
-    --this.life;
-    this.game.gui.lostLife( this.life );
+    --this.game.data.life;
+
+    this.game.gui.lostLife( this.game.data.life );
 
     this.game.camera.shake( 0.003, 100, true, Phaser.Camera.SHAKE_HORIZONTAL );
     this.flicker( 0xff0000, 5, 0.15 );
@@ -386,8 +386,7 @@ Player.prototype.onDeath = function()
 
     var _this = this;
     setTimeout(function () {
-        if (_this.life > 0) {
-            //this.game.state.start("Menu");
+        if (_this.game.data.life > 0) {
             _this.game.state.restart();
         } else {
             _this.game.state.start("Over");
