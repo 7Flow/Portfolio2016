@@ -1,0 +1,17 @@
+map                                                               *                                                                         W
+                        E                                         p                                                       E               P P P       
+                      P P P P                       *               p p p p                                             P P P     P * *
+      B B B                           |             *     |                     - -     +                     -                                               B 
+                              W     - |     P * *   P     |   %       E       C C C C C C C         +         - - -             +       C C C C
+                      C C C C C C C C C R               G C C C C C C C C C C R R R R R R R / / / / R / / G G C C C C C C C C C C C C C X R X X / / R / / G G G
+G G G G G G G G G G G X R R X X X X R R R G / / / / / G X X R R R X X X R X R R R X X X R R / / / / / / / X R R R R X X X R X X X R R X X X X X / / / / / X X X
+0     3               10                 20          26      30                  40      44          50                  60                  70
+
+                                                                 B B B
+
+                                                               P P P P P                                                                                            
+ B B                   E     %                 |     P * * *                                             I     I                                             |
+                     C C C C C C           - - |                                         P * * *       I R L L R S                                 %         | 
+ C C C C C C C C C C X X R R R X C C C C C C C C                                                   I / R R L L R R S                             P P P P P P P
+ X X R R X R X R R R R R R X X X X X R X R R R X G G G S S / / / I I / / I / / / I I I / / / / / / R / R R L L R X X S S I I I I I S S G G G P P X X X R X R R
+79                    90        95       100   103       108 110                 120                 130                 140                 150       155
